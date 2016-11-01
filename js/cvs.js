@@ -5,7 +5,7 @@
       h = cvs.height = window.innerHeight,
       o = [w/2, h/2],
       stars = [],
-      maxStars = 50;
+      maxStars = 99;
 
   function draw(star) {
     ctx.beginPath();
@@ -43,8 +43,6 @@
     render();
   }
 
-
-
   function resizeCanvas() {
     w = cvs.width = window.innerWidth;
     h = cvs.height = window.innerHeight;
@@ -60,22 +58,35 @@
   function initOneStar(){
     var posX = rand(0, w),
         posY = rand(0, h),
-        radius = rand(1, 3);
-    return {
-      x: posX,
-      y: posY,
-      r: .6,
-      a: Math.random() * .9,
-      vx: (posX - o[0]) * .0005,
-      vy: (posY - o[1]) * .0005,
-      vr: Math.random(),
-      time: rand(30, 100)
+        dx = posX - o[0],
+        dy = posY - o[1],
+        star = {
+          x: posX,
+          y: posY,
+          r: .6,
+          a: Math.random(),
+          vx: dx * .0004,
+          vy: dy * .0004,
+          vr: Math.random()/3,
+          time: rand(120, 360) // 20/1s
+        };
+
+    if( Math.abs(dx) < 100 && Math.abs(dy) < 60 ){
+      // 靠近中心点 O
+      // 应该重新设计算法
+      // star.time = rand(20, 40);
+      // star.vx = dx * .010;
+      // star.vy = dy * .008;
+      // star.vr = 24 / rand(5, 7);
     }
+    return star;
   }
 
   window.addEventListener('resize',resizeCanvas);
   initStars();
   render();
-  setInterval(run, 100);
+  setInterval(run, 50);
+
+
 
 })();
