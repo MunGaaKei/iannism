@@ -11,7 +11,7 @@
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.r, 0, 360);
     ctx.fillStyle = '#fff';
-    ctx.globalAlpha = star.a;
+    ctx.globalAlpha = star.alpha;
     ctx.fill();
     ctx.closePath();
   }
@@ -35,8 +35,8 @@
       } else {
         var star = stars[l];
         stars[l].time--;
-        stars[l].x = star.x + star.vx;
-        stars[l].y = star.y + star.vy;
+        stars[l].x = (star.x + star.vx);
+        stars[l].y = (star.y + star.vy);
         stars[l].r = star.r + star.vr * .01;
       }
     }
@@ -64,10 +64,11 @@
           x: posX,
           y: posY,
           r: .6,
-          a: Math.random(),
+          alpha: Math.random(),
           vx: dx * .0004,
           vy: dy * .0004,
           vr: Math.random()/3,
+          a: 0, // for shooting star
           time: rand(120, 360) // 20/1s
         };
 
@@ -78,6 +79,7 @@
       // star.vx = dx * .010;
       // star.vy = dy * .008;
       // star.vr = 24 / rand(5, 7);
+      star.a = rand(1, 4) * Math.random();
     }
     return star;
   }
@@ -87,6 +89,26 @@
   render();
   setInterval(run, 50);
 
+})();
+
+// others setting
+(function(){
+  var navs = document.querySelector('div.c'),
+      nav = navs.querySelectorAll('a'),
+      bg = document.querySelector('div.bg-nav'),
+      l = nav.length;
+  while(l--){
+    (function(){
+      var i = l;
+      nav[i].addEventListener('mouseover', function(){
+        bg.style.top = 27 * i + 3 + 'px';
+        bg.style.width = this.offsetWidth + 'px';
+      });
+    })();
+  }
+  navs.addEventListener('mouseleave', function(){
+    bg.style.width = 0;
+  });
 
 
 })();
