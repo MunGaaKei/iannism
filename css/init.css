@@ -27,9 +27,7 @@ li{list-style: none;}
   z-index: -1;
   background: #090723;
 }
-.b{
-  
-}
+
 .c{
   position: absolute;
   top: 30px;
@@ -43,7 +41,7 @@ li{list-style: none;}
   position: absolute;
   right: 8px;
   height: 24px;
-  background: rgba(255, 255, 255, .94);;
+  background: rgba(255, 255, 255, .94);
   border-radius: 2px;
   z-index: -1;
   transition: all .3s ease;
@@ -60,7 +58,7 @@ li{list-style: none;}
 .d{
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  right: 30px;
 }
 .d a{
   padding: 8px 3px 5px 3px;
@@ -71,4 +69,25 @@ li{list-style: none;}
   color: #222;
   background: rgba(255,255,255,.94);
 }
+.e{
+  position: absolute;
+  left: -100%;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  overflow: hidden;
+  /*background: rgba(255,255,255,.99);*/
+  background: #fff;
+  padding: 20px;
+  transition: all .4s ease-out;
+}
+#menu:target{
+  left: 0;
+  right: 180px;
+}
+.e a{ color: #aaa; }
+.e a:hover{ color: #444; }
+
+
+
 @keyframes c-on { from { transform: translateX(100px); opacity: 0; } }

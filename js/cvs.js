@@ -107,6 +107,6 @@
     })();
   }
   navs.addEventListener('mouseleave', function(){ bg.style.width = 0; });
-  
+
 
 })();
