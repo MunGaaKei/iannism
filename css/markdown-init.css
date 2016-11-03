@@ -84,7 +84,7 @@
 .markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
 .markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
 .markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
-.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(233, 233, 233); }
 .markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
 .markdown-preview[data-use-github-style] pre { word-wrap: normal; }
 .markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
@@ -210,7 +210,7 @@ font-style: italic;
 color: #5c6370;
 }
 .entity.name.type {
-color: #e5c07b;
+color: #61afef;
 }
 .entity.other.inherited-class {
 color: #98c379;
@@ -269,7 +269,7 @@ color: #be5046;
 color: #abb2bf;
 }
 .string {
-color: #98c379;
+color: #666;
 }
 .string.regexp {
 color: #56b6c2;

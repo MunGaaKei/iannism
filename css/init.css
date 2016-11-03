@@ -4,40 +4,17 @@ a{color: #eee;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #222; }
 body{font: 15px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif;overflow: hidden;}
 ::selection{background: #222;color: #fff;}
-::-webkit-scrollbar{width: 8px;height: 8px;}
+::-webkit-scrollbar{width: 4px;height: 4px;}
 ::-webkit-scrollbar-button{display: none;}
-::-webkit-scrollbar-thumb{background: #999;border-radius: 4px;}
+::-webkit-scrollbar-thumb{ background: #aaa; }
 ::-webkit-scrollbar-corner{display: none;}
 li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
-@font-face {
-  font-family: "iconfont";
-  src: url('iconfont/iconfont.eot?t=1477993182283'); /* IE9*/
-  src: url('iconfont/iconfont.eot?t=1477993182283#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont/iconfont.woff?t=1477993182283') format('woff'), /* chrome, firefox */
-  url('iconfont/iconfont.ttf?t=1477993182283') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont/iconfont.svg?t=1477993182283#iconfont') format('svg'); /* iOS 4.1- */
-}
 .iconfont {
-  font-family:"iconfont" !important;
-  font-size: 24px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
+  font-size: 26px;
   -webkit-text-stroke-width: 0.1px;
-  -moz-osx-font-smoothing: grayscale;
 }
-.icon-qq:before { content: "\e606"; }
-.icon-weibo:before { content: "\e63b"; }
-.icon-share:before { content: "\e624"; }
-.icon-github:before { content: "\e69f"; }
-.icon-user:before { content: "\e765"; }
-.icon-link:before { content: "\e60b"; }
-.icon-add:before { content: "\e646"; }
-.icon-star:before { content: "\e744"; }
-.icon-mail:before { content: "\e616"; }
-.icon-wechat:before { content: "\e602"; }
-.icon-file:before { content: "\e61d"; }
 
 /* PAGE ELEMENTS */
 .a{
@@ -48,11 +25,10 @@ li{list-style: none;}
   bottom: 0;
   overflow: hidden;
   z-index: -1;
-}
-.cvs{
-  width: 100%;
-  height: 100%;
   background: #090723;
+}
+.b{
+  
 }
 .c{
   position: absolute;
@@ -87,17 +63,12 @@ li{list-style: none;}
   left: 30px;
 }
 .d a{
-  padding: 8px 3px 4px 3px;
+  padding: 8px 3px 5px 3px;
   border-radius: 50%;
+  margin: 2px;
 }
 .d a:hover{
   color: #222;
   background: rgba(255,255,255,.94);
 }
 @keyframes c-on { from { transform: translateX(100px); opacity: 0; } }
-@keyframes pulsing {
-  from { transform: scaleX(1); }
-  30% { transform: scaleX(1.01); }
-  70% { transform: scaleX(.99); }
-  to { transform: scaleX(1); }
-}

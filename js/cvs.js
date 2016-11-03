@@ -106,9 +106,7 @@
       });
     })();
   }
-  navs.addEventListener('mouseleave', function(){
-    bg.style.width = 0;
-  });
-
+  navs.addEventListener('mouseleave', function(){ bg.style.width = 0; });
+  
 
 })();
