@@ -8,6 +8,7 @@ body{font: 15px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft
 ::-webkit-scrollbar-button{display: none;}
 ::-webkit-scrollbar-thumb{ background: #aaa; }
 ::-webkit-scrollbar-corner{display: none;}
+input{ font: 15px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif; }
 li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
@@ -87,6 +88,38 @@ li{list-style: none;}
 }
 .e a{ color: #aaa; }
 .e a:hover{ color: #444; }
+.e-head{ height: 30px; line-height: 30px;}
+.e-head i{ font-size: 20px;}
+.e-head a{
+  padding: 6px;
+  border-radius: 4px;
+}
+.e-head a:hover{ background: #ddd; }
+.box-search{
+  float: right;
+  overflow: hidden;
+}
+.box-search input{
+  margin-right: -28px;
+  padding: 4px 28px 4px 10px;
+  border-bottom: 1px solid transparent;
+  width: 0;
+  transition: all .3s ease;
+  outline: none;
+}
+.box-search:hover input,.box-search input:focus{
+  width: 150px;
+  border-color: #ddd;
+}
+.e-body{
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  right: 20px;
+  bottom: 90px;
+  background: #ddd;
+  overflow: auto;
+}
 
 
 
