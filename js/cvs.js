@@ -114,10 +114,66 @@
 // blogs menu setting
 (function(){
   var menu = document.getElementById('menu'),
-      l = route.length;
+      input = document.querySelector('#blog input'),
+      btn = input.nextElementSibling,
+      blogs = route.concat(),
+      l = blogs.length,
+      blogsPerPage = 10,
+      pageNav = document.querySelector('#blog .page-nav'),
       html = '';
+
   while(l--){ html += formatMenu(route[l]); }
   menu.innerHTML = html;
+
+  pageNav.addEventListener('click', function(e){
+    var target = e.target;
+    if(target.classList[0] != 'page' || target.classList[1] == 'page-o' ) return false;
+    var page = parseInt(target.innerHTML);
+    
+
+
+
+
+  });
+
+  input.addEventListener('keydown', function(e){
+    switch (e.which) {
+      case 13:
+        return btn.click();
+        break;
+      default: break;
+
+    }
+  });
+  btn.addEventListener('click', function(){ searchBlog(input.value.trim()); });
+
+  function searchBlog(k, isTag){
+    if(!k) return false;
+    var blog, rest = [];
+    l = route.length;
+    blogs = [];
+
+    while(l--){
+      blog = route[l];
+      searchArray(blog.tag, k)?blogs.unshift(blog):rest.unshift(blog);
+    }
+
+    if (!isTag) {
+      l = rest.length;
+      while(l--){
+        blog = rest[l];
+        if(blog.title.indexOf(k)) blogs.push(blog);
+      }
+    }
+    return blogs;
+  }
+
+  function searchArray(array, k){
+    var l = array.length;
+    if(!l) return false;
+    while(l--){ if(array[l] == k) return true; }
+    return false;
+  }
 
   function formatMenu(o){
     var tag = o.tag,
