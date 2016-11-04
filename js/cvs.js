@@ -91,7 +91,7 @@
 
 })();
 
-// others setting
+// home setting
 (function(){
   var navs = document.querySelector('div.c'),
       nav = navs.querySelectorAll('a'),
@@ -108,5 +108,28 @@
   }
   navs.addEventListener('mouseleave', function(){ bg.style.width = 0; });
 
+})();
 
+
+// blogs menu setting
+(function(){
+  var menu = document.getElementById('menu'),
+      l = route.length;
+      html = '';
+  while(l--){ html += formatMenu(route[l]); }
+  menu.innerHTML = html;
+
+  function formatMenu(o){
+    var tag = o.tag,
+        tags = (function(){
+          var html = '',
+              i = tag.length;
+          while(i--){ html += '<a href="javascript:void(0);" class="tag">'+ tag[i] +'</a>'; }
+          return html;
+        })(),
+        html = '<li class="item"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
+             + '<div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags +'</div>'
+             + '<i class="iconfont icon-defaultjustified"></i>' + o.abstract;
+    return html;
+  }
 })();
