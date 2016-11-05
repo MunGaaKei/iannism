@@ -1,3 +1,4 @@
+// canvas init
 (function(){
   var cvs = document.getElementById('canvas'),
       ctx = cvs.getContext('2d'),
@@ -91,11 +92,11 @@
 
 })();
 
-// home setting
+// home init
 (function(){
-  var navs = document.querySelector('div.c'),
+  var navs = document.querySelector('nav.nav'),
       nav = navs.querySelectorAll('a'),
-      bg = document.querySelector('div.bg-nav'),
+      bg = document.querySelector('div.whitesquare'),
       l = nav.length;
   while(l--){
     (function(){
@@ -107,71 +108,84 @@
     })();
   }
   navs.addEventListener('mouseleave', function(){ bg.style.width = 0; });
-
 })();
 
-
-// blogs menu setting
+// blogs menu init
 (function(){
   var menu = document.getElementById('menu'),
       input = document.querySelector('#blog input'),
       btn = input.nextElementSibling,
-      blogs = route.concat(),
+      blogs = menus.concat(),
+      blogsPerPage = 9,
       l = blogs.length,
-      blogsPerPage = 10,
       pageNav = document.querySelector('#blog .page-nav'),
-      html = '';
+      keyword = document.getElementById('keyword');
 
-  while(l--){ html += formatMenu(route[l]); }
-  menu.innerHTML = html;
+  printMenus(1);
+
+  keyword.addEventListener('click', function(e){
+    if(e.target.tagName.toLowerCase() != 'a') return false;
+    blogs = menus.concat();
+    printMenus(1);
+    this.innerHTML = '<i>: )</i>';
+  });
 
   pageNav.addEventListener('click', function(e){
     var target = e.target;
     if(target.classList[0] != 'page' || target.classList[1] == 'page-o' ) return false;
-    var page = parseInt(target.innerHTML);
-    
-
-
-
-
+    printMenus(parseInt(target.innerHTML));
   });
 
-  input.addEventListener('keydown', function(e){
-    switch (e.which) {
-      case 13:
-        return btn.click();
-        break;
-      default: break;
-
-    }
+  menu.addEventListener('click', function(e){
+    var target = e.target;
+    if(target.classList[0] != 'tag') return false;
+    var tag = target.innerHTML;
+    searchBlog(tag, true);
+    printMenus(1);
   });
-  btn.addEventListener('click', function(){ searchBlog(input.value.trim()); });
+
+  input.addEventListener('keydown', function(e){ if(e.which == 13) return btn.click(); });
+  btn.addEventListener('click', function(){
+    searchBlog(input.value.trim());
+    printMenus(1);
+  });
+
+  function printMenus(p){
+    var num = blogsPerPage,
+        html = '';
+    l = blogs.length;
+    pages = Math.ceil(l/num);
+    l -= (p-1) * num;
+    while( num-- && l-- ){ html += formatMenu(blogs[l]); }
+    pageNav.innerHTML = showPage(p, pages);
+    menu.innerHTML = html;
+  }
 
   function searchBlog(k, isTag){
     if(!k) return false;
     var blog, rest = [];
-    l = route.length;
+    l = menus.length;
     blogs = [];
-
+    k = k.toLowerCase();
     while(l--){
-      blog = route[l];
+      blog = menus[l];
       searchArray(blog.tag, k)?blogs.unshift(blog):rest.unshift(blog);
     }
-
     if (!isTag) {
       l = rest.length;
       while(l--){
         blog = rest[l];
-        if(blog.title.indexOf(k)) blogs.push(blog);
+        if(blog.title.toLowerCase().indexOf(k) >= 0) blogs.push(blog);
       }
     }
+    keyword.innerHTML = '<b>' + k + '</b> <a href="javascript:;">取消条件</a>';
     return blogs;
   }
 
   function searchArray(array, k){
     var l = array.length;
     if(!l) return false;
-    while(l--){ if(array[l] == k) return true; }
+    while(l--){ if(array[l].toLowerCase() == k) return true; }
     return false;
   }
 
@@ -185,7 +199,42 @@
         })(),
         html = '<li class="item"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
              + '<div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags +'</div>'
-             + '<i class="iconfont icon-defaultjustified"></i>' + o.abstract;
+             + '<i class="iconfont icon-summaryread"></i>' + o.abstract;
     return html;
   }
+
 })();
+
+// photography init
+(function(){
+  var a = document.querySelector('div.a'),
+      c = document.getElementById('photography');
+
+  document.getElementById('nav-c').addEventListener('click', function(){
+    a.classList.add('hide');
+    c.classList.remove('hide');
+  });
+  document.getElementById('nav-a').addEventListener('click', function(){
+    a.classList.remove('hide');
+    c.classList.add('hide');
+  });
+
+
+})();
+
+function showPage(p, totalpage, siblings){
+  var i, pre, next,
+      siblingNum = siblings? siblings: 3,
+      page = '<a class="page page-o">'+p+'</a>';
+  for (i= 1; i< siblingNum; i++){
+      pre = p - i;
+      next = p + i;
+      if(p-i > 1){ page = '<a class="page">' + pre + '</a>' + page; }
+      if(p+i < totalpage){ page += '<a class="page">' + next + '</a>'; }
+  }
+  if(p - siblingNum > 1){ page = '<a class="page">1</a> - - ' + page; }
+  if(p - siblingNum-2 < 0 && p != 1){ page = '<a class="page">1</a>' + page; }
+  if(p + siblingNum < totalpage){ page += ' - - <a class="page">' + totalpage + '</a>'; }
+  if(p + siblingNum >= totalpage && p != totalpage){ page += '<a class="page">' + totalpage + '</a>'; }
+  return page;
+}

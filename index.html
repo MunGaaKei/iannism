@@ -11,54 +11,46 @@
   <link rel="stylesheet" media="screen" href="css/init.css">
 
 
-  <title>GitHub</title>
+  <title>TO AKEI</title>
 </head>
 <body>
 
 
   <div class="a">
     <canvas id="canvas">SORRY, YOUR BROWSER DOESN'T SUPPORT CANVAS. :(</canvas>
-  </div>
-  <div class="b"></div>
-  <div class="c">
-    <div class="bg-nav"></div>
-    <ul>
-      <li><a href="##">About</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="##">Photography</a></li>
-      <li><a href="##">Stories</a></li>
-    </ul>
-  </div>
-  <div class="d">
-    <a href="https://github.com/MunGaaKei" target="_blank"><i class="iconfont icon-github"></i></a>
-    <a href="http://weibo.com/1807771927/profile" target="_blank"><i class="iconfont icon-weibo"></i></a>
+    <nav class="nav">
+      <div class="whitesquare"></div>
+      <ul>
+        <li><a href="##">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a id="nav-c" href="#photography">Photography</a></li>
+        <li><a href="##">Stories</a></li>
+      </ul>
+    </nav>
+    <div class="sites">
+      <a href="https://github.com/MunGaaKei" target="_blank"><i class="iconfont icon-github"></i></a>
+      <a href="http://weibo.com/1807771927/profile" target="_blank"><i class="iconfont icon-weibo"></i></a>
+    </div>
   </div>
 
-  <div id="blog" class="e">
-    <div class="e-head">
-      <a href="##"><i class="iconfont icon-newlisticon06"></i></a>
+  <div id="blog" class="b">
+    <div class="b-head">
+      <a href="##" class="btn-a"><i class="iconfont icon-newlisticon06"></i></a>
+      <span id="keyword"><i>: )</i></span>
       <div class="box-search">
         <input type="text" placeholder="搜索" autocomplete="off" spellcheck="false">
-        <a href="javascript:void(0);"><i class="iconfont icon-sousuo"></i></a>
+        <a href="javascript:void(0);" class="btn-a"><i class="iconfont icon-sousuo"></i></a>
       </div>
     </div>
-
-    <ul id="menu" class="e-body"></ul>
-
-    <div class="page-nav">
-      <a class="page page-o">1</a>
-      <a class="page">2</a>
-      <a class="page">3</a>
-      <a class="page">4</a>
-      <a class="page">5</a>
-    </div>
+    <ul id="menu" class="b-body"></ul>
+    <div class="page-nav"></div>
   </div>
 
-  <div id="photography" class="f">
-
+  <div id="photography" class="c hide">
+    <a href="javascript:;" id="nav-a"><i class="iconfont icon-newlisticon06"></i></a>
   </div>
 
-  <script src="js/route.js"></script>
+  <script src="js/menus.js"></script>
   <script src="js/cvs.js"></script>
 </body>
 </html>

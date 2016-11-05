@@ -1,6 +1,6 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
-a{color: #eee;text-decoration: none;transition: all .3s ease;}
+a{color: #666;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #444; }
 body{font: 14px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif;overflow: hidden;}
 ::selection{background: #222;color: #fff;}
@@ -18,27 +18,32 @@ li{list-style: none;}
 }
 
 /* PAGE ELEMENTS */
-.a{
+.a, .c{
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  backface-visibility: hidden;
+  transition: all .8s ease;
+}
+.a{
   overflow: hidden;
   z-index: -1;
-  background: #090723;
+  background: #0B0A17;
 }
-
-.c{
+.a a{ color: #ddd; }
+.a a:hover{ color: #000; }
+.nav{
   position: absolute;
   top: 30px;
   right: 20px;
   line-height: 24px;
   text-align: right;
   overflow: hidden;
-  animation: c-on 2s ease;
+  animation: nav-on 2s ease;
 }
-.bg-nav{
+.whitesquare{
   position: absolute;
   right: 8px;
   height: 24px;
@@ -47,60 +52,58 @@ li{list-style: none;}
   z-index: -1;
   transition: all .3s ease;
 }
-.c li{
+.nav li{
   margin-top: 3px;
   padding-right: 4px;
   border-right: 4px solid #fff;
 }
-.c a{
+.nav a{
   padding: 4px 6px;
   letter-spacing: 2px;
 }
-.d{
+.sites{
   position: absolute;
   bottom: 30px;
   right: 30px;
 }
-.d a{
-  padding: 8px 3px 5px 3px;
+.sites a{
+  padding: 7px 3px 5px 3px;
   border-radius: 50%;
   margin: 2px;
 }
-.d a:hover{
+.sites a:hover{
   color: #222;
   background: rgba(255,255,255,.94);
 }
-.e{
+.b{
   position: absolute;
-  left: -100%;
+  left: 0;
   top: 0;
-  right: 100%;
+  right: 180px;
   bottom: 0;
   background: #fff;
+  color: #999;
   padding: 20px;
+  transform: translateX(-100%);
   transition: all .4s ease-out;
 }
 #blog:target{
-  left: 0;
-  right: 180px;
+  transform: translateX(0);
 }
-.e a{ color: #666; }
-.e-head{
+.b-head{
   height: 34px;
   line-height: 32px;
-  color: #999;
   overflow: hidden;
 }
-.e-head i{ font-size: 20px; }
-.e-head a{
+.b-head i{ font-size: 20px; }
+.btn-a{
   color: #aaa;
   padding: 6px;
-
   border-radius: 4px;
 }
-.e-head a:hover{
-  color: #444;
-  background: #eee;
+.btn-a:hover{ background: #eee; }
+#keyword{
+  margin-left: 10px;
 }
 .box-search{
   float: right;
@@ -118,7 +121,7 @@ li{list-style: none;}
   width: 150px;
   border-color: #ddd;
 }
-.e-body{
+.b-body{
   position: absolute;
   left: 20px;
   top: 60px;
@@ -130,7 +133,6 @@ li{list-style: none;}
 .item{
   margin-bottom: 20px;
   padding: 10px;
-  color: #999;
   line-height: 28px;
   overflow: hidden;
   transition: all .3s ease;
@@ -157,7 +159,6 @@ li{list-style: none;}
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .page-nav{
   position: absolute;
   bottom: 20px;
@@ -176,4 +177,13 @@ li{list-style: none;}
   cursor: pointer;
 }
 
-@keyframes c-on { from { transform: translateX(100px); opacity: 0; } }
+.c{
+  padding: 20px;
+  overflow: auto;
+  background: #ddd;
+}
+.hide{
+  transform: rotateX(180deg);
+}
+
+@keyframes nav-on { from { transform: translateX(100px); opacity: 0; } }
