@@ -140,6 +140,7 @@ li{list-style: none;}
   border-radius: 3px;
   letter-spacing: 1px;
   border-bottom: 1px dashed #999;
+  position: relative;
 }
 .item:hover{
   color: #444;
@@ -148,6 +149,12 @@ li{list-style: none;}
   margin-right: 4px;
   font-size: 18px;
   font-weight: normal;
+}
+.spread{
+  position: absolute;
+  border-radius: 50%;
+  background: #ddd;
+
 }
 .tag{
   margin-right: 10px;

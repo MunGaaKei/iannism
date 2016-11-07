@@ -138,10 +138,10 @@
 
   menu.addEventListener('click', function(e){
     var target = e.target;
-    if(target.classList[0] != 'tag') return false;
-    var tag = target.innerHTML;
-    searchBlog(tag, true);
-    printMenus(1);
+    if(target.classList[0] == 'tag') {
+      searchBlog(target.innerHTML, true);
+      printMenus(1);
+    }
   });
 
   input.addEventListener('keydown', function(e){ if(e.which == 13) return btn.click(); });
@@ -204,7 +204,7 @@
         })(),
         html = '<li class="item"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
              + '<div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags +'</div>'
-             + '<i class="iconfont icon-summaryread"></i>' + o.abstract;
+             + '<i class="iconfont icon-summaryread"></i>' + o.abstract + '</li>';
     return html;
   }
 
