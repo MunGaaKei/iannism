@@ -16,6 +16,7 @@ li{list-style: none;}
   font-size: 26px;
   -webkit-text-stroke-width: 0.1px;
 }
+.none{padding: 20px 0;text-align: center;}
 
 /* PAGE ELEMENTS */
 .a, .c{
@@ -176,14 +177,15 @@ li{list-style: none;}
   color: #666;
   cursor: pointer;
 }
-
 .c{
   padding: 20px;
   overflow: auto;
-  background: #ddd;
+  background: #fff;
 }
 .hide{
-  transform: rotateX(180deg);
+  transform: translateX(50px);
+  opacity: 0;
+  z-index: -100;
 }
 
 @keyframes nav-on { from { transform: translateX(100px); opacity: 0; } }

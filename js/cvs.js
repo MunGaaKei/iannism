@@ -154,6 +154,11 @@
     var num = blogsPerPage,
         html = '';
     l = blogs.length;
+    if(!l) {
+      menu.innerHTML = '<p class="none">没有找到相关结果 :(</p>';
+      pageNav.innerHTML = '<i class="iconfont icon-more"></i>';
+      return false;
+    }
     pages = Math.ceil(l/num);
     l -= (p-1) * num;
     while( num-- && l-- ){ html += formatMenu(blogs[l]); }
