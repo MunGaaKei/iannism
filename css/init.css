@@ -150,12 +150,6 @@ li{list-style: none;}
   font-size: 18px;
   font-weight: normal;
 }
-.spread{
-  position: absolute;
-  border-radius: 50%;
-  background: #ddd;
-
-}
 .tag{
   margin-right: 10px;
 }
@@ -185,9 +179,20 @@ li{list-style: none;}
   cursor: pointer;
 }
 .c{
-  padding: 20px;
   overflow: auto;
   background: #fff;
+}
+.banner-c{
+  height: 40%;
+  min-height: 200px;
+  max-height: 300px;
+  /*background: #eee url('../image/bg-c.jpg') no-repeat fixed left;*/
+  background-size: cover;
+}
+#nav-a{
+  position: fixed;
+  left: 20px;
+  top: 20px;
 }
 .hide{
   transform: translateX(50px);
