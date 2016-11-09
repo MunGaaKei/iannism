@@ -202,7 +202,7 @@
           while(i--){ html += '<a href="javascript:void(0);" class="tag">'+ tag[i] +'</a>'; }
           return html;
         })(),
-        html = '<li class="item"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
+        html = '<li class="item-b"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
              + '<div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags +'</div>'
              + '<i class="iconfont icon-summaryread"></i>' + o.abstract + '</li>';
     return html;
@@ -212,17 +212,20 @@
 
 // photography init
 (function(){
-  var a = document.querySelector('div.a'),
-      c = document.getElementById('photography');
+  var d = document,
+      a = d.querySelector('div.a'),
+      c = d.getElementById('photography');
 
-  document.getElementById('nav-c').addEventListener('click', function(){
+  d.getElementById('nav-c').addEventListener('click', function(){
     a.classList.add('hide');
     c.classList.remove('hide');
   });
-  document.getElementById('nav-a').addEventListener('click', function(){
+  d.getElementById('nav-a').addEventListener('click', function(){
     a.classList.remove('hide');
     c.classList.add('hide');
   });
+
+  
 
 
 })();
