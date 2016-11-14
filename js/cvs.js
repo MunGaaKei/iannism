@@ -214,7 +214,9 @@
 (function(){
   var d = document,
       a = d.querySelector('div.a'),
-      c = d.getElementById('photography');
+      c = d.getElementById('photography'),
+      boxC = d.querySelector('div.box-c'),
+      widthC = boxC.offsetWidth;
 
   d.getElementById('nav-c').addEventListener('click', function(){
     a.classList.add('hide');
@@ -225,7 +227,29 @@
     c.classList.add('hide');
   });
 
-  
+  boxC.addEventListener('mousewheel', function(e){
+    var left = parseInt(this.style.transform.match(/\-?[0-9]+/g)),
+        x = left - 150,
+        y = -widthC + window.innerWidth;
+
+    if(e.deltaY > 0 || e.wheelDeltaY < 0){
+      // 向右滚动
+      if(!x) x = -150;
+      this.style.transform = 'translate('+ (x > y? x: y) + 'px)';
+    } else {
+      x = left + 150;
+      this.style.transform = 'translate('+ (x > 0? 0: x) + 'px)';
+    }
+
+  });
+
+  window.addEventListener('resize', function(){
+    widthC = boxC.offsetWidth;
+    var x = parseInt(boxC.style.transform.match(/\-?[0-9]+/g));
+    
+    // boxC.style.transform = 'translate('+ (x > 0? 0: x) + 'px)';
+  });
+
 
 
 })();

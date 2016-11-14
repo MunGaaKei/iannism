@@ -179,33 +179,27 @@ li{list-style: none;}
   cursor: pointer;
 }
 .c{
-  overflow: auto;
+  overflow: hidden;
   background: #fff;
 }
 .nav-c{
   position: fixed;
   left: 20px;
   top: 20px;
+  z-index: 1;
 }
 .hide{
   transform: translateX(50px);
   opacity: 0;
   z-index: -100;
 }
-
 .box-c{
+  width: 2000px;
   height: 100%;
+  background: -webkit-linear-gradient(right,#666,#ccc);
+  transition: all .3s ease;
 }
-.item-c{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 320px;
-  height: 240px;
-  margin: 10px;
-  background: #fff;
-  box-shadow: 0 0 4px #ddd;
-}
+
 
 
 
