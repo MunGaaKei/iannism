@@ -180,7 +180,7 @@ li{list-style: none;}
 }
 .c{
   overflow: hidden;
-  background: #fff;
+
 }
 .nav-c{
   position: fixed;
@@ -196,8 +196,8 @@ li{list-style: none;}
 .box-c{
   width: 2000px;
   height: 100%;
-  background: -webkit-linear-gradient(right,#666,#ccc);
   transition: all .3s ease;
+  background: -webkit-linear-gradient(left,#fff,#aaa);
 }
 
 

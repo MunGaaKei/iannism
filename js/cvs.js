@@ -6,7 +6,7 @@
       h = cvs.height = window.innerHeight,
       o = [w/2, h/2],
       stars = [],
-      maxStars = 99;
+      maxStars = 119;
 
   function draw(star) {
     ctx.beginPath();
@@ -14,7 +14,6 @@
     ctx.fillStyle = '#fff';
     ctx.globalAlpha = star.alpha;
     ctx.fill();
-    ctx.closePath();
   }
 
   function initStars() {
@@ -29,7 +28,8 @@
 
   function run() {
     var l = maxStars;
-    ctx.clearRect(0, 0, w, h);
+    // ctx.clearRect(0, 0, w, h);
+    cvs.width = w; // 部分浏览器不支持
     while(l--){
       if(stars[l].time === 0){
         stars[l] = initOneStar();
@@ -244,10 +244,9 @@
   });
 
   window.addEventListener('resize', function(){
-    widthC = boxC.offsetWidth;
-    var x = parseInt(boxC.style.transform.match(/\-?[0-9]+/g));
-    
-    // boxC.style.transform = 'translate('+ (x > 0? 0: x) + 'px)';
+    var w = window.innerWidth,
+        x = parseInt(boxC.style.transform.match(/\-?[0-9]+/g));
+    if(w - x > widthC) boxC.style.transform = 'translate('+ (w - widthC) + 'px)';
   });
 
 
