@@ -179,8 +179,8 @@ li{list-style: none;}
   cursor: pointer;
 }
 .c{
-  overflow: hidden;
-
+  overflow: auto;
+  background: #fff;
 }
 .nav-c{
   position: fixed;
@@ -193,12 +193,7 @@ li{list-style: none;}
   opacity: 0;
   z-index: -100;
 }
-.box-c{
-  width: 2000px;
-  height: 100%;
-  transition: all .3s ease;
-  background: -webkit-linear-gradient(left,#fff,#aaa);
-}
+
 
 
 
