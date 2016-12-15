@@ -1,0 +1,23 @@
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
+a{color: #666;text-decoration: none;transition: all .3s ease;}
+a:hover{ color: #444; }
+body{font: 14px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif;color: #484848;transition: all .3s ease;}
+::selection{background: #222;color: #fff;}
+::-webkit-scrollbar{width: 4px;height: 4px;}
+::-webkit-scrollbar-button{display: none;}
+::-webkit-scrollbar-thumb{ background: #666; }
+::-webkit-scrollbar-corner{display: none;}
+input{ font: 15px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif; }
+li{list-style: none;}
+.clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
+.clearfix{*zoom:1;}/*IE/7/6*/
+.iconfont {font-size: 18px;-webkit-text-stroke-width: 0.1px;}
+.container{width: 70%;min-width: 450px;margin: 50px auto;letter-spacing: 1px;overflow: auto;}
+.time{float: left;margin: 20px 0 50px 0;}
+.container img{display: block;margin: 20px auto;max-width: 100%;background-color: #eee;}
+.aside{position: fixed;left: calc(85% + 10px);top: 50px;}
+.aside li{margin: 16px 0;}
+.aside a{padding: 6px;border-radius: 2px;background: rgba(255,255,255,.76);}
+.night{background: #111;color: #ddd;}
+.night a{color: #ddd;background: rgba(0,0,0,.6);}

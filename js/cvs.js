@@ -202,7 +202,7 @@
           while(i--){ html += '<a href="javascript:void(0);" class="tag">'+ tag[i] +'</a>'; }
           return html;
         })(),
-        html = '<li class="item-b"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '"><b>' + o.title + '</b></a>'
+        html = '<li class="item-b"><i class="iconfont icon-tijiandingzhi"></i><a href="blog/' + o.path + '" target="_blank"><b>' + o.title + '</b></a>'
              + '<div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags +'</div>'
              + '<i class="iconfont icon-summaryread"></i>' + o.abstract + '</li>';
     return html;
