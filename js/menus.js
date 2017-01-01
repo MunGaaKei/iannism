@@ -1,9 +1,9 @@
 var menus = [
   {
     title: '2017',
-    abstract: '...',
+    abstract: '',
     time: '2017-1-1',
-    tag: [],
+    tag: ['随写'],
     path: '2017.html'
   }
 ];
