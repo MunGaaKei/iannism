@@ -191,6 +191,13 @@ li{list-style: none;}
   transition: all .9s ease;
   overflow: auto;
   font-size: 16px;
+  scrollbar-face-color:#F3F3F3; /*面子*/
+  scrollbar-arrow-color:#C0C0C0; /*箭头*/
+  scrollbar-3dlight-color:#C0C0C0; /*最外左*/
+  scrollbar-highlight-color:#FFFFFF; /*左二*/
+  scrollbar-shadow-color:#FFFFFF; /*右二*/
+  scrollbar-darkshadow-color:#C0C0C0; /*右一*/
+  scrollbar-track-color:#F3F3F3; /*滑道*/
 }
 .c::-webkit-scrollbar{width: 0px;}
 .c:target,.d:target{transform: translate(-50%,0);}
@@ -224,9 +231,10 @@ li{list-style: none;}
   height: 213px;
   position: relative;
 }
-.c-row:nth-of-type(2n) li{
-  float: right;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .c-row:nth-of-type(2n) li{ float: right; }
 }
+
 .c-row img{
   display: block;
   height: 210%;
@@ -260,8 +268,8 @@ li{list-style: none;}
 .d p{
   margin: 10px 20px;
   letter-spacing: 1px;
-  /*font-weight: bold;*/
 }
+.d .iconfont{font-size: 15px;color: #333;}
 
 
 
