@@ -230,6 +230,7 @@ li{list-style: none;}
   overflow: hidden;
   height: 213px;
   position: relative;
+  background-color: #ddd;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   .c-row:nth-of-type(2n) li{ float: right; }
