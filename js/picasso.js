@@ -253,7 +253,7 @@
       view.setAttribute('src', target.dataset.url);
       p.style.display = 'block';
       p.style.width = target.naturalWidth + 'px';
-      p.style.top = c.scrollTop + 'px';
+      p.style.top = c.scrollTop + 50 + 'px';
     }
   });
 

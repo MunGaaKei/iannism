@@ -180,102 +180,69 @@ li{list-style: none;}
   cursor: pointer;
 }
 
-.c,.d{
+.c{
   position: fixed;
-  left: 50%;
+  left: 0;
   top: 0;
+  right: 0;
   bottom: 0;
-  width: 852px;
-  transform: translate(-50%,-100%);
-  background: #fff;
-  transition: all .9s ease;
+  background: #eee;
+  padding: 200px 0;
+  opacity: 0;
+  transition: all .3s ease;
+  transform: scale(0);
   overflow: auto;
-  font-size: 16px;
-  scrollbar-face-color:#F3F3F3; /*面子*/
-  scrollbar-arrow-color:#C0C0C0; /*箭头*/
-  scrollbar-3dlight-color:#C0C0C0; /*最外左*/
-  scrollbar-highlight-color:#FFFFFF; /*左二*/
-  scrollbar-shadow-color:#FFFFFF; /*右二*/
-  scrollbar-darkshadow-color:#C0C0C0; /*右一*/
-  scrollbar-track-color:#F3F3F3; /*滑道*/
 }
-.c::-webkit-scrollbar{width: 0px;}
-.c:target,.d:target{transform: translate(-50%,0);}
-.d{transform: translate(-50%,100%);}
-.c header{
-  height: 233px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://b368.photo.store.qq.com/psb?/V10MaZ0m1MOHAC/vUcZvVeRSQ16sglHUCVFFQa94nYTF1N.FhqyNII2nvI!/b/dHABAAAAAAAA&bo=VQOAAgAAAAAFB*A!&rf=viewer_4);
-  margin-bottom: 213px;
-}
-.c header p{
-  position: absolute;
-  right: 20px;
-  top: 200px;
-  font-weight: 900;
-}
-.c footer{
-  margin: 100px 20px;
-  text-align: right;
-}
+.c:target{transform: scale(1);opacity: 1;}
+.c footer{margin-top:200px;text-align: center;font-size: 16px;}
 .c-row{
   position: relative;
-  transition: all .3s ease;
+  max-width: 932px;
+  margin: 0 auto;
+  text-align: center;
 }
+.c-row:nth-of-type(2n) li{ float: right; }
 .c-row li{
   float: left;
+  margin: 10px;
   width: 213px;
-  transition: all .3s ease;
-  overflow: hidden;
   height: 213px;
-  position: relative;
-  background-color: #ddd;
+  background: #ccc;
+  overflow: hidden;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  .c-row:nth-of-type(2n) li{ float: right; }
-}
-
 .c-row img{
   display: block;
-  height: 210%;
+  height: 130%;
   transition: all 1s ease;
   opacity: 0;
 }
-.c-row img:hover{ height: 188%; }
 .c-viewer{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,.5);
   transition: all .3s ease;
   z-index: 50;
   display: none;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 0 4px #aaa;
 }
 .c-viewer img{
   display: block;
-  width: 100%;
-}
-@media (max-width: 852px) {
-  .c,.d{ width: 100%; }
-  .c-row li{
-    width: 25%;
-    height: 150px;
-  }
+  max-width: 100%;
 }
 
-.d h2{ margin: 50px 20px 30px 20px; }
-.d p{
-  margin: 10px 20px;
-  letter-spacing: 1px;
+.d{
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  transition: all .3s ease;
+  color: #fff;
+  transform: rotateY(90deg);
 }
-.d .iconfont{font-size: 15px;color: #333;}
-
-
-
-
-
+.d:target{
+  transform: rotateY(0);
+}
 
 
 
