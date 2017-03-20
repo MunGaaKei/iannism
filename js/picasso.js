@@ -216,6 +216,7 @@
       rest = l,
       view = document.getElementById('view');
 
+  window.addEventListener('resize',function(){ h = window.innerHeight; });
   c.addEventListener('mousewheel', checkRow);
   checkRow();
 
@@ -253,7 +254,7 @@
       view.setAttribute('src', target.dataset.url);
       p.style.display = 'block';
       p.style.width = target.naturalWidth + 'px';
-      p.style.top = c.scrollTop + 50 + 'px';
+      p.style.top = c.scrollTop + h/2 + 'px';
     }
   });
 
