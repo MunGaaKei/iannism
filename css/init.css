@@ -186,7 +186,7 @@ li{list-style: none;}
   top: 0;
   right: 0;
   bottom: 0;
-  background: #eee;
+  background: rgba(255,255,255,1);
   padding: 200px 0;
   opacity: 0;
   transition: all .3s ease;
@@ -224,12 +224,17 @@ li{list-style: none;}
   z-index: 50;
   display: none;
   padding: 10px;
-  background: #fff;
+  background: rgba(255,255,255,.9);
   box-shadow: 0 0 4px #aaa;
 }
 .c-viewer img{
   display: block;
   max-width: 100%;
+}
+.c-back{
+  position: absolute;
+  right: 50px;
+  top: 50px;
 }
 
 .d{
@@ -240,9 +245,7 @@ li{list-style: none;}
   color: #fff;
   transform: rotateY(90deg);
 }
-.d:target{
-  transform: rotateY(0);
-}
+.d:target{transform: rotateY(0);}
 
 
 
