@@ -17,6 +17,7 @@ li{list-style: none;}
 .info{margin: 20px 0 50px 0;font-family: cursive;}
 .content img{display: block;margin: 20px auto;max-width: 100%;background-color: #eee;}
 .content a{color: #4094c7; text-decoration: underline;}
+.content blockquote{border-left: 4px solid #aaa;color: #666;padding: 10px 20px;background-color: #eee;}
 .aside{position: fixed;left: calc(85% + 10px);top: 50px;}
 .aside li{margin: 16px 0;}
 .aside a{padding: 6px;border-radius: 2px;background: rgba(255,255,255,.76);}
