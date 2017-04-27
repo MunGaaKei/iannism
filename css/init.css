@@ -4,8 +4,7 @@ a{color: #666;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #444; }
 body{font: 14px/20px "Alright Sans LP","Avenir Next","Helvetica Neue","Microsoft YaHei",sans-serif;overflow: hidden;}
 ::selection{background: #222;color: #fff;}
-::-webkit-scrollbar{width: 3px;height: 3px;transition: all .3s ease;}
-::-webkit-scrollbar:hover{width: 6px;height: 6px;}
+::-webkit-scrollbar{width: 3px;height: 3px;}
 ::-webkit-scrollbar-button{display: none;}
 ::-webkit-scrollbar-thumb{ background: #aaa; }
 ::-webkit-scrollbar-corner{display: none;}
@@ -75,7 +74,7 @@ li{list-style: none;}
   color: #222;
   background: rgba(255,255,255,.94);
 }
-.b{
+.b,.c{
   position: absolute;
   left: 0;
   top: 0;
@@ -182,19 +181,13 @@ li{list-style: none;}
 }
 
 .c{
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255,255,255,1);
-  padding: 200px 0;
-  opacity: 0;
-  transition: all .3s ease;
-  transform: scale(0);
+  background: #fff;
   overflow: auto;
+  padding: 200px 0;
+  transform: translateY(-100%);
+  z-index: 99;
 }
-.c:target{transform: scale(1);opacity: 1;}
+.c:target{transform: translateY(0);}
 .c footer{margin-top:200px;text-align: center;font-size: 16px;}
 .c-row{
   position: relative;
@@ -210,6 +203,9 @@ li{list-style: none;}
   height: 213px;
   background: #ccc;
   overflow: hidden;
+}
+@media (max-width: 1142px) {
+  .c-row:nth-of-type(2n) li{ float: left; }
 }
 .c-row img{
   display: block;
@@ -232,11 +228,6 @@ li{list-style: none;}
   display: block;
   max-width: 100%;
 }
-.c-back{
-  position: absolute;
-  right: 50px;
-  top: 50px;
-}
 
 .d{
   position: absolute;
@@ -247,6 +238,7 @@ li{list-style: none;}
   transform: rotateY(90deg);
 }
 .d:target{transform: rotateY(0);}
+.d-text::first-letter{font-size: 24px;}
 
 
 
