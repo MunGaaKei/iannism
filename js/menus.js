@@ -7,7 +7,7 @@ var menus = [
     path: '2017.html'
   },{
     title: 'CANVAS下的星空',
-    abstract: '使用canvas绘制星空图',
+    abstract: 'canvas简易使用：绘制星空效果',
     time: '2017-1-14',
     tag: ['canvas','前端'],
     path: 'canvas.html'
