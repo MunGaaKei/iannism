@@ -21,6 +21,7 @@
         <li><a href="#blog">Blog · 博客</a></li>
         <li><a href="#photography">Photography · 摄影</a></li>
         <li><a href="https://mungaakei.github.io/xamples/">Works · 作品</a></li>
+        <li><a id="player" href="#music">Music · 音乐</a></li>
       </ul>
     </nav>
     <div class="sites">
@@ -88,6 +89,26 @@
     <p>picasso8l@163.com</p>
     <br>
     <p> : )</p>
+  </div>
+
+  <div id="music" class="e">
+    <div class="e-col clearfix">
+      <a href="javascript:;" title="停止"><span style="font-size:34px;line-height:40px;">■</span></a>
+      <a href="javascript:;" title="音量">
+        <i class="iconfont icon-hkflow"></i>
+        <div class="progress volume"><span id="volume"></span></div>
+      </a>
+      <a href="javascript:;" title="下一曲"><i class="iconfont icon-controllernext"></i></a>
+      <a href="javascript:;" title="播放/暂停"><i class="iconfont icon-playfill"></i></a>
+    </div>
+    <a href="##" class="e-x">×</a>
+    <a href="javascript:;" class="e-list"><i class="iconfont icon-defaultjustified"></i></a>
+    <div class="e-info">
+      <b>歌曲名</b> / <span>歌手名</span>
+      <div class="progress prog-play"><span id="progress"></span></div>
+      <audio id="audio">SORRY, YOUR BROWSER DOESN'T SUPPORT AUDIO. :(</audio>
+    </div>
+    <ul class="e-menu"></ul>
   </div>
 
   <script src="js/menus.js"></script>
