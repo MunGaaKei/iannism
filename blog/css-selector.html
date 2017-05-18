@@ -1,0 +1,34 @@
+<html><head><meta charset="utf-8">
+<title>一些CSS选择器 记</title>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="http://at.alicdn.com/t/font_ad90zq63j3akmx6r.css"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head>
+<body>
+<div class="container"><header class="clearfix"><h2>一些CSS选择器 记</h2><p class="info">On 2017-4-12 by <a href="https://mungaakei.github.io/picasso">GaaKei</a></p></header><div class="content">这是一篇记录一些相对少用而且较为生僻的CSS选择器的文章。<div><br></div><blockquote>当然是相对于我来说orz ##怎么老是记不住##</blockquote><div><br></div><div><br><br><br></div>
+<table class="table aa">
+  <tr style="font-weight: bold;"><td>方法</td><td>选择元素</td><td>CSS</td></tr>
+  <tr><td>div+p</td><td>匹配&lt;div&gt;后的邻居&lt;p&gt;元素</td><td>2</td></tr>
+  <tr><td>span~b</td><td>匹配前面有&lt;span&gt;的每个&lt;b&gt;元素</td><td>3</td></tr>
+  <tr><td>p:not(:first-child)</td><td>非第一个节点</td><td>3</td></tr>
+  <tr><td>p:nth-child(3n+1)</td><td>第1、4、7、11…个&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:nth-last-child(3)</td><td>属于父元素里倒数第3个&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:nth-of-type(3)</td><td>同一节点层第三个&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:empty</td><td>匹配空节点的&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:only-child</td><td>属于父元素里只含有&lt;p&gt;元素的这个&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:[class|=blue]</td><td>匹配类名以blue-**这个类格式开头的&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:[class~=blue]</td><td>匹配类名含有blue的&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>p:[class*=blue]</td><td>匹配类名里含有blue字符串的&lt;p&gt;元素</td><td>3</td></tr>
+  <tr><td>img:[src^=http]</td><td>匹配src以http为开头的&lt;img&gt;元素</td><td>3</td></tr>
+  <tr><td>img:[src$=jpg]</td><td>匹配src以jpg为结尾的&lt;img&gt;元素</td><td>3</td></tr>
+</table>
+<br><br><br>
+<div>## p:[class=a]匹配不到&lt;p class="a b"&gt; 2 &lt;/p&gt;元素，p:[class="a b"]才可以匹配得到。</div>
+<br><br><br><br>
+<h2>## nth-child() 与 nth-of-type() 的区别</h2><br>
+<div>&lt;div&gt;<br>　&lt;b&gt; 1 &lt;/b&gt;<br>　&lt;p&gt; 2 &lt;/p&gt;<br>　&lt;p&gt; 3 &lt;/p&gt;<br>&lt;/div&gt;</div>
+<div>在如上HTML结构中</div><br><div>p:nth-child(2){ color: red; } 会让第一个&lt;p&gt;元素也就是数字2字体变红。</div>
+<div>p:nth-of-type(2){ color: red; } 则会让第二个&lt;p&gt;元素也就是数字3变红。</div><br>
+<p>## 要注意的是，如果第二个元素不是&lt;p&gt;元素，那么p:nth-child(2)则不会匹配到任何元素。</p>
+<br><br><br><br><br>
+<div>感谢阅读</div>
+</div><aside class="aside"><ul><li><a href="https://mungaakei.github.io/picasso/#blog" title="返回目录"><i class="iconfont icon-newlisticon06"></i></a></li><li><a id="nighttoggle" href="javascript:;" title="切换模式"><i class="iconfont icon-iconset0454"></i></a></li><li><a href="#" title="返回顶部"><i class="iconfont icon-rocket"></i></a></li></ul></aside></div>
+<script>document.getElementById("nighttoggle").addEventListener("click", function(){document.querySelector("body").classList.toggle("night");});</script><script src="../js/prism.js"></script>
+</body>
