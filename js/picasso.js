@@ -79,7 +79,7 @@
     blogs = [];
     k = k.toLowerCase();
     while(l--){
-      blog = menus[l];
+      blog = menus.blogs[l];
       searchArray(blog.tag, k)?blogs.unshift(blog):rest.unshift(blog);
     }
     if (!isTag) {
