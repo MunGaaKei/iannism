@@ -2,18 +2,18 @@
 (function(){
   var navs = document.querySelector('nav.nav'),
       nav = navs.querySelectorAll('a'),
-      bg = document.querySelector('div.whitesquare'),
+      rect = document.querySelector('div.rectangle'),
       l = nav.length;
   while(l--){
     (function(){
       var i = l;
       nav[i].addEventListener('mouseover', function(){
-        bg.style.top = 27 * i + 3 + 'px';
-        bg.style.width = this.offsetWidth + 'px';
+        rect.style.top = 27 * i + 3 + 'px';
+        rect.style.width = this.offsetWidth + 'px';
       });
     })();
   }
-  navs.addEventListener('mouseleave', function(){ bg.style.width = 0; });
+  navs.addEventListener('mouseleave', function(){ rect.style.width = 0; });
 })();
 
 // BLOG MENU INIT
@@ -188,6 +188,7 @@
     play();
   });
   acts[2].addEventListener('click', function(){ i = cut(i); })
+  acts[3].addEventListener('click', initSong);
   acts[3].addEventListener('click', play);
   audio.volume = .3;
   printMenus();
@@ -200,7 +201,6 @@
     volume.style.width = e.offsetX + '%';
     audio.volume = e.offsetX/100;
   });
-  d.getElementById('player').addEventListener('click', initSong);
   audio.addEventListener('timeupdate',function(){ progress.style.width = audio.currentTime/audio.duration * 100 + '%'; });
   audio.addEventListener('play',function(){ acts[3].innerHTML = '<i class="iconfont icon-stop"></i>'; });
   audio.addEventListener('pause',function(){ acts[3].innerHTML = '<i class="iconfont icon-playfill"></i>'; });
@@ -230,7 +230,7 @@
     song.innerHTML = songs[0].song;
     singer.innerHTML = songs[0].singer;
     audio.src = 'music/' + songs[0].file;
-    d.getElementById('player').removeEventListener('click', initSong);
+    acts[3].removeEventListener('click', initSong);
   }
 
 })();
