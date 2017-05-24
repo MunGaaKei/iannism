@@ -77,6 +77,7 @@ li{list-style: none;}
   font-weight: bold;
 }
 .nav a:hover{color: #fff;}
+@keyframes nav-on { from { transform: translateX(100px); opacity: 0; } }
 .sites{
   position: absolute;
   bottom: 30px;
@@ -210,9 +211,7 @@ li{list-style: none;}
   background: #ccc;
   overflow: hidden;
 }
-@media (max-width: 1142px) {
-  .c-row:nth-of-type(2n) li{ float: left; }
-}
+@media (max-width: 1142px) {.c-row:nth-of-type(2n) li{ float: left; }}
 .c-row img{
   display: block;
   height: 130%;
@@ -242,16 +241,21 @@ li{list-style: none;}
   position: absolute;
   left: 100px;
   bottom: 100px;
-  transition: all 1s ease;
-  transform: translateX(-300px);
-  opacity: 0;
+  transition: all .1s linear;
+  transform: scale(0);
+  opacity: 1;
   line-height: 60px;
   font-size: 26px;
   font-family: "Microsoft JhengHei";
 }
 .d:target{
-  transform: translateX(0);
-  opacity: 1;
+  animation: d 2s ease 0s 1;
+  transform: scale(1);
+}
+@keyframes d {
+  0%{transform: scale(0); opacity: 0;}
+  1%{transform: scale(1);opacity: 0;}
+  100%{transform: scale(1);opacity: 1;}
 }
 .d p{font-family: "Segoe Print";}
 .d-text::first-letter{font-size: 1.8em;}
@@ -356,7 +360,3 @@ li{list-style: none;}
 }
 .e-menu li:nth-child(even){background: rgba(222,222,222,.86);}
 .e-menu a{color: #333;font-weight: bold;}
-
-
-
-@keyframes nav-on { from { transform: translateX(100px); opacity: 0; } }
