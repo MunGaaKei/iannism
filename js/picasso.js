@@ -8,12 +8,13 @@
     (function(){
       var i = l;
       nav[i].addEventListener('mouseover', function(){
-        rect.style.top = 27 * i + 3 + 'px';
+        rect.style.top = this.offsetHeight * i + 3 + 'px';
         rect.style.width = this.offsetWidth + 'px';
       });
     })();
   }
   navs.addEventListener('mouseleave', function(){ rect.style.width = 0; });
+
 })();
 
 // BLOG MENU INIT

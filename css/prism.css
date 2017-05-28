@@ -16,6 +16,7 @@ pre[class*="language-"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
+	letter-spacing: normal;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -32,7 +33,7 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	border: 1px solid #aaa;
+	box-shadow: 0 0 10px #aaa inset;
 }
 
 /* Inline code */
@@ -77,7 +78,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: teal;
+	color: #d14;
 }
 
 .token.operator,
