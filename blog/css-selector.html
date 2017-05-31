@@ -23,7 +23,11 @@
 <div>## p:[class=a]匹配不到&lt;p class="a b"&gt; 2 &lt;/p&gt;元素，p:[class="a b"]才可以匹配得到。</div>
 <br><br><br><br>
 <h2>## nth-child() 与 nth-of-type() 的区别</h2><br>
-<div>&lt;div&gt;<br>　&lt;b&gt; 1 &lt;/b&gt;<br>　&lt;p&gt; 2 &lt;/p&gt;<br>　&lt;p&gt; 3 &lt;/p&gt;<br>&lt;/div&gt;</div>
+<div><pre><code class="language-html">&lt;div&gt;
+　&lt;b&gt; 1 &lt;/b&gt;
+　&lt;p&gt; 2 &lt;/p&gt;
+　&lt;p&gt; 3 &lt;/p&gt;
+&lt;/div&gt;</code></pre></div>
 <div>在如上HTML结构中</div><br><div>p:nth-child(2){ color: red; } 会让第一个&lt;p&gt;元素也就是数字2字体变红。</div>
 <div>p:nth-of-type(2){ color: red; } 则会让第二个&lt;p&gt;元素也就是数字3变红。</div><br>
 <p>## 要注意的是，如果第二个元素不是&lt;p&gt;元素，那么p:nth-child(2)则不会匹配到任何元素。</p>
