@@ -34,8 +34,14 @@ li{list-style: none;}
 .terrace{
   position: absolute;
   right: 300px;
-  top: 100px;
-  width: 30%;
+  top: 10%;
+  width: 24%;
+  overflow: hidden;
+}
+.terrace img{
+  display: block;
+  width: 120%;
+  position: relative;
 }
 .nav{
   position: absolute;
@@ -84,7 +90,7 @@ li{list-style: none;}
   color: #999;
   padding: 20px;
   box-shadow: 2px 2px 10px #aaa;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: all .4s ease-out;
   z-index: 100;
 }

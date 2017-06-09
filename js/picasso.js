@@ -3,6 +3,7 @@
   var navs = document.querySelector('nav.nav'),
       nav = navs.querySelectorAll('a'),
       rect = document.querySelector('div.rectangle'),
+      terrace = document.querySelector('div.terrace img'),
       l = nav.length;
   while(l--){
     (function(){
@@ -14,6 +15,10 @@
     })();
   }
   navs.addEventListener('mouseleave', function(){ rect.style.width = 0; });
+  document.addEventListener('mousemove', function(e){
+    var p = e.clientX / window.innerWidth;
+    terrace.style.left = -20 * p + '%';
+  });
 
 })();
 
