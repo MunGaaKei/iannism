@@ -15,7 +15,7 @@
       height: 100%;
       width: 100%;
       background: #333;
-    }.m-trans{ transition: all .3s ease; }</style></head><body><div class="container"><header class="clearfix"><h2>鼠标移入移出方向判断</h2><p class="info">On 2017-2-13 by <a href="https://mungaakei.github.io/picasso">GaaKei</a></p></header><div class="content">这是一篇关于如何使用Javascript判断鼠标移入移出方向的文章。<div><br></div><div>效果如下</div><div>&gt;&gt;</div><div><br></div><div style="text-align: center;">
+    }.m-trans{ transition: all .3s ease; }</style></head><body><div class="container"><header id="header" class="clearfix"><h2>鼠标移入移出方向判断</h2><p class="info">On 2017-2-13 by <a href="https://mungaakei.github.io/picasso">GaaKei</a><a href="#" class="fr">顶部</a><a href="https://mungaakei.github.io/picasso/#blog" class="fr">更多</a></p></header><div class="content">这是一篇关于如何使用Javascript判断鼠标移入移出方向的文章。<div><br></div><div>效果如下</div><div>&gt;&gt;</div><div><br></div><div style="text-align: center;">
   <div class="m-box">
     <div class="m-mask"></div>
   </div><div class="m-box">
@@ -100,8 +100,9 @@ function boxEnter(element, opt){
 
 function boxLeave(element, opt){
 	$(element).find('div.mask').css(pos[dir[opt]]);
-}</code></pre><br></div><div>关于 <b>*</b>：</div><div><br></div><div>1)：<b>getBoundingClientRect()</b>可以返回目标元素数据的一个对象数组，这些数据包括该元素的宽、高以及各边相对页面边界的距离。</div><div><br></div><div>2)：移除动画效果的目的是为了让mask立即复位到指定位置而不通过transition。如果不移除，mask会出现掠过box的画面。比如上一个操作是从右移出，那么mask现在的位置处于box右边[<b>left: 100%</b>]。此时如果鼠标从左边移入，那么mask就会通过transition动画从[<b>left: 100%</b>]移动到[<b>left: -100%</b>]，显然不是我们想要的效果。而移除了transition，mask就不会出现这种问题了。</div><div><br></div><div>3)：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为<b>回流</b>。</div><div><br></div><div><br></div><div>感谢阅读</div><div><i><br></i></div><div><i><br></i></div></div><aside class="aside"><ul><li><a href="https://mungaakei.github.io/picasso/#blog" title="返回目录"><i class="iconfont icon-newlisticon06"></i></a></li><li><a id="nighttoggle" href="javascript:;" title="切换模式"><i class="iconfont icon-iconset0454"></i></a></li><li><a href="#" title="返回顶部"><i class="iconfont icon-rocket"></i></a></li></ul></aside></div><script>document.getElementById("nighttoggle").addEventListener("click", function(){document.querySelector("body").classList.toggle("night");});</script><script src="../js/prism.js"></script>
+}</code></pre><br></div><div>关于 <b>*</b>：</div><div><br></div><div>1)：<b>getBoundingClientRect()</b>可以返回目标元素数据的一个对象数组，这些数据包括该元素的宽、高以及各边相对页面边界的距离。</div><div><br></div><div>2)：移除动画效果的目的是为了让mask立即复位到指定位置而不通过transition。如果不移除，mask会出现掠过box的画面。比如上一个操作是从右移出，那么mask现在的位置处于box右边[<b>left: 100%</b>]。此时如果鼠标从左边移入，那么mask就会通过transition动画从[<b>left: 100%</b>]移动到[<b>left: -100%</b>]，显然不是我们想要的效果。而移除了transition，mask就不会出现这种问题了。</div><div><br></div><div>3)：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为<b>回流</b>。</div><div><br></div><div><br></div><div>感谢阅读</div><div><i><br></i></div><div><i><br></i></div></div></div><script>document.getElementById("nighttoggle").addEventListener("click", function(){document.querySelector("body").classList.toggle("night");});</script><script src="../js/prism.js"></script>
 <script src="../js/jquery-3.1.1.min.js"></script>
+<script>document.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});</script>
 <script>
 (function() {
 var pos = {

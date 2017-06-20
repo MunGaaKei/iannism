@@ -20,6 +20,7 @@
     terrace.style.left = -20 * p + '%';
   });
 
+
 })();
 
 // BLOG MENU INIT

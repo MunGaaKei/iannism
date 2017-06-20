@@ -2,7 +2,7 @@
 <title>一些CSS选择器 记</title>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="http://at.alicdn.com/t/font_ad90zq63j3akmx6r.css"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head>
 <body>
-<div class="container"><header class="clearfix"><h2>一些CSS选择器 记</h2><p class="info">On 2017-4-12 by <a href="https://mungaakei.github.io/picasso">GaaKei</a></p></header><div class="content">这是一篇记录一些相对少用而且较为生僻的CSS选择器的文章。<div><br></div><blockquote>当然是相对于我来说orz ##怎么老是记不住##</blockquote><div><br></div><div><br><br><br></div>
+<div class="container"><header id="header" class="clearfix"><h2>一些CSS选择器 记</h2><p class="info">On 2017-4-12 by <a href="https://mungaakei.github.io/picasso">GaaKei</a><a href="#" class="fr">顶部</a><a href="https://mungaakei.github.io/picasso/#blog" class="fr">更多</a></p></header><div class="content">这是一篇记录一些相对少用而且较为生僻的CSS选择器的文章。<div><br></div><blockquote>当然是相对于我来说orz ##怎么老是记不住##</blockquote><div><br></div><div><br><br><br></div>
 <table class="table aa">
   <tr style="font-weight: bold;"><td>方法</td><td>选择元素</td><td>CSS</td></tr>
   <tr><td>div+p</td><td>匹配&lt;div&gt;后的邻居&lt;p&gt;元素</td><td>2</td></tr>
@@ -33,5 +33,6 @@
 <p>## 要注意的是，如果第二个元素不是&lt;p&gt;元素，那么p:nth-child(2)则不会匹配到任何元素。</p>
 <br><br><br><br><br>
 <div>感谢阅读</div>
-</div><aside class="aside"><ul><li><a href="https://mungaakei.github.io/picasso/#blog" title="返回目录"><i class="iconfont icon-newlisticon06"></i></a></li><li><a href="#" title="返回顶部"><i class="iconfont icon-rocket"></i></a></li></ul></aside></div><script src="../js/prism.js"></script>
+</div></div><script src="../js/prism.js"></script>
+<script>document.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});</script>
 </body>
