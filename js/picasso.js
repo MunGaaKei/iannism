@@ -3,7 +3,7 @@
   var navs = document.querySelector('nav.nav'),
       nav = navs.querySelectorAll('a'),
       rect = document.querySelector('div.rectangle'),
-      terrace = document.querySelector('div.terrace img'),
+      terrace = document.getElementById('terrace'),
       l = nav.length;
   while(l--){
     (function(){
@@ -19,7 +19,7 @@
     var p = e.clientX / window.innerWidth;
     terrace.style.left = -20 * p + '%';
   });
-
+  terrace.onload = function(){terrace.style.opacity = 1;}
 
 })();
 
@@ -268,3 +268,4 @@ function getOffsetTop(o){
   }
   return h;
 }
+function rand(min, max) { return min + Math.floor((max - min) * Math.random()); }
