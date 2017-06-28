@@ -2,7 +2,7 @@ article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 a{color: #555;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #333; }
-body{font: 14px/20px "Microsoft YaHei";overflow: hidden;}
+body{font: 14px/20px "Microsoft YaHei";overflow: hidden;color: #666;}
 ::selection{background: #222;color: #fff;}
 ::-webkit-scrollbar{width: 3px;height: 3px;}
 ::-webkit-scrollbar-button{display: none;}
@@ -78,7 +78,6 @@ li{list-style: none;}
   display: none;
   background-color: rgba(255,255,255,.8);
   padding: 50px 20px;
-  color: #444;
   font: normal 1.28rem "Segoe Print";
   letter-spacing: 1px;
 }
@@ -190,4 +189,44 @@ li{list-style: none;}
 
 .c{
   position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,.7);
+  transition: all .3s ease;
+  transform: scaleX(0);;
+  overflow: auto;
+  font-size: 2rem;
+}
+.c:target{transform: scaleX(1);}
+.c header{
+  position: sticky;
+  top: 0;
+  padding: 30px 50px;
+  background: rgba(255,255,255,.8);
+}
+.c header a{float: right;font-size: 3rem;}
+.c-body{
+  max-width: 1440px;
+  margin: 100px auto;
+}
+.c ul{clear: both;}
+.c li{
+  float: left;
+  width: 25%;
+  height: 335px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.2);
+}
+.c ul:nth-of-type(2n) li{ float: right; }
+.c img{
+  display: block;
+  width: 160%;
+}
+@media (max-width: 1100px) {.c li{width: 33.33%;height: 300px;}}
+.c footer{
+  font-size: 1.4rem;
+  padding: 50px;
+  text-align: right;
 }
