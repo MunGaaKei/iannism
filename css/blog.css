@@ -12,7 +12,7 @@ input{ font: 15px/20px "Microsoft YaHei"; }
 li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
-.iconfont {font-size: 18px;-webkit-text-stroke-width: 0.1px;}
+.iconfont {font-size: 1.29rem;-webkit-text-stroke-width: 0.1px;}
 .container{width: 70%;min-width: 450px;margin: 50px auto;letter-spacing: 1px;overflow: auto;}
 .container header{position: fixed;top: 0;width: 70%;min-width: 450px;padding: 30px 0;background: rgba(255,255,255,.94);transition: all .3s ease;}
 .hide{transform: translateY(-100%);}
