@@ -7,11 +7,11 @@ var menus = {
     {title: '接触 ECMAScript6',abstract: '关于ES6新增的一些方法的简单介绍',time: '2017-5-2',tag: ['ES6','JavaScript'],path: 'ecmascript6.html'}
   ],
   photos: [
-    ['11.jpg', '12.jpg', '13.jpg'],
-    ['1.jpg', '3.jpg'],
-    ['4.jpg', '5.jpg', '10.jpg'],
+    ['9.jpg'],
     ['2.jpg', '7.jpg', '8.jpg'],
-    ['9.jpg']
+    ['4.jpg', '5.jpg', '10.jpg'],
+    ['1.jpg', '3.jpg'],
+    ['11.jpg', '12.jpg', '13.jpg']
   ],
   musics: [
     {file: '0.mp3',song: '他夏了夏天',singer: '苏打绿'},
