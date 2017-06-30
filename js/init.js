@@ -10,7 +10,6 @@
       keyword = document.getElementById('keyword');
 
   printMenus(1);
-
   keyword.addEventListener('click', function(e){
     if(e.target.tagName.toLowerCase() != 'a') return false;
     blogs = menus.blogs.concat();
@@ -113,6 +112,7 @@
       rest = l = photos.length;
   c.addEventListener('mousewheel', initUl);
   c.addEventListener('DOMMouseScroll', initUl);
+  c.addEventListener('touchmove', initUl);
   initUl();
 
   c.addEventListener('click', function(e){
