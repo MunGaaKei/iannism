@@ -1,3 +1,10 @@
+// HOME PAGE INIT
+(function(){
+  document.querySelector('.terrace img').onload = function(){
+    this.opac
+  }
+})();
+
 // BLOG MENU INIT
 (function(){
   var menu = document.getElementById('menu'),
@@ -29,6 +36,7 @@
       searchBlog(target.innerHTML, true);
       printMenus(1);
     }
+    ripple(e);
   });
 
   input.addEventListener('keydown', function(e){ if(e.which == 13) return btn.click(); });
@@ -169,4 +177,20 @@ function showPage(p, totalpage, siblings){
   if(p + siblingNum < totalpage){ page += ' - - <a class="page">' + totalpage + '</a>'; }
   if(p + siblingNum >= totalpage && p != totalpage){ page += '<a class="page">' + totalpage + '</a>'; }
   return page;
+}
+
+function ripple(e){
+  var target = e.target,
+      ripple = target.querySelector('div.ripple');
+  if(!ripple){
+    ripple = document.createElement('div');
+    ripple.className = 'ripple';
+  } else { return false; }
+  var rect = target.getBoundingClientRect(),
+      w = rect.width * .2;
+  ripple.style.height = w + 'px';
+  ripple.style.top = e.pageY - rect.top - w/2 + 'px';
+  ripple.style.left = e.pageX - rect.left - w/2 + 'px';
+  target.appendChild(ripple);
+  setTimeout(function(){target.removeChild(ripple);},900);
 }
