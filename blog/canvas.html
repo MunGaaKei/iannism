@@ -78,4 +78,6 @@
   //最后我们只需要循环让它run()起来就好了。
   setInterval(run, 50);
 </code></pre><br></div><div>感谢阅读<br></div></div></div><script>document.getElementById("nighttoggle").addEventListener("click", function(){document.querySelector("body").classList.toggle("night");});</script><script src="../js/prism.js"></script>
-<script src="../js/jquery-3.1.1.min.js"></script><script>document.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});</script></body></html>
+<script src="../js/jquery-3.1.1.min.js"></script><script>document.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});
+document.addEventListener('DOMMouseScroll', function(e){if(e.detail < 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});</script>
+</body></html>

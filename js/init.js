@@ -35,8 +35,7 @@
     if(target.classList[0] == 'tag') {
       searchBlog(target.innerHTML, true);
       printMenus(1);
-    }
-    ripple(e);
+    } else if(target.tagName === 'LI' || target.parentNode.tagName === 'LI'){ripple(e);}
   });
 
   input.addEventListener('keydown', function(e){ if(e.which == 13) return btn.click(); });
