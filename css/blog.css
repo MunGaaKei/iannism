@@ -2,7 +2,7 @@ article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 a{color: #666;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #444; }
-body{font: 14px/20px "Microsoft YaHei";color: #484848;transition: all .3s ease;}
+body{font: 15px/26px "Microsoft YaHei";color: #484848;transition: all .3s ease;}
 ::selection{background: #222;color: #fff;}
 ::-webkit-scrollbar{width: 4px;height: 4px;}
 ::-webkit-scrollbar-button{display: none;}

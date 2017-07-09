@@ -31,7 +31,7 @@ li{list-style: none;}
   z-index: 10;
 }
 .nav li{
-  padding: 4px 6px;
+  padding: 4px 6px 4px 0;
   transition: all .3s ease;
   margin: 6px 0;
   background-color: rgba(255,255,255,.86);
@@ -44,7 +44,7 @@ li{list-style: none;}
   color: #fff;
   background-color: rgba(0,0,0,.7);
 }
-.terrace{
+.disc{
   position: absolute;
   right: 35%;
   top: 20%;
@@ -53,12 +53,12 @@ li{list-style: none;}
   background-color: rgba(255,255,255,.9);
   box-shadow: 0 0 10px #aaa;
 }
-.terrace img{
+.disc img{
   display: block;
   height: 100%;
   margin: 0 auto;
 }
-.terrace:after{
+.disc:before{
   content: '\20';
   position: absolute;
   right: -15%;
@@ -68,6 +68,15 @@ li{list-style: none;}
   width: 90%;
   background-color: #444;
   z-index: -1;
+}
+.terrace{
+  position: absolute;
+  right: 40%;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  opacity: .5;
+  filter: blur(2px);
 }
 .origami{
   position: absolute;
@@ -83,7 +92,7 @@ li{list-style: none;}
   top: 0;
   bottom: 0;
   background-color: rgba(255,255,255,.86);
-  padding: 50px 20px;
+  padding: 50px 40px;
   font: normal 1.28rem "Segoe Print","Lora","Microsoft JhengHei";
   letter-spacing: 1px;
   transform: scale(0);

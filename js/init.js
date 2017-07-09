@@ -1,8 +1,6 @@
 // HOME PAGE INIT
-(function(){
-  document.querySelector('.terrace img').onload = function(){
-    this.opac
-  }
+;(function(){
+  
 })();
 
 // BLOG MENU INIT
