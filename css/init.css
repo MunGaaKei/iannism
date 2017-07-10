@@ -87,7 +87,7 @@ li{list-style: none;}
 
 .a{
   position: absolute;
-  left: 25%;
+  left: 20%;
   right: 0;
   top: 0;
   bottom: 0;
@@ -239,11 +239,12 @@ li{list-style: none;}
   bottom: 0;
   background: rgba(255,255,255,.8);
   transition: all .3s ease;
-  transform: scaleX(0);
+  transform: translateY(-50%) scaleX(0);
+  opacity: 0;
   overflow: auto;
   font-size: 2rem;
 }
-.c:target{transform: scaleX(1);}
+.c:target{transform: translateY(0) scaleX(1);opacity: 1;}
 .c header{
   position: sticky;
   top: 0;
