@@ -1,6 +1,6 @@
 // HOME PAGE INIT
 ;(function(){
-  
+
 })();
 
 // BLOG MENU INIT
@@ -143,10 +143,11 @@
     var imgs = ul.querySelectorAll('img'),
         imgsLen = imgs.length;
     while(imgsLen--){
-      var img = imgs[imgsLen];
-      img.setAttribute('src', img.dataset.src);
-      img.style.transform = 'scale(1)';
-      img.style.opacity = 1;
+      imgs[imgsLen].setAttribute('src', imgs[imgsLen].dataset.src);
+      imgs[imgsLen].onload = function(){
+        this.style.transform = 'scale(1)';
+        this.style.opacity = 1;
+      }
     }
   }
   function formatUl(ul){
