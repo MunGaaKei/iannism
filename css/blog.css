@@ -14,9 +14,10 @@ li{list-style: none;}
 .clearfix{*zoom:1;}/*IE/7/6*/
 .iconfont {font-size: 1.29rem;-webkit-text-stroke-width: 0.1px;}
 .container{width: 70%;min-width: 450px;margin: 50px auto;letter-spacing: 1px;overflow: auto;}
-.container header{position: fixed;top: 0;width: 70%;min-width: 450px;padding: 30px 0;background: rgba(255,255,255,.94);transition: all .3s ease;}
+.container header{position: fixed;top: 0;width: 70%;min-width: 450px;padding: 2rem 0;background: rgba(255,255,255,.94);transition: all .3s ease;}
 .hide{transform: translateY(-100%);}
-.info{margin-top: 20px;font-family: "Segoe Print";}
+.header p{margin-top: 20px;}
+.header time{margin-left: 20px;font-family: 'Helvetica';color: #999;}
 .content{margin-top: 100px;}
 .content img{display: block;margin: 20px auto;max-width: 100%;background-color: #eee;}
 .content a{color: #4094c7; text-decoration: underline;}

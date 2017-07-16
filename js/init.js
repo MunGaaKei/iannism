@@ -1,6 +1,6 @@
 // HOME PAGE INIT
 ;(function(){
-
+  
 })();
 
 // BLOG MENU INIT

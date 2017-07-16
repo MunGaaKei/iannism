@@ -43,6 +43,7 @@ li{list-style: none;}
   height: 20%;
   background-color: rgba(0,0,0,.4);
   transform: rotate(45deg);
+  -webkit-animation: shooting 6s linear infinite;
   animation: shooting 6s linear infinite;
   z-index: -2;
 }
@@ -51,6 +52,7 @@ li{list-style: none;}
   top: -20%;
   height: 30%;
   opacity: 0;
+  -webkit-animation: shooting 6s linear infinite;
   animation: shooting 5s linear infinite 2s;
 }
 @keyframes shooting{
