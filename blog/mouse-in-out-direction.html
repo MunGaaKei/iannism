@@ -1,4 +1,4 @@
-<html><head><meta charset="utf-8"><title>鼠标移入移出方向判断</title><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css">
+<html><head><meta charset="utf-8"><title>鼠标移入移出方向判断</title><meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css">
 <style>    .m-box{
       position: relative;
       overflow: hidden;
@@ -102,8 +102,15 @@ function boxLeave(element, opt){
 	$(element).find('div.mask').css(pos[dir[opt]]);
 }</code></pre><br></div><div>关于 <b>*</b>：</div><div><br></div><div>1)：<b>getBoundingClientRect()</b>可以返回目标元素数据的一个对象数组，这些数据包括该元素的宽、高以及各边相对页面边界的距离。</div><div><br></div><div>2)：移除动画效果的目的是为了让mask立即复位到指定位置而不通过transition。如果不移除，mask会出现掠过box的画面。比如上一个操作是从右移出，那么mask现在的位置处于box右边[<b>left: 100%</b>]。此时如果鼠标从左边移入，那么mask就会通过transition动画从[<b>left: 100%</b>]移动到[<b>left: -100%</b>]，显然不是我们想要的效果。而移除了transition，mask就不会出现这种问题了。</div><div><br></div><div>3)：当渲染树中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为<b>回流</b>。</div><div><br></div><div><br></div><div>感谢阅读</div><div><i><br></i></div><div><i><br></i></div></div></div><script>document.getElementById("nighttoggle").addEventListener("click", function(){document.querySelector("body").classList.toggle("night");});</script><script src="../js/prism.js"></script>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script>document.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});
-document.addEventListener('DOMMouseScroll', function(e){if(e.detail < 0){document.getElementById('header').classList.remove('hide');} else {document.getElementById('header').classList.add('hide');}});</script>
+<script>
+(function(){var y = 0, dy = 0, d = document;
+  d.addEventListener('touchstart', function(e){y = e.touches[0].pageY;});
+  d.addEventListener('touchmove', function(e){
+    dy = e.touches[0].pageY - y;
+    if(dy > 0){d.getElementById('header').classList.remove('hide');}else{d.getElementById('header').classList.add('hide');}});
+  d.addEventListener('mousewheel', function(e){if(e.wheelDeltaY > 0){d.getElementById('header').classList.remove('hide');} else {d.getElementById('header').classList.add('hide');}});
+d.addEventListener('DOMMouseScroll', function(e){if(e.detail < 0){d.getElementById('header').classList.remove('hide');} else {d.getElementById('header').classList.add('hide');}});
+})();</script>
 <script>
 (function() {
 var pos = {

@@ -30,14 +30,11 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 2em 1rem;
 	margin: .5em 0;
 	overflow: auto;
-	border: 1px solid #888;
-	border-bottom-width: 3px;
-	border-right-width: 3px;
-	border-radius: 3px;
-	background-color: #eee;
+	border: 1px solid #999;
+	border-left-width: 6px;
 }
 
 /* Inline code */

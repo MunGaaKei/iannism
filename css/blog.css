@@ -1,33 +1,30 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 a{color: #666;text-decoration: none;transition: all .3s ease;}
-a:hover{ color: #444; }
+a:hover{ color: #dd5862; }
 body{font: 15px/26px "Microsoft YaHei";color: #484848;transition: all .3s ease;}
 ::selection{background: #222;color: #fff;}
 ::-webkit-scrollbar{width: 4px;height: 4px;}
 ::-webkit-scrollbar-button{display: none;}
 ::-webkit-scrollbar-thumb{ background: #666; }
 ::-webkit-scrollbar-corner{display: none;}
-input{ font: 15px/20px "Microsoft YaHei"; }
 li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
 .iconfont {font-size: 1.29rem;-webkit-text-stroke-width: 0.1px;}
-.container{width: 70%;min-width: 450px;margin: 50px auto;letter-spacing: 1px;overflow: auto;}
-.container header{position: fixed;top: 0;width: 70%;min-width: 450px;padding: 2rem 0;background: rgba(255,255,255,.94);transition: all .3s ease;}
+.container{padding: 0 1.5rem;max-width: 900px;margin: 50px auto;letter-spacing: 1px;overflow-y: auto;overflow-x: hidden;line-height: 1.5;}
+.container header{position: fixed;top: -1px;left: 0;right: -1rem;padding: .8rem 2rem;background: rgba(255,255,255,.94);transition: all .3s ease;box-shadow: 0 0 8px #aaa;z-index: 10;}
 .hide{transform: translateY(-100%);}
-.header p{margin-top: 20px;}
-.header time{margin-left: 20px;font-family: 'Helvetica';color: #999;}
+.header p{margin-top: .5rem;}
+.header time{margin-left: 1rem;font-family: 'Georgia';color: #999;font-size: 1.1rem;}
 .content{margin-top: 100px;}
 .content img{display: block;margin: 20px auto;max-width: 100%;background-color: #eee;}
-.content a{color: #4094c7; text-decoration: underline;}
+.content a{border-bottom: 1px dashed #666;}
+.content a:hover{color: #4094c7;border-color: #4094c7;}
 .content blockquote{border-left: 4px solid #aaa;color: #666;padding: 10px 20px;background-color: #eee;}
 .table{margin: 20px 0;width: 100%;font-size: 14px;background-color: rgba(255,255,255,.94);border-collapse:collapse;}
 .table td{padding: 10px;}
 .table tr:not(:last-child){border-bottom: 1px solid #ccc;}
 .table tr:first-child{border-bottom: 2px solid #bbb;}
 .table tr:hover{background-color: #eee;}
-.night{background: #111;color: #ddd;}
-.night a{color: #ddd;}
-.night .aside a{color: #ddd; background: rgba(0,0,0,.6);}
-.fr{float: right;margin-left: 10px;}
+.fr{float: right;margin-left: 1rem;}
