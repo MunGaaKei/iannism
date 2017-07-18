@@ -55,6 +55,12 @@ li{list-style: none;}
   -webkit-animation: shooting 5s linear infinite 2s;
   animation: shooting 5s linear infinite 2s;
 }
+@-webkit-keyframes shooting{
+  0%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
+  30%{transform:translate(-700px, 700px) rotate(45deg);}
+  31%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
+  100%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
+}
 @keyframes shooting{
   0%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
   30%{transform:translate(-700px, 700px) rotate(45deg);}
@@ -85,6 +91,7 @@ li{list-style: none;}
   border-bottom: 17.3px solid rgba(0,0,0,.6);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
+  -webkit-animation: rotate 7s linear infinite;
   animation: rotate 7s linear infinite;
   opacity: 0;
   transition: all .3s ease;
@@ -98,6 +105,7 @@ li{list-style: none;}
   border-top: 10.4px solid rgba(0,0,0,.6);
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
+  -webkit-animation: rotate 11s linear infinite;
   animation: rotate 11s linear infinite;
   opacity: 0;
   transition: all .3s ease;
@@ -105,6 +113,16 @@ li{list-style: none;}
 .nav li:hover a:after,
 .nav li:hover a:before{
   opacity: 1;
+}
+@-webkit-keyframes rotate{
+  0%{transform: rotate(0);}
+  20%{transform: rotate(60deg);}
+  30%{transform: rotate(90deg);}
+  40%{transform: rotate(120deg);}
+  60%{transform: rotate(180deg);}
+  80%{transform: rotate(240deg);}
+  80%{transform: rotate(270deg);}
+  100%{transform: rotate(360deg);}
 }
 @keyframes rotate{
   0%{transform: rotate(0);}
@@ -159,7 +177,13 @@ li{list-style: none;}
 .a:target{
   transform: scale(1) translateY(0);
   opacity: 1;
+  -webkit-animation: aFadeIn 1s 1;
   animation: aFadeIn 1s 1;
+}
+@-webkit-keyframes aFadeIn {
+  0%{transform: scale(0);}
+  1%{transform: scale(1) translateY(3%); opacity: 0;}
+  100%{transform: scale(1);opacity: 1;}
 }
 @keyframes aFadeIn {
   0%{transform: scale(0);}
@@ -193,8 +217,9 @@ li{list-style: none;}
 }
 .b:target{transform: translateX(0);}
 .b-head{
-  height: 34px;
-  line-height: 32px;
+  padding: 0 .4rem;
+  height: 2.43rem;
+  line-height: 2.28;
   overflow: hidden;
 }
 .b-head i{ font-size: 20px; }
@@ -223,16 +248,16 @@ li{list-style: none;}
 }
 .b-body{
   position: absolute;
-  left: 20px;
-  top: 60px;
-  right: 20px;
-  bottom: 70px;
+  left: 1rem;
+  top: 4.29rem;
+  right: 1rem;
+  bottom: 5rem;
   overflow: auto;
 }
 .item-b{
-  margin: 10px;
-  padding: 10px;
-  line-height: 28px;
+  margin: .71rem;
+  padding: .71rem;
+  line-height: 2rem;
   overflow: hidden;
   transition: all .3s ease;
   letter-spacing: 1px;
@@ -258,9 +283,9 @@ li{list-style: none;}
 }
 .page-nav{
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  bottom: 1.42rem;
+  left: 1.42rem;
+  right: 1.42rem;
   text-align: right;
 }
 .page-nav .page{
@@ -281,7 +306,12 @@ li{list-style: none;}
   pointer-events: none;
   opacity: 0;
   z-index: -1;
+  -webkit-animation: ripple 1.5s ease-out;
   animation: ripple 1.5s ease-out;
+}
+@-webkit-keyframes ripple {
+  from{opacity: 1;}
+  to{transform: scale(10);opacity: 0;}
 }
 @keyframes ripple {
   from{opacity: 1;}
