@@ -141,17 +141,6 @@ li{list-style: none;}
   background-color: #444;
   z-index: -1;
 }
-.terrace{
-  position: absolute;
-  right: 40%;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  max-height: 734px;
-  z-index: -1;
-  opacity: .5;
-  filter: blur(2px);
-}
 
 .a{
   position: absolute;
@@ -361,6 +350,7 @@ li{list-style: none;}
   z-index: 50;
   display: none;
   transition: all .3s ease;
+  box-shadow: 0 0 4px #999;
 }
 .display img{
   display: block;
