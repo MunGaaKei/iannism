@@ -309,20 +309,20 @@ li{list-style: none;}
   position: absolute;
   width: 20%;
   border-radius: 50%;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.15);
   pointer-events: none;
   opacity: 0;
   z-index: -1;
-  -webkit-animation: ripple 1.5s ease-out;
-  animation: ripple 1.5s ease-out;
+  -webkit-animation: ripple 1.4s ease-out;
+  animation: ripple 1.4s ease-out;
 }
 @-webkit-keyframes ripple {
   from{opacity: 1;}
-  to{transform: scale(10);opacity: 0;}
+  to{transform: scale(12);opacity: 0;}
 }
 @keyframes ripple {
   from{opacity: 1;}
-  to{transform: scale(10);opacity: 0;}
+  to{transform: scale(12);opacity: 0;}
 }
 
 .c{
