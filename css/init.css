@@ -12,7 +12,7 @@ input{ font: 16px/20px "Microsoft YaHei"; }
 li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
-.iconfont {font-size: 2rem;-webkit-text-stroke-width: 0.1px;}
+.iconfont {font-size: 1.6rem;-webkit-text-stroke-width: 0.1px;}
 
 .z{
   position: absolute;
@@ -340,9 +340,7 @@ li{list-style: none;}
 }
 .c:target{transform: translateY(0);opacity: 1;}
 .c header{
-  position: sticky;
-  top: 0;
-  padding: 30px 50px;
+  padding: 80px 10% 30px 10%;
   z-index: 10;
 }
 .c header a{float: right;font-size: 3rem;}
@@ -355,8 +353,39 @@ li{list-style: none;}
   width: 25%;
   height: 335px;
   overflow: hidden;
-  background-color: rgba(0,0,0,.3);
   transition: all .3s ease;
+  position: relative;
+}
+.c li:after{
+  display: block;
+  content: '\20';
+  position: absolute;
+  right: 45%;
+  width: 20px;
+  height: 20px;
+  top: 45%;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.3);
+  z-index: -1;
+  -webkit-animation: load 6s ease infinite;
+  animation: load 6s ease infinite;
+  transform: translate(0, -40px);
+}
+@-webkit-keyframes load{
+  0%{transform: translate(0, -40px);}
+  20%{transform: translate(-20px, 34.64px);}
+  40%{transform: translate(38.4px, -10.4px);}
+  60%{transform: translate(-38.4px, -10.4px);}
+  80%{transform: translate(20px, 34.64px);}
+  100%{transform: translate(0, -40px);}
+}
+@-keyframes load{
+  0%{transform: translate(0, -40px);}
+  20%{transform: translate(-20px, 34.64px);}
+  40%{transform: translate(38.4px, -10.4px);}
+  60%{transform: translate(-38.4px, -10.4px);}
+  80%{transform: translate(20px, 34.64px);}
+  100%{transform: translate(0, -40px);}
 }
 .c li:hover{transform: scale(.96);}
 .c ul{clear: both;}

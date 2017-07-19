@@ -118,7 +118,7 @@
   c.addEventListener('mousewheel', initUl);
   c.addEventListener('DOMMouseScroll', initUl);
   c.addEventListener('touchmove', initUl);
-  initUl();
+  document.getElementById('init-c').addEventListener('click', initUl);
 
   c.addEventListener('click', function(e){
     if(e.target.tagName === 'IMG' && e.target.dataset.src){
