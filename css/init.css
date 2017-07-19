@@ -56,13 +56,15 @@ li{list-style: none;}
   animation: shooting 5s linear infinite 2s;
 }
 @-webkit-keyframes shooting{
-  0%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
+  0%{transform:translate(0, 0) rotate(45deg); opacity: 0;}
+  1%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
   30%{transform:translate(-700px, 700px) rotate(45deg);}
   31%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
   100%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
 }
 @keyframes shooting{
-  0%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
+  0%{transform:translate(0, 0) rotate(45deg); opacity: 0;}
+  1%{transform:translate(0, 0) rotate(45deg); opacity: 1;}
   30%{transform:translate(-700px, 700px) rotate(45deg);}
   31%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
   100%{transform:translate(-700px, 700px) rotate(45deg); opacity: 0;}
@@ -167,13 +169,14 @@ li{list-style: none;}
   top: 0;
   bottom: 0;
   background-color: rgba(255,255,255,.86);
-  padding: 50px 2rem;
+  padding: 50px 3rem;
   font: normal 1.28rem "Segoe Print","Lora","Microsoft JhengHei";
   letter-spacing: 1px;
   transform: scale(0);
   opacity: 0;
   overflow: auto;
 }
+
 .a:target{
   transform: scale(1) translateY(0);
   opacity: 1;
@@ -200,7 +203,11 @@ li{list-style: none;}
 .a p{margin-top: .6rem;}
 .a p:nth-last-child(1){margin-top: 3rem;}
 .a address{font-style: normal;}
-.a .en{font-size: .8rem;margin-top: -.4rem;}
+.a .en{font-size: .8rem;margin-top: .4rem;}
+@media (min-width: 900px){
+  .a{padding: 50px 20%;}
+  .a .en{margin-top: -.4rem;}
+}
 
 .b{
   position: absolute;
