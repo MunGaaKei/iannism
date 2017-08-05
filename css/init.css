@@ -83,6 +83,7 @@ li{list-style: none;}
   padding: 4px 6px;
   background-color: rgba(255,255,255,.86);
   position: relative;
+  letter-spacing: .2rem;
 }
 .nav a:after{
   position: absolute;
@@ -226,7 +227,7 @@ li{list-style: none;}
 .b:target{transform: translateX(0);}
 .b-head{
   margin-top: .8rem;
-  padding: .3rem 0 .3rem 1.4rem;
+  padding: .3rem 0 .3rem .6rem;
   overflow: hidden;
   position: relative;
 }
@@ -398,7 +399,7 @@ li{list-style: none;}
   left: 50%;
   padding: 10px;
   transform: translateX(-50%);
-  max-width: 98%;
+  max-width: 90%;
   overflow: hidden;
   background-color: #fff;
   z-index: 50;
