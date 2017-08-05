@@ -12,11 +12,11 @@ li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
 .iconfont {font-size: 1.29rem;-webkit-text-stroke-width: 0.1px;}
-.container{padding: 0 1.5rem;max-width: 900px;margin: 50px auto;letter-spacing: 1px;overflow-y: auto;overflow-x: hidden;line-height: 2;}
+.container{padding: 0 1.5rem;max-width: 800px;margin: 50px auto;letter-spacing: 1px;overflow-y: auto;overflow-x: hidden;line-height: 2;}
 .container header{position: fixed;top: -1px;left: 0;right: -1rem;padding: .8rem 2rem;background: rgba(255,255,255,.88);transition: all .3s ease;box-shadow: 0 0 8px #aaa;z-index: 10;}
 .hide{transform: translateY(-100%);}
 .header p{margin-top: .2rem;}
-.header a{border-top: 3px solid transparent;}
+.header a{border-top: 3px solid transparent;border-bottom: 3px solid transparent;}
 .header a:hover{border-color: #dd5862;}
 .header a:first-child{float: left;}
 .header time{float: left;margin-left: 1rem;font-family: 'Georgia';color: #999;font-size: 1.1rem;}
@@ -30,4 +30,4 @@ li{list-style: none;}
 .table tr:not(:last-child){border-bottom: 1px solid #ccc;}
 .table tr:first-child{border-bottom: 2px solid #bbb;}
 .table tr:hover{background-color: #eee;}
-.fr{float: right;margin-left: 1rem;}
+.fr{float: right;margin-left: .6rem;}

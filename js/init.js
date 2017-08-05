@@ -33,7 +33,7 @@
     if(target.classList[0] == 'tag') {
       searchBlog(target.innerHTML, true);
       printMenus(1);
-    } else if(target.tagName === 'LI' || target.parentNode.tagName === 'LI'){ripple(e);}
+    }
   });
 
   input.addEventListener('keydown', function(e){ if(e.which == 13) return btn.click(); });
@@ -47,7 +47,7 @@
         html = '';
     l = blogs.length;
     if(!l) {
-      menu.innerHTML = '<p class="none">没有找到相关结果 :(</p>';
+      menu.innerHTML = '<p class="none">没有找到相关结果 : (</p>';
       pageNav.innerHTML = '<i class="iconfont icon-more"></i>';
       return false;
     }
@@ -94,7 +94,7 @@
           while(i--){ html += '<a href="javascript:void(0);" class="tag">'+ tag[i] +'</a>'; }
           return html;
         })(),
-        html = '<li class="item-b"><i class="iconfont icon-tijiandingzhi"></i><a href="' + o.path + '" target="_blank"><b>' + o.title
+        html = '<li class="item-b"><a href="' + o.path + '" target="_blank"><b>' + o.title
              + '</b></a><div class="info"><i class="iconfont icon-rili"></i>' + o.time + ' · <i class="iconfont icon-tag"></i>' + tags
              + '</div><i class="iconfont icon-summaryread"></i>' + o.abstract + '</li>';
     return html;
@@ -122,11 +122,13 @@
 
   c.addEventListener('click', function(e){
     if(e.target.tagName === 'IMG' && e.target.dataset.src){
-      var display = document.getElementById('display');
-      display.style.top = c.scrollTop + window.innerHeight/2 + 'px';
-      display.style.width = e.target.naturalWidth + 'px';
+      var display = document.getElementById('display'),
+          target = e.target,
+          top = c.scrollTop + window.innerHeight/2 - target.naturalHeight/2 - 10;
+      display.style.top = (top>0?top:0) + 'px';
+      display.style.width = target.naturalWidth + 'px';
       display.style.display = 'block';
-      display.querySelector('img').setAttribute('src', e.target.dataset.src);
+      display.querySelector('img').setAttribute('src', target.dataset.src);
     }
   });
   document.getElementById('display').addEventListener('click', function(){this.style.display = 'none';});
@@ -175,20 +177,4 @@ function showPage(p, totalpage, siblings){
   if(p + siblingNum < totalpage){ page += ' - - <a class="page">' + totalpage + '</a>'; }
   if(p + siblingNum >= totalpage && p != totalpage){ page += '<a class="page">' + totalpage + '</a>'; }
   return page;
-}
-
-function ripple(e){
-  var target = e.target,
-      ripple = target.querySelector('div.ripple');
-  if(!ripple){
-    ripple = document.createElement('div');
-    ripple.className = 'ripple';
-  } else { return false; }
-  var rect = target.getBoundingClientRect(),
-      w = rect.width * .2;
-  ripple.style.height = w + 'px';
-  ripple.style.top = e.pageY - rect.top - w/2 + 'px';
-  ripple.style.left = e.pageX - rect.left - w/2 + 'px';
-  target.appendChild(ripple);
-  setTimeout(function(){target.removeChild(ripple);},900);
 }

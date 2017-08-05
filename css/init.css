@@ -2,7 +2,7 @@ article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 a{color: #555;text-decoration: none;transition: all .3s ease;}
 a:hover{ color: #333; }
-body{font: 14px/20px "Microsoft YaHei";overflow: hidden;color: #444;}
+body{font: 16px/20px "Microsoft YaHei";overflow: hidden;color: #444;}
 ::selection{background: #222;color: #fff;}
 ::-webkit-scrollbar{width: 3px;height: 3px;}
 ::-webkit-scrollbar-button{display: none;}
@@ -215,65 +215,71 @@ li{list-style: none;}
   top: 0;
   left: 0;
   bottom: 0;
-  background: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.86);
   color: #999;
-  padding: 20px;
+  padding: 0 1rem;
   transform: translateX(-100%);
   transition: all .4s ease-out;
   z-index: 10;
+  font-size: .9rem;
 }
 .b:target{transform: translateX(0);}
 .b-head{
-  padding: 0 .4rem;
-  height: 2.43rem;
-  line-height: 2.28;
+  margin-top: .8rem;
+  padding: .3rem 0 .3rem 1.4rem;
   overflow: hidden;
+  position: relative;
 }
-.b-head i{ font-size: 20px; }
+.b-head i{ font-size: 1.25rem; }
 .b-head a{
   color: #666;
   padding: 6px;
   border-radius: 4px;
 }
 .b-head a:hover{ background: #ddd; }
-#keyword{margin-left: 10px;}
+#keyword{margin-left: .625rem;}
 .search{
-  float: right;
+  position: absolute;
+  right: 0;
+  top: .1rem;
   overflow: hidden;
+  background-color: rgba(255,255,255,.94);
+  z-index: 1;
 }
 .search input{
-  margin-right: -28px;
-  padding: 4px 28px 5px 10px;
+  margin-right: -1.75rem;
+  padding: .25rem 1.75rem .3125rem .625rem;
   border-bottom: 1px solid transparent;
   width: 0;
   transition: all .3s ease;
   outline: none;
 }
 .search:hover input,.search input:focus{
-  width: 150px;
+  width: 10rem;
   border-color: #ddd;
 }
 .b-body{
   position: absolute;
   left: 1rem;
-  top: 4.29rem;
+  top: 3.6rem;
   right: 1rem;
-  bottom: 5rem;
+  bottom: 3.6rem;
   overflow: auto;
 }
+.none{text-align: center;padding: 1rem 0;}
 .item-b{
-  margin: .71rem;
-  padding: .71rem;
+  margin: 0 1rem;
+  padding: 1rem .71rem;
   line-height: 2rem;
   overflow: hidden;
   transition: all .3s ease;
   letter-spacing: 1px;
   position: relative;
-  border: 1px dashed transparent;
+  border-radius: 3px;
 }
 .item-b:hover{
   color: #444;
-  border-color: #888;
+  background-color: rgba(0,0,0,.06);
 }
 .item-b .iconfont{
   margin-right: 4px;
@@ -281,8 +287,8 @@ li{list-style: none;}
   font-weight: normal;
 }
 .item-b b{font-size: 1.2rem;}
-.tag{margin-right: 10px;}
-.tag:hover{text-decoration: overline;}
+.tag{padding: .2rem .3rem;border-radius: 2px;margin-right: 2px;}
+.tag:hover{background-color: rgba(0,0,0,.14);}
 .info{
   white-space: nowrap;
   overflow: hidden;
@@ -290,9 +296,9 @@ li{list-style: none;}
 }
 .page-nav{
   position: absolute;
-  bottom: 1.42rem;
-  left: 1.42rem;
-  right: 1.42rem;
+  bottom: .6rem;
+  left: 1rem;
+  right: 1rem;
   text-align: right;
 }
 .page-nav .page{
@@ -304,25 +310,6 @@ li{list-style: none;}
   color: #fff;
   background-color: rgba(11,11,11,.6);
   cursor: pointer;
-}
-.ripple{
-  position: absolute;
-  width: 20%;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,.15);
-  pointer-events: none;
-  opacity: 0;
-  z-index: -1;
-  -webkit-animation: ripple 1.4s ease-out;
-  animation: ripple 1.4s ease-out;
-}
-@-webkit-keyframes ripple {
-  from{opacity: 1;}
-  to{transform: scale(12);opacity: 0;}
-}
-@keyframes ripple {
-  from{opacity: 1;}
-  to{transform: scale(12);opacity: 0;}
 }
 
 .c{
@@ -340,7 +327,7 @@ li{list-style: none;}
 }
 .c:target{transform: translateY(0);opacity: 1;}
 .c header{
-  padding: 80px 10% 30px 10%;
+  padding: 80px 4% 30px 4%;
   z-index: 10;
 }
 .c header a{float: right;font-size: 3rem;}
@@ -356,6 +343,10 @@ li{list-style: none;}
   transition: all .3s ease;
   position: relative;
 }
+@media (max-width: 1200px) {.c li{width: 25%;height: 240px;}}
+@media (max-width: 800px) {.c li{width: 33.33%;height: 260px;}}
+@media (max-width: 660px) {.c li{width: 33.33%;height: 180px;}}
+@media (max-width: 500px) {.c li{width: 50%;height: 180px;}}
 .c li:after{
   display: block;
   content: '\20';
@@ -397,9 +388,6 @@ li{list-style: none;}
   transform: scale(1.4);
   opacity: 0;
 }
-@media (max-width: 1200px) {.c li{width: 33.33%;height: 300px;}}
-@media (max-width: 850px) {.c li{width: 50%;height: 320px;}}
-@media (max-width: 600px) {.c li{width: 100%;height: 400px;}}
 .c footer{
   font-size: 1.4rem;
   padding: 50px;
@@ -409,7 +397,7 @@ li{list-style: none;}
   position: absolute;
   left: 50%;
   padding: 10px;
-  transform: translate(-50%,-50%);
+  transform: translateX(-50%);
   max-width: 98%;
   overflow: hidden;
   background-color: #fff;
