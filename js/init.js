@@ -123,9 +123,8 @@
   c.addEventListener('click', function(e){
     if(e.target.tagName === 'IMG' && e.target.dataset.src){
       var display = document.getElementById('display'),
-          target = e.target,
-          top = c.scrollTop + window.innerHeight/2 - target.naturalHeight/2 - 10;
-      display.style.top = (top>0?top:0) + 'px';
+          target = e.target;
+      display.style.top = c.scrollTop + window.innerHeight/2 + 'px';
       display.style.width = target.naturalWidth + 'px';
       display.style.display = 'block';
       display.querySelector('img').setAttribute('src', target.dataset.src);
