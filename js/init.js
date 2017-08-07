@@ -9,7 +9,7 @@
       input = document.querySelector('#blog input'),
       btn = input.nextElementSibling,
       blogs = menus.blogs.concat(),
-      blogsPerPage = 9,
+      blogsPerPage = 5,
       l = blogs.length,
       pageNav = document.querySelector('#blog .page-nav'),
       keyword = document.getElementById('keyword');
