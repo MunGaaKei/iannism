@@ -1,0 +1,13 @@
+<html><head><meta charset="utf-8"><title>JavaScript 小技巧</title><meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head>
+<body>
+<!-- insert .container -->
+<div class="container"><header id="header" class="header clearfix"><h2>JavaScript 小技巧</h2><p><a href="https://mungaakei.github.io/picasso">满家淇</a><time>2017-9-19</time><a href="#" class="fr">顶部</a><a href="https://mungaakei.github.io/picasso/#blog" class="fr">更多</a></p></header><div class="content">这里记录一些在使用JS时比较有趣以及还比较实用的方法。<div><br></div><div><blockquote>内容会不断进行更新</blockquote><div><br></div><div><br></div><h2>匿名事件监听绑定及移除</h2><div>此方法可以用在类似实现绑定匿名事件只让它执行一次的功能下（以及懒得重新声明一个事件句柄来放入removeEventListener的第二个参数）：</div><div><pre><code class="language-js">el.addEventListener('click', function(){
+
+	// do something ...
+
+	this.removeEventListener('click', arguments.callee);
+
+});</code></pre></div><div>ps：此方法在 <b>"use strict";</b> 下无效。</div><div><br></div><div><br></div></div></div></div>
+<script src="../js/prism.js"></script><script src="../js/blog.js"></script>
+</body>
