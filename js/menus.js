@@ -6,7 +6,7 @@ var menus = {
     {title: '关于一些CSS选择器',abstract: '一些相对少用的CSS选择器记录',time: '2017-4-12',tag: ['笔记','CSS'],path: 'blog/css-selector.html'},
     {title: '接触 ECMAScript6',abstract: '关于ES6新增的一些方法的简单介绍',time: '2017-5-2',tag: ['ES6','JavaScript'],path: 'blog/ecmascript6.html'},
     {title: '使用 Vue-cli',abstract: '在使用 vue-cli 做项目时的一些问题和说明',time: '2017-7-22',tag: ['Vue'],path: 'blog/vue-cli.html'},
-    {title: 'JavaScript 小技巧',abstract: '使用JavaScript的一些小技巧',time: '2017-9-19',tag: ['JavaScript', 'tips'],path: 'blog/js-tips.html'}
+    {title: '一些关于 JavaScript 的小知识',abstract: '使用JavaScript的一些小技巧',time: '2017-9-19',tag: ['JavaScript', 'tips'],path: 'blog/js-tips.html'}
   ],
   photos: [
     ['9.jpg'],
