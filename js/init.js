@@ -124,9 +124,7 @@
     if(e.target.tagName === 'IMG' && e.target.dataset.src){
       var display = document.getElementById('display'),
           target = e.target;
-      display.style.top = c.scrollTop + window.innerHeight/2 + 'px';
-      display.style.width = target.naturalWidth + 'px';
-      display.style.display = 'block';
+      display.style.cssText =  'top:' + (c.scrollTop + window.innerHeight/2) + 'px;' + 'width:' + target.naturalWidth + 'px;' + 'display: block;';
       display.querySelector('img').setAttribute('src', target.dataset.src);
     }
   });
@@ -146,8 +144,7 @@
     while(imgsLen--){
       imgs[imgsLen].setAttribute('src', imgs[imgsLen].dataset.src);
       imgs[imgsLen].onload = function(){
-        this.style.transform = 'scale(1)';
-        this.style.opacity = 1;
+        this.style.cssText = 'transform: scale(1); opacity: 1;';
       }
     }
   }
