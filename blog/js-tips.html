@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head>
 <body>
 <!-- insert .container -->
-<div class="container"><header id="header" class="header clearfix"><h2>一些关于 JavaScript 的小知识</h2><p><a href="https://mungaakei.github.io/picasso">满家淇</a><time>2017-9-19</time><a href="#" class="fr">顶部</a><a href="https://mungaakei.github.io/picasso/#blog" class="fr">更多</a></p></header><div class="content">这里记录一些在使用JS时，比较有趣以及还比较实用的方法，还有一些容易被忽视的地方。<div><br></div><div><blockquote>内容会不断进行更新</blockquote><div><br></div><div><br></div><div><br></div><div><br></div><h2>匿名事件监听绑定及移除</h2><div>此方法可以用在类似实现绑定匿名事件只让它执行一次的功能下（以及懒得重新声明一个事件句柄来放入removeEventListener的第二个参数）：</div><div><pre><code class="language-js">el.addEventListener('click', function(){
+<div class="container"><header id="header" class="header clearfix"><h2>一些关于 JavaScript 的小知识</h2><p><a href="../index.html">满家淇</a> <time>2017-9-19</time></p></header><div class="content">这里记录一些在使用JS时，比较有趣以及还比较实用的方法，还有一些容易被忽视的地方。<div><br></div><div><blockquote>内容会不断进行更新</blockquote><div><br></div><div><br></div><div><br></div><div><br></div><h2>匿名事件监听绑定及移除</h2><div>此方法可以用在类似实现绑定匿名事件只让它执行一次的功能下（以及懒得重新声明一个事件句柄来放入removeEventListener的第二个参数）：</div><div><pre><code class="language-js">el.addEventListener('click', function(){
 
 	// do something ...
 

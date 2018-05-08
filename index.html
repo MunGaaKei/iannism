@@ -1,71 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="description" content="Personal Website of MunGaaKei.">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
-  <link rel="stylesheet" href="http://at.alicdn.com/t/font_ad90zq63j3akmx6r.css">
-  <link rel="stylesheet" media="screen" href="css/init.css">
-  <title>TO PICΛSSO : )</title>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="description" content="Personal Website of MunGaaKei.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+<link rel="shortcut icon" href="ico.ico" type="image/x-icon">
+<link rel="stylesheet" media="screen" href="css/init.css">
+<title>Mun Gaa Kei : )</title>
 </head>
 <body>
-  <nav class="z">
-    <ul class="nav">
-      <li><a href="#about">关于</a></li>
-      <li><a href="#blog">博客</a></li>
-      <li><a id="init-c" href="#photography">摄影</a></li>
-      <li><a href="https://mungaakei.github.io/ProjectM/" target="_blank">作品</a></li>
-    </ul>
-    <div class="disc"><img src="image/terrace.jpg"></div>
-    <ul class="shootingstar">
-      <li></li>
-      <li></li>
-    </ul>
-  </nav>
 
-  <div id="about" class="a">
-    <h2>关于<a href="##">×</a></h2>
-    <section>
-      <p>努力</p>
-      <br>
-      <p><span>目前求职</span>前端开发<span>岗位</span></p>
-      <p class="en"><span>Looking for the position of </span>front-end developer</p>
-      <p>个人简历: <a href="blog/resume.html" target="_blank"><i class="iconfont icon-article"></i></a></p>
-      <p class="en">Resume:</p>
-      <br>
-      <address>Email: 502975759@qq.com</address>
-      <p>I'd <b>love</b> to hear from you!</p>
-      <p>
-        <a href="https://github.com/MunGaaKei" target="_blank" title="Github"><i class="iconfont icon-github"></i></a>
-        <a href="http://weibo.com/1807771927/profile" target="_blank" title="微博"><i class="iconfont icon-weibo"></i></a>
-      </p>
-    </section>
-  </div>
-
-  <div id="blog" class="b">
-    <div class="b-head">
-      <a href="##"><i class="iconfont icon-newlisticon06"></i></a>
-      <span id="keyword"><i>: )</i></span>
-      <div class="search">
-        <input type="text" placeholder="搜索" autocomplete="off" spellcheck="false">
-        <a href="javascript:void(0);"><i class="iconfont icon-sousuo"></i></a>
-      </div>
+    <div class="mun">
+        <div class="gaakei">
+            <h1>Mun Gaa Kei</h1>
+            <p>「 Designs, Ideals and Codes. 」</p>
+            <ul>
+                <li id="b"><a>文章</a></li>
+                <li id="p"><a>图像</a></li>
+                <li><a href="https://mungaakei.github.io/PROJECT-M/" target="_blank">项目</a></li>
+            </ul>
+            <p>502975759@qq.com</p>
+            <p>I'd love to hear from u ～</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://github.com/MunGaaKei" target="_blank"><i class="iconfont icon-github"></i></a>
+                <a href="http://weibo.com/1807771927/profile" target="_blank"><i class="iconfont icon-weibo"></i></a>
+            </p>
+        </div>
     </div>
-    <ul id="menu" class="b-body"></ul>
-    <div class="page-nav"></div>
-  </div>
 
-  <div id="photography" class="c">
-    <header>"D"<a href="##">×</a></header>
-    <div class="c-body clearfix"></div>
-    <div id="display" class="display"><img></div>
-    <footer><a href="##">つづく</a></footer>
-  </div>
+    <section class="b">
+        <header class="clearfix">
+            <a id="xb" class="close"><i class="iconfont icon-close"></i></a>
+            <div class="search">
+                <input id="condition" type="text" placeholder="检索" spellcheck="false">
+                <a id="search"><i class="iconfont icon-sousuo"></i></a>
+            </div>
+        </header>
+        <ul id="blogs" class="blogs"></ul>
+        <footer class="clearfix">
+            <span id="keyword"><i>: )</i></span>
+            <div id="pages" class="pages"></div>
+        </footer>
+    </section>
 
-  <script src="js/menus.js"></script>
-  <script src="js/init.js"></script>
+    <section class="p out" style="display: none;">
+        <header>
+            <span id="xp" class="p-btn">返回</span>
+        </header>
+        <ul id="content" class="content">
+            <li>
+                <p>南宁</p>
+                <time>2017 10</time>
+                <ul class="imgs clearfix">
+                    <li><img src="image/1.jpg"></li>
+                </ul>
+            </li>
+            <li>
+                <p>MYS</p>
+                <time>2017 2</time>
+                <ul class="imgs clearfix">
+                    <li><img src="image/10.jpg"></li>
+                    <li><img src="image/11.jpg"></li>
+                    <li><img src="image/12.jpg"></li>
+                    <li><img src="image/13.jpg"></li>
+                </ul>
+            </li>
+            <li>
+                <time>2016 11</time>
+                <ul class="imgs clearfix">
+                    <li><img src="image/9.jpg"></li>
+                </ul>
+            </li>
+            <li>
+                <p>杭州</p>
+                <time>2016 3</time>
+                <ul class="imgs clearfix">
+                    <li><img src="image/2.jpg"></li>
+                    <li><img src="image/3.jpg"></li>
+                </ul>
+            </li>
+            <li>
+                <p>家</p>
+                <time>2015</time>
+                <ul class="imgs clearfix">
+                    <li><img src="image/4.jpg"></li>
+                    <li><img src="image/5.jpg"></li>
+                    <li><img src="image/6.jpg"></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="view out" style="display: none;">
+            <img id="view" src="image/11.jpg">
+        </div>
+    </section>
+
+
+<script src="js/menus.js"></script>
+<script src="js/init.js"></script>
 </body>
 </html>
