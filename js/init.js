@@ -90,18 +90,25 @@
         out(b);
         on(p);
     });
-
+    byId('p').addEventListener('click', function(){
+        initP();
+        this.removeEventListener('click', arguments.callee);
+    });
     byId('xp').addEventListener('click', function(){ out(p); });
 
-    let imgs = byId('content').querySelectorAll('img');
-    l = imgs.length;
-    for(let i = 0; i< l; i++){
-        imgs[i].addEventListener('click', function(){
-            on(v);
-            view.setAttribute('src', this.getAttribute('src'));
-        });
+    function initP(){
+        let img, imgs = byId('content').querySelectorAll('img');
+        l = imgs.length;
+        for(let i = 0; i< l; i++){
+            img = imgs[i];
+            img.setAttribute('src', img.dataset.src);
+            img.addEventListener('click', function(){
+                on(v);
+                view.setAttribute('src', this.getAttribute('src'));
+            });
+        }
+        v.addEventListener('click', function(){ out(this); });
     }
-    v.addEventListener('click', function(){ out(this); });
 
 
     // PUBLIC METHODS
