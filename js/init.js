@@ -9,6 +9,10 @@
         pagenav = byId('pages'),
         l = blogs.length;
 
+    byId('picasso').addEventListener('load', function(){
+        this.style.opacity = 1;
+    });
+
     printBlogs();
     byId('b').addEventListener('click', function(){
         out(p);

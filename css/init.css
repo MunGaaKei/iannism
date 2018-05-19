@@ -20,6 +20,14 @@ time{
     vertical-align: middle;
 }
 
+#picasso{
+    position: absolute;
+    width: 300px;
+    right: 10%; bottom: -20%;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease; transition: opacity .2s ease;
+}
+
 .mun{
     display: -ms-flex; display: flex;
     position: absolute;
