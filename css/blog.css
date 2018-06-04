@@ -12,8 +12,9 @@ li{list-style: none;}
 .clearfix:after{ content:" "; display:block; height:0; clear:both; visibility: hidden;}
 .clearfix{*zoom:1;}/*IE/7/6*/
 .iconfont {font-size: 1.29rem;-webkit-text-stroke-width: 0.1px;}
-.container{padding: 0 1.5rem;max-width: 800px;margin: 50px auto;letter-spacing: 1px;overflow-y: auto;overflow-x: hidden;line-height: 1.8;}
-.header{text-align: right;margin-bottom: 100px;}
+.container{padding: 0 1.5rem;max-width: 800px;margin: 50px auto;letter-spacing: 1px;overflow-y: auto;overflow-x: hidden;line-height: 1.5;}
+.header{margin-bottom: 100px;}
+.header h2{font-size: 1.5rem;margin-bottom: 6px;}
 .header time{font-family: 'Georgia';color: #999;vertical-align: top;margin-left: 10px;}
 .content{margin-top: 2rem;overflow-x: hidden;}
 .content img{display: block;margin: 1.42rem auto;max-width: 100%;background-color: #eee;}

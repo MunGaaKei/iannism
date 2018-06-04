@@ -1,4 +1,4 @@
-<html><head><meta charset="utf-8"><title>CANVAS下的星空</title><meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head><body><div class="container"><header id="header" class="header clearfix"><h2>CANVAS下的星空</h2><p class="clearfix"><a href="../index.html">满家淇</a><time>2017-1-14</time></p></header><div class="content">　　这是一篇简单介绍&lt;canvas&gt;使用的文章。<div><br></div><div>　　<a href="https://mungaakei.github.io/xamples/cvs-starry.html">演示效果&gt;&gt;</a><br></div><div><br></div><div>　　首先先铺好画布</div><div>　　&gt;&gt;</div><div><br></div><pre><code class="language-html">&lt;canvas id="canvas"&gt; 浏览器不支持canvas时出现的文字 &lt;/canvas&gt;</code></pre><div><br></div><div>　　在设置画布大小的时候可以我们可以直接在标签里设置，也可以使用JavaScript设置。而使用CSS设置时需要注意，这可能会引起画布拉伸从而导致得不到你想要的效果。</div><div><br></div><div>　　事实上，<b>JavaScript</b>就是接下来将要使用的画笔。<br></div><div>　　我们所要画的是星星从屏幕中心缓缓向四周扩散的效果，有一点穿梭在宇宙中的感觉。<br></div><div><br></div><div>　　那么先做好一些准备工作<br></div><div>　　&gt;&gt;</div><div><br></div><div><pre><code class="language-js">(function(){
+<html><head><meta charset="utf-8"><title>CANVAS下的星空</title><meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><link rel="shortcut icon" href="../ico.ico" type="image/x-icon"><link rel="stylesheet" href="../css/blog.css"><link rel="stylesheet" href="../css/prism.css"></head><body><div class="container"><header id="header" class="header clearfix"><h2>CANVAS下的星空</h2><p class="clearfix"><a href="../index.html">满家淇</a><time>2017-1-14</time></p></header><div class="content">这是一篇简单介绍&lt;canvas&gt;使用的文章。<div><br></div><div><a href="https://mungaakei.github.io/xamples/cvs-starry.html">演示效果&gt;&gt;</a><br></div><div><br></div><div>首先先铺好画布</div><div>&gt;&gt;</div><div><br></div><pre><code class="language-html">&lt;canvas id="canvas"&gt; 浏览器不支持canvas时出现的文字 &lt;/canvas&gt;</code></pre><div><br></div><div>在设置画布大小的时候可以我们可以直接在标签里设置，也可以使用JavaScript设置。而使用CSS设置时需要注意，这可能会引起画布拉伸从而导致得不到你想要的效果。</div><div><br></div><div>事实上，<b>JavaScript</b>就是接下来将要使用的画笔。<br></div><div>我们所要画的是星星从屏幕中心缓缓向四周扩散的效果，有一点穿梭在宇宙中的感觉。<br></div><div><br></div><div>那么先做好一些准备工作<br></div><div>&gt;&gt;</div><div><br></div><div><pre><code class="language-js">(function(){
   var cvs = document.getElementById('canvas'),
       ctx = cvs.getContext('2d'), 　　//<i>封装绘图功能的对象</i>
       w = cvs.width = window.innerWidth,　　//设置画布大小与屏幕大小一致
@@ -8,7 +8,7 @@
       maxStars = 119;　　//星星数量上限
 
 　　  ......
-)();</code></pre></div><div><br></div><div><br></div><h2>星星初始化</h2><div><br></div><div><br></div><div>　　在穿梭开始的时候，星星应该散落在画布上的随机任何位置。这需要对每颗星星进行初始化，包括坐标位置，大小，飞行速度，飞行时间等等。这些都是可以根据个人想要的效果来进行调制的。<br></div><div>　　&gt;&gt;<br></div><div><br></div><div><pre><code class="language-js">  function initOneStar(){
+)();</code></pre></div><div><br></div><div><br></div><h2>星星初始化</h2><div><br></div><div><br></div><div>在穿梭开始的时候，星星应该散落在画布上的随机任何位置。这需要对每颗星星进行初始化，包括坐标位置，大小，飞行速度，飞行时间等等。这些都是可以根据个人想要的效果来进行调制的。<br></div><div>&gt;&gt;<br></div><div><br></div><div><pre><code class="language-js">  function initOneStar(){
     var posX = rand(0, w),　　//rand()函数返回第一个参数到第二个参数之间的随机整数值
         posY = rand(0, h),　　//星星的坐标值
 
@@ -35,7 +35,7 @@
   function initStars() {
     var l = maxStars;
     while(l--){ stars[l] = initOneStar();
-  }</code></pre><br></div><div>　　这样stars[]已经存有了我们需要的maxStars个星星，它们各自拥有不同的坐标，飞行速度...</div><div><br></div><div><br></div><h2>绘制星星</h2><div><br></div><div><br></div><div>　　接下来需要把上面已经初始化好的星星stars[]"画"到画布上。<br></div><div>　　&gt;&gt;<br></div><div><br></div><div><pre><code class="language-js">  function draw(star) {
+  }</code></pre><br></div><div>这样stars[]已经存有了我们需要的maxStars个星星，它们各自拥有不同的坐标，飞行速度...</div><div><br></div><div><br></div><h2>绘制星星</h2><div><br></div><div><br></div><div>接下来需要把上面已经初始化好的星星stars[]"画"到画布上。<br></div><div>&gt;&gt;<br></div><div><br></div><div><pre><code class="language-js">  function draw(star) {
     ctx.beginPath();　　//开始绘制路径
     ctx.arc(star.x, star.y, star.r, 0, 360);
     //绘制圆形
@@ -51,8 +51,8 @@
     var l = maxStars;
     while(l--){ draw(stars[l]); }　　//循环画出每颗星星
   }
-</code></pre><br></div><div>　　到了这里只要调用下面两个函数，一副星空图便出现在了你的屏幕上。<br></div><div><br></div><div><pre><code class="language-js">  initStars();
-  render();</code></pre><br></div><div><br></div><h2>星星的飞行</h2><div><br></div><div><br></div><div>　　静止的星空似乎有点单调，试着换一种感觉。<br></div><div><br></div><div>　　让每颗星星动起来的原理很简单：<br></div><div>　　1) 擦拭掉每颗星星<br></div><div>　　2) 计算每颗星星下一次出现的位置<br></div><div>　　3) 根据重新计算好的位置再把每颗星星画上去</div><div><br></div><div><pre><code class="language-js">  function run() {
+</code></pre><br></div><div>到了这里只要调用下面两个函数，一副星空图便出现在了你的屏幕上。<br></div><div><br></div><div><pre><code class="language-js">  initStars();
+  render();</code></pre><br></div><div><br></div><h2>星星的飞行</h2><div><br></div><div><br></div><div>静止的星空似乎有点单调，试着换一种感觉。<br></div><div><br></div><div>让每颗星星动起来的原理很简单：<br></div><div>1) 擦拭掉每颗星星<br></div><div>2) 计算每颗星星下一次出现的位置<br></div><div>3) 根据重新计算好的位置再把每颗星星画上去</div><div><br></div><div><pre><code class="language-js">  function run() {
     var l = maxStars;
 
 　  // 1) 擦拭

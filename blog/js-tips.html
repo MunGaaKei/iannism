@@ -13,10 +13,10 @@ if (condition) eval();
 
 // 另一种方式
 condition &amp;&amp; eval();</code></pre><br></div><div><br></div><div><br></div><div><br></div><h2>假值表</h2><div><pre><code class="language-js">var  a = false,		// 传统布尔值 false
-	b = 0,			// 数字0
-	c = '',			// 空字符串
-	d = 1 * 'd',	      // NaN类型
-	e;				// 未赋值变量 undefined</code></pre><br></div><div>假值表上的变量在判断时都会隐性转换为false。</div><div><br></div><div>* 非空对象和空对象 var f = { } 转成布尔值都为true，所以不能用 if ( f ) 来判断对象是否为空。可以用 "{}" == JSON.stringify( f ) 来判断对象是否为空。</div><div><br></div><div><br></div><div><br></div><div><br></div></div></div>
+	 b = 0,			// 数字0
+	 c = '',			// 空字符串
+	 d = 1 * 'd',	      // NaN类型
+	 e;				// 未赋值变量 undefined</code></pre><br></div><div>假值表上的变量在判断时都会隐性转换为false。</div><div><br></div><div>* 非空对象和空对象 var f = { } 转成布尔值都为true，所以不能用 if ( f ) 来判断对象是否为空。可以用 "{}" == JSON.stringify( f ) 来判断对象是否为空。</div><div><br></div><div><br></div><div><br></div><div><br></div></div></div>
 
 <script src="../js/prism.js"></script><script src="../js/blog.js"></script>
 </body>
