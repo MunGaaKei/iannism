@@ -1,0 +1,14 @@
+{
+	"name": "Picasso",
+	"version": "1.0.0",
+	"author": "Mun Gaa Kei",
+	"scripts": {
+		"start": "node gulpfile.js"
+	},
+	"dependencies": {
+		"browser-sync": "latest",
+		"gulp": "latest",
+		"gulp-sass": "latest",
+		"gulp-sourcemaps": "latest"
+	}
+}

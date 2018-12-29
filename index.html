@@ -7,99 +7,26 @@
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
 <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
-<link rel="stylesheet" media="screen" href="css/init.css">
+<link rel="stylesheet" href="https://use.typekit.net/tps0vhc.css">
+<link rel="stylesheet" media="screen" href="css/picasso.css">
 <title>Mun Gaa Kei : )</title>
 </head>
 <body>
 
-    <img src="image/picasso.png" id="picasso">
-
-    <div class="mun">
-        <div class="gaakei">
-            <h1>Mun Gaa Kei</h1>
-            <p>「 Designs, Ideals and Codes. 」</p>
-            <ul>
-                <li id="b"><a>文章</a></li>
-                <li id="p"><a>图像</a></li>
-                <li><a href="https://mungaakei.github.io/projects/" target="_blank">项目</a></li>
-            </ul>
-            <p>502975759@qq.com</p>
-            <p>I'd love to hear from u ～</p>
-            <p style="margin-top: 1rem;">
-                <a href="https://github.com/MunGaaKei" target="_blank"><i class="iconfont icon-github"></i></a>
-                <a href="http://weibo.com/1807771927/profile" target="_blank"><i class="iconfont icon-weibo"></i></a>
-            </p>
-        </div>
+    <div class="container">
+        
     </div>
 
-    <section class="b out" style="display: none;">
-        <header class="clearfix">
-            <a id="xb" class="close"><i class="iconfont icon-close"></i></a>
-            <div class="search">
-                <input id="condition" type="text" placeholder="检索" spellcheck="false">
-                <a id="search"><i class="iconfont icon-sousuo"></i></a>
-            </div>
-        </header>
-        <ul id="blogs" class="blogs"></ul>
-        <footer class="clearfix">
-            <span id="keyword"><i>: )</i></span>
-            <div id="pages" class="pages"></div>
-        </footer>
-    </section>
-
-    <section class="p out" style="display: none;">
-        <header>
-            <span id="xp" class="p-btn">返回</span>
-        </header>
-        <ul id="content" class="content">
-            <li>
-                <p>南宁</p>
-                <time>2017 10</time>
-                <ul class="imgs clearfix">
-                    <li><img data-src="image/1.jpg"></li>
-                </ul>
-            </li>
-            <li>
-                <p>MYS</p>
-                <time>2017 2</time>
-                <ul class="imgs clearfix">
-                    <li><img data-src="image/10.jpg"></li>
-                    <li><img data-src="image/11.jpg"></li>
-                    <li><img data-src="image/12.jpg"></li>
-                    <li><img data-src="image/13.jpg"></li>
-                </ul>
-            </li>
-            <li>
-                <time>2016 11</time>
-                <ul class="imgs clearfix">
-                    <li><img data-src="image/9.jpg"></li>
-                </ul>
-            </li>
-            <li>
-                <p>杭州</p>
-                <time>2016 3</time>
-                <ul class="imgs clearfix">
-                    <li><img data-src="image/2.jpg"></li>
-                    <li><img data-src="image/3.jpg"></li>
-                </ul>
-            </li>
-            <li>
-                <p>家</p>
-                <time>2015</time>
-                <ul class="imgs clearfix">
-                    <li><img data-src="image/4.jpg"></li>
-                    <li><img data-src="image/5.jpg"></li>
-                    <li><img data-src="image/6.jpg"></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="view out" style="display: none;">
-            <img id="view">
-        </div>
-    </section>
-
-
-<script src="js/menus.js"></script>
-<script src="js/init.js"></script>
+<script src="js/picasso.js"></script>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'zhz7swe',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 </body>
 </html>
