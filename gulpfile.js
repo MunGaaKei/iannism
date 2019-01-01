@@ -1,17 +1,30 @@
 const gulp = require('gulp');
-
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', () => {
-	gulp.src('css/picasso.scss')
-	.pipe(sass())
-	.pipe(gulp.dest('css'));
+	return gulp.src('css/picasso.scss')
+		.pipe(sass({ outputStyle: 'expanded' }))
+		.pipe(gulp.dest('css'))
+		.pipe(browserSync.stream());
 });
 
 gulp.task('default', () => {
-	gulp.watch('css/picasso.scss', () => {
-		gulp.run('sass');
+	browserSync.init({
+		server: { baseDir: './' },
+		port: 27149
 	});
+
+	gulp.watch('css/scss/*.scss', () => {
+		return gulp.src('css/scss/picasso.scss')
+		.pipe(sass({ outputStyle: 'expanded' }))
+		.pipe(gulp.dest('css'))
+		.pipe(browserSync.stream());
+	});
+
+	gulp.watch('./*.html', () => {
+		return browserSync.reload();
+	});
+
 });

@@ -9,6 +9,7 @@
 		"browser-sync": "latest",
 		"gulp": "latest",
 		"gulp-sass": "latest",
-		"gulp-sourcemaps": "latest"
+		"gulp-sourcemaps": "latest",
+		"gulp-watch": "latest"
 	}
 }
