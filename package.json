@@ -2,8 +2,9 @@
 	"name": "Picasso",
 	"version": "1.0.0",
 	"author": "Mun Gaa Kei",
+	"main": "gulpfile.js",
 	"scripts": {
-		"start": "node gulpfile.js"
+		"start": "gulp default"
 	},
 	"dependencies": {
 		"browser-sync": "latest",
