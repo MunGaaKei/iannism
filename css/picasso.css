@@ -1,41 +1,55 @@
 html, body {
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
-
-.container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.header {
+  position: sticky;
+  z-index: 10;
+  top: -50px;
+  margin: 8% auto 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 720px;
+  text-align: right;
+  background: #fff;
 }
 
 .me {
-  margin: auto;
-  text-align: center;
-  font-family: 'Microsoft JhengHei';
-}
-
-.name {
-  font-family: uppercut-angle, sans-serif;
+  font-family: source-han-sans-simplified-c, sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding: 0 12px;
+  font-weight: 700;
 }
 
 .navs {
-  margin: auto;
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
   user-select: none;
   color: #bbb;
+  font-family: mantinia, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .navs .nav {
   display: block;
   margin: 12px;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 16px;
+}
+
+.container {
+  position: relative;
+  flex: 1;
+}
+
+.content {
+  max-width: 720px;
+  margin: auto;
+  height: 1000px;
 }

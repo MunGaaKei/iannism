@@ -14,19 +14,36 @@
 </head>
 <body>
 
+    <header class="header">
+        <h1 class="me">满家 淇</h1>
+        <ul class="navs">
+            <li><a href="#post" class="nav">Post</a></li>
+            <li><a href="#code" class="nav">Code</a></li>
+            <li><a href="#about" class="nav">About me</a></li>
+        </ul>
+    </header>
     <div class="container">
-        <div class="me">
-            <h1 class="name">IAN MAN</h1>
-            <ul class="navs">
-                <li><a class="nav">文章</a></li>
-                <li><a class="nav">图片</a></li>
-                <li><a class="nav">代码</a></li>
-            </ul>
+        <div id="about" class="content">
+            1
         </div>
-
-
+        <div id="code" class="content">
+            2
+        </div>
+        <div id="post" class="content">
+            3
+        </div>
     </div>
 
 <script src="js/picasso.js"></script>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'zhz7swe',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 </body>
 </html>

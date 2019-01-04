@@ -4,6 +4,12 @@
 	font-style: normal;
 }
 
+@mixin cjk {
+	font-family: source-han-sans-cjk-sc, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 @mixin angle {
 	font-family: uppercut-angle, sans-serif;
 	font-weight: 400;

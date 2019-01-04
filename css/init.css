@@ -4,13 +4,13 @@ h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
 a{ color: #555; text-decoration: none; cursor: default; transition: all .2s ease; }
 a:hover{ color: #222; }
 li{ list-style: none; }
-html, body{ color: #444; font: 14px Helvetica, "Microsoft Yahei"; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow: hidden; }
+html, body{ color: #444; font: 14px Helvetica, "Microsoft Yahei"; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow-x: hidden; }
 ::selection{ background-color: #cce2ff; color: rgba(0,0,0,.87); }
 ::-webkit-scrollbar{ width: 6px; height: 6px; }
 ::-webkit-scrollbar-button{ display: none; }
 ::-webkit-scrollbar-track{ background-color: transparent; }
-::-webkit-scrollbar-thumb{ background: #bbb; border: 1px solid #ccc; }
-::-webkit-scrollbar-corner{ display: none;}
+::-webkit-scrollbar-thumb{ background: #aaa; border-radius: 6px; }
+::-webkit-scrollbar-corner{ display: none; }
 .clearfix:after{ content: "\20"; display: block; height: 0; clear: both; visibility: hidden; }
 
 @font-face {font-family: "iconfont";
