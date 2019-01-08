@@ -14,23 +14,29 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="me">满家 淇</h1>
-        <ul class="navs">
-            <li><a href="#post" class="nav">Post</a></li>
-            <li><a href="#code" class="nav">Code</a></li>
-            <li><a href="#about" class="nav">About me</a></li>
-        </ul>
+    <header id="header" class="header roof">
+        <div class="inner">
+            <h1 class="me">满家 淇</h1>
+            <div class="navigation">
+                <div class="ian">
+                    <a href="javascript:;" class="ian">IAN MAN</a>
+                </div>
+                <ul id="navs" class="navs">
+                    <li><a data-tab="post" class="nav">Post</a></li>
+                    <li><a data-tab="code" class="nav">Code</a></li>
+                    <li><a data-tab="about" class="nav">About me</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
+
     <div class="container">
-        <div id="about" class="content">
-            1
-        </div>
-        <div id="code" class="content">
-            2
-        </div>
-        <div id="post" class="content">
-            3
+        <div class="inner">
+            <div class="search">
+                <i class="iconfont icon-sousuo"></i>
+                <span>:</span>
+                <input id="keyword" class="input" type="text" autocomplete="off" required>
+            </div>
         </div>
     </div>
 

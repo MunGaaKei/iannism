@@ -8,24 +8,43 @@ html, body{
 	scroll-behavior: smooth;
 }
 
+.inner{
+	position: relative;
+	margin: auto; padding: 0 10px;
+	max-width: $width;
+}
 .header{
-	position: sticky; z-index: 10;
-	top: -50px;
-	margin: 8% auto 10px;
-	padding: 10px;
+	position: relative; z-index: 50;
+	padding: 10% 0 10px;
 	box-sizing: border-box;
-	max-width: 100%; width: $width;
 	text-align: right;
-	background: #fff;
+	transition: all .3s ease;
+	overflow: hidden;
+
+	&.roof{
+		padding: 0;
+		background: #fff;
+		box-shadow: 0 1px 4px rgba(0,0,0,.1);
+		margin-top: -40px;
+		.ian{ opacity: 1; }
+	}
+}
+.ian{
+	@include angle;
+	opacity: 0;
 }
 .me{
 	@include sans;
 	padding: 0 12px;
 	font-weight: 700;
 }
+.navigation{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .navs{
 	display: flex;
-	flex-direction: row-reverse;
 	user-select: none;
 	color: #bbb;
 	@include mantinia;
@@ -42,9 +61,29 @@ html, body{
 .container{
 	position: relative;
 	flex: 1;
+	padding: 20px 0;
+	overflow: auto;
+	transition: all .3s ease;
 }
 .content{
-	max-width: $width;
+	display: none;
 	margin: auto;
-	height: 1000px;
+	max-width: $width;
+	transition: all .3s ease;
+	opacity: 0;
+	transform: translate(20px,0);
+	&.on{
+		opacity: 1;
+		transform: translate(0,0);
+	}
+}
+
+.search{
+	// display: flex;
+	align-items: center;
+}
+.input{
+	// padding: 10px 0;
+	background: none;
+	outline: none;
 }

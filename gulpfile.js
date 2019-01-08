@@ -22,4 +22,9 @@ gulp.task('default', () => {
 		.pipe(browserSync.reload());
 	});
 
+	gulp.watch('js/*.js', () => {
+		return gulp.src('js/*.js')
+		.pipe(browserSync.reload());
+	});
+
 });

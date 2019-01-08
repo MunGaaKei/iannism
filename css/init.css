@@ -4,7 +4,8 @@ h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
 a{ color: #555; text-decoration: none; cursor: default; transition: all .2s ease; }
 a:hover{ color: #222; }
 li{ list-style: none; }
-html, body{ color: #444; font: 14px Helvetica, "Microsoft Yahei"; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow-x: hidden; }
+html, body{ color: #444; font: 14px gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow-x: hidden; }
+input, textarea{ font: 1rem gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif; line-height: 1.425; letter-spacing: .04rem; }
 ::selection{ background-color: #cce2ff; color: rgba(0,0,0,.87); }
 ::-webkit-scrollbar{ width: 6px; height: 6px; }
 ::-webkit-scrollbar-button{ display: none; }

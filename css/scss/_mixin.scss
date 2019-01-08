@@ -12,12 +12,18 @@
 
 @mixin angle {
 	font-family: uppercut-angle, sans-serif;
-	font-weight: 400;
+	font-weight: 700;
 	font-style: normal;
 }
 
 @mixin mantinia {
 	font-family: mantinia, serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin gitan {
+	font-family: gitan-latin, sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
