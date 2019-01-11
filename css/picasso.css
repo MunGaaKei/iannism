@@ -1,7 +1,6 @@
 html, body {
-  display: flex;
-  flex-direction: column;
   scroll-behavior: smooth;
+  overflow: auto;
 }
 
 .inner {
@@ -12,24 +11,13 @@ html, body {
 }
 
 .header {
-  position: relative;
+  position: sticky;
   z-index: 50;
   padding: 10% 0 10px;
   box-sizing: border-box;
   text-align: right;
   transition: all .3s ease;
   overflow: hidden;
-}
-
-.header.roof {
-  padding: 0;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  margin-top: -40px;
-}
-
-.header.roof .ian {
-  opacity: 1;
 }
 
 .ian {
@@ -80,23 +68,20 @@ html, body {
 
 .content {
   display: none;
+  box-sizing: border-box;
   margin: auto;
+  padding: 0 12px;
   max-width: 720px;
   transition: all .3s ease;
+}
+
+.about {
+  text-align: right;
   opacity: 0;
   transform: translate(20px, 0);
 }
 
-.content.on {
+.about.on {
   opacity: 1;
   transform: translate(0, 0);
-}
-
-.search {
-  align-items: center;
-}
-
-.input {
-  background: none;
-  outline: none;
 }

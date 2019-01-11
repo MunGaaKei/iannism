@@ -2,10 +2,11 @@
 @import 'variables';
 
 html, body{
-	display: flex;
-	flex-direction: column;
+	// display: flex;
+	// flex-direction: column;
 	// background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 	scroll-behavior: smooth;
+	overflow: auto;
 }
 
 .inner{
@@ -14,20 +15,12 @@ html, body{
 	max-width: $width;
 }
 .header{
-	position: relative; z-index: 50;
+	position: sticky; z-index: 50;
 	padding: 10% 0 10px;
 	box-sizing: border-box;
 	text-align: right;
 	transition: all .3s ease;
 	overflow: hidden;
-
-	&.roof{
-		padding: 0;
-		background: #fff;
-		box-shadow: 0 1px 4px rgba(0,0,0,.1);
-		margin-top: -40px;
-		.ian{ opacity: 1; }
-	}
 }
 .ian{
 	@include angle;
@@ -67,23 +60,18 @@ html, body{
 }
 .content{
 	display: none;
+	box-sizing: border-box;
 	margin: auto;
+	padding: 0 12px;
 	max-width: $width;
-	transition: all .3s ease;
+	transition: all .3s ease;	
+}
+.about{
+	text-align: right;
 	opacity: 0;
 	transform: translate(20px,0);
 	&.on{
 		opacity: 1;
 		transform: translate(0,0);
 	}
-}
-
-.search{
-	// display: flex;
-	align-items: center;
-}
-.input{
-	// padding: 10px 0;
-	background: none;
-	outline: none;
 }

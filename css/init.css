@@ -1,7 +1,7 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
-a{ color: #555; text-decoration: none; cursor: default; transition: all .2s ease; }
+a{ color: #555; text-decoration: none; cursor: pointer; transition: all .2s ease; }
 a:hover{ color: #222; }
 li{ list-style: none; }
 html, body{ color: #444; font: 14px gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow-x: hidden; }
