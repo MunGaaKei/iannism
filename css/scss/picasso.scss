@@ -1,9 +1,9 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
-a{ color: inherit; text-decoration: none; cursor: pointer; transition: all .2s; }
+a{ color: inherit; text-decoration: none; cursor: pointer; transition: all .24s; }
 li{ list-style: none; }
-html, body{ color: #444; font: 14px gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif; line-height: 1.425; letter-spacing: .04rem; height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+html, body{ color: #444; font: calc(10px + .3vw) gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif; line-height: 1.425; letter-spacing: .04rem; overflow: hidden; scroll-behavior: smooth; }
 input, textarea{ font: inherit; }
 ::selection{ background-color: #cce2ff; color: rgba(0,0,0,.87); }
 ::-webkit-scrollbar{ width: 6px; height: 6px; }
@@ -24,6 +24,32 @@ url('iconfont.svg?t=1525339665180#iconfont') format('svg'); /* iOS 4.1- */
 .iconfont {font-family:"iconfont" !important;font-size:inherit;font-style:normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 .icon-qq:before{content:"\e606";}.icon-newlisticon06:before{content:"\e631";}.icon-more:before{content:"\e6d8";}.icon-weibo:before{content:"\e63b";}.icon-share:before{content:"\e624";}.icon-github:before{content:"\e69f";}.icon-album:before{content:"\e617";}.icon-tag:before{content:"\e60a";}.icon-data:before{content:"\e637";}.icon-rili:before{content:"\e768";}.icon-mail:before{content:"\e638";}.icon-iconset0455:before{content:"\e65a";}.icon-iconset0456:before{content:"\e65b";}.icon-wechat:before{content:"\e602";}.icon-sousuo:before{content:"\e686";}.icon-080xiezhen:before{content:"\e68d";}.icon-lighting:before{content:"\e6a0";}.icon-hearsolid:before{content:"\e6ac";}.icon-needle:before{content:"\e6ba";}.icon-summaryread:before{content:"\e753";}.icon-article:before{content:"\e615";}.icon-3icon01:before{content:"\e684";}.icon-close:before{content:"\e6b6";}.icon-feather:before{content:"\e7d7";}.icon-image:before{content:"\e645";}.icon-arrowup:before{content:"\e695";}.icon-back:before{content:"\e632";}
 
+.room{
+	position: absolute;
+	left: 0; top: 0; right: 0; bottom: 0;
+	display: none;
+	overflow-x: hidden;
+	transition: all .24s;
+	&.on{ display: block; }
+}
+.home{
+	opacity: 0;
+	transform: translate3d(20px, 0, 0);
+	&.active{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+.photograph{
+	background-color: #bbe9f0;
+	opacity: 0;
+	transform: scale(1.05);
+	&.active{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 .bio{
 	position: relative;
 	box-sizing: border-box;
@@ -43,7 +69,8 @@ url('iconfont.svg?t=1525339665180#iconfont') format('svg'); /* iOS 4.1- */
 		max-width: 400px;
 	}
 }
-.link{
+.link,
+.blog a{
 	position: relative;
 	&:before{
 		content: '\20';
@@ -52,9 +79,9 @@ url('iconfont.svg?t=1525339665180#iconfont') format('svg'); /* iOS 4.1- */
 		height: 6px;
 		border-radius: 3px;
 		background-color: #cce2ff;
-		transition: all .24s;
+		transition: inherit;
 	}
 	&:hover:before{
-		height: 80%;
+		height: 81%;
 	}
 }
