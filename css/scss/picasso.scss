@@ -18,7 +18,7 @@ input, textarea{ font: inherit; }
 ::-webkit-scrollbar-thumb{ background: #aaa; border-radius: 6px; }
 ::-webkit-scrollbar-corner{ display: none; }
 .clearfix:after{ content: "\20"; display: block; height: 0; clear: both; visibility: hidden; }
-.iconfont{ font-size: 1em; }
+.iconfont{ font-size: 1em; font-weight: 700; }
 
 .room{
 	position: absolute;
@@ -37,12 +37,21 @@ input, textarea{ font: inherit; }
 	}
 }
 .photograph{
-	background-color: #bbe9f0;
+	background-color: #fff;
 	opacity: 0;
 	transform: scale(1.05);
 	&.active{
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+.blog{
+	background-color: #fff;
+	opacity: 0;
+	transform: translate3d(-20px, 0, 0);
+	&.active{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
 	}
 }
 
@@ -71,10 +80,15 @@ input, textarea{ font: inherit; }
 		left: 0; bottom: 0; right: 0;
 		height: 6px;
 		border-radius: 3px;
-		background-color: #cce2ff;
+		background-color: #ffda73;
 		transition: inherit;
 	}
 	&:hover:before{
 		height: 81%;
+	}
+}
+.contact{
+	> .link{
+		margin-left: .4rem;
 	}
 }

@@ -73,6 +73,7 @@ input, textarea {
 
 .iconfont {
   font-size: 1em;
+  font-weight: 700;
 }
 
 .room {
@@ -101,7 +102,7 @@ input, textarea {
 }
 
 .photograph {
-  background-color: #bbe9f0;
+  background-color: #fff;
   opacity: 0;
   transform: scale(1.05);
 }
@@ -109,6 +110,17 @@ input, textarea {
 .photograph.active {
   opacity: 1;
   transform: scale(1);
+}
+
+.blog {
+  background-color: #fff;
+  opacity: 0;
+  transform: translate3d(-20px, 0, 0);
+}
+
+.blog.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .bio {
@@ -145,11 +157,15 @@ input, textarea {
   right: 0;
   height: 6px;
   border-radius: 3px;
-  background-color: #cce2ff;
+  background-color: #ffda73;
   transition: inherit;
 }
 
 .link:hover:before,
 .blog a:hover:before {
   height: 81%;
+}
+
+.contact > .link {
+  margin-left: .4rem;
 }
