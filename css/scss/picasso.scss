@@ -6,9 +6,11 @@ li{ list-style: none; }
 html, body{
 	font: calc(10px + .3vw) gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif;
 	line-height: 1.425; letter-spacing: .04rem;
-	color: #444;
+	color: #212121;
 	overflow: hidden;
 	scroll-behavior: smooth;
+	text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
 }
 input, textarea{ font: inherit; }
 ::selection{ background-color: #cce2ff; color: rgba(0,0,0,.87); }
@@ -54,14 +56,66 @@ input, textarea{ font: inherit; }
 		transform: translate3d(0, 0, 0);
 	}
 }
-
-.bio{
+.bio,
+.menu{
 	position: relative;
 	box-sizing: border-box;
 	margin: 0 auto;
-	padding: 40px 16px;
 	width: 812px;
 	min-height: 100%; max-width: 100%;
+}
+.menu{
+	padding: 20vh 16px 40px;
+	> .header,
+	> .footer {
+		position: sticky; z-index: 1;
+		display: flex;
+		align-items: baseline;
+		padding: 8px 0;
+		background-color: #fff;
+	}
+	> .header {
+		top: 0;
+		font-weight: 700;
+	}
+	> .footer {
+		bottom: 0;
+	}
+}
+.list{
+	margin: 20px 0 32px;
+	> .year {
+		text-align: right;
+		font-style: italic;
+	}
+	> .li {
+		margin: 8px 0;
+		display: flex;
+		align-items: baseline;
+		&:before{
+			content: attr(data-date);
+			order: 2;
+			font-style: italic;
+		}
+		&:after{
+			flex: 1;
+			content: '\20';
+			margin: 0 .8rem;
+			border-bottom: 1px dotted #212121;
+			transition: all .24s;
+		}
+		&:hover{
+			color: #5f9ea0;
+			&:after{
+				border-color: #5f9ea0;
+			}
+		}
+	}
+}
+
+
+.bio{
+	padding: 40px 16px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -71,8 +125,7 @@ input, textarea{ font: inherit; }
 		max-width: 400px;
 	}
 }
-.link,
-.blog a{
+.link{
 	position: relative;
 	&:before{
 		content: '\20';
@@ -80,7 +133,7 @@ input, textarea{ font: inherit; }
 		left: 0; bottom: 0; right: 0;
 		height: 6px;
 		border-radius: 3px;
-		background-color: #ffda73;
+		background-color: #cce2ff;
 		transition: inherit;
 	}
 	&:hover:before{
@@ -88,7 +141,7 @@ input, textarea{ font: inherit; }
 	}
 }
 .contact{
-	> .link{
+	> .link {
 		margin-left: .4rem;
 	}
 }
