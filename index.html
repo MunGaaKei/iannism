@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div id="h" class="room home">
+    <div id="h" class="room home on active">
       	<div class="bio">
 			<h1>满 家淇</h1>
 			<p>前端</p>
@@ -27,7 +27,7 @@
     	</div>
 	</div>
 	
-	<div id="b" class="room blog on active">
+	<div id="b" class="room blog">
 		<div class="menu">
 			<h2 class="header">文章</h2>
 			<div class="list">
@@ -45,11 +45,11 @@
 		</div>
 	</div>
 
-	<div id="p" class="room photograph" data-href="h">
-		<ul class="gallery">
-			<li><img data-src="image/1.jpg" alt=""></li>
-			<li><img data-src="" alt=""></li>
-			<li><img data-src="" alt=""></li>
+	<div id="p" class="room photograph">
+		<ul class="gallery" data-href="h">
+			<li class="display" style="left: 20%; top: 40%;" data-i="0"><img data-src="image/1.jpg" alt=""></li>
+			<li data-i="1" style="left: 40%; top: 15%;"><img data-src="image/2.jpg" alt=""></li>
+			<li data-i="2" style="left: 50%; top: 25%;"><img data-src="image/3.jpg" alt=""></li>
 		</ul>
 	</div>
 
