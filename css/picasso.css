@@ -43,7 +43,6 @@ img {
   margin: auto;
   max-width: 100%;
   max-height: 100%;
-  transition: all .24s;
 }
 
 ::selection {
@@ -111,27 +110,106 @@ img {
   transform: translate3d(0, 0, 0);
 }
 
+.loading {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: opacity .24s;
+}
+
+.loading:before, .loading:after {
+  content: '\20';
+  margin: auto -.2em;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.loading:before {
+  margin-left: auto;
+  animation: loading 1s linear infinite;
+  background-color: #aaa;
+}
+
+.loading:after {
+  margin-right: auto;
+  animation: loading 1s linear .15s infinite;
+  background-color: #212121;
+}
+
+@keyframes loading {
+  50% {
+    transform: scale(1);
+  }
+}
+
 .gallery {
   height: 100%;
+  user-select: none;
 }
 
 .gallery > li {
   position: absolute;
   display: none;
-  max-width: 50%;
-  max-height: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .24s;
+  max-height: 100%;
 }
 
 .gallery > li.display {
   display: flex;
 }
 
-.gallery > li.zoom img {
-  margin: auto;
+.gallery > li.zoom {
+  left: 50% !important;
+  top: 50% !important;
+  width: 100%;
+  height: 100%;
 }
 
-.gallery img {
-  background-color: #f1f1f1;
+.w50 {
+  width: 50%;
+  left: 60%;
+  top: 40%;
+}
+
+.w43 {
+  width: 43%;
+  left: 40%;
+  top: 60%;
+}
+
+.h63 {
+  height: 63%;
+  left: 50%;
+  top: 50%;
+}
+
+.h50 {
+  height: 80%;
+  left: 42%;
+  top: 60%;
+}
+
+@media (max-width: 600px) {
+  .w50 {
+    width: 70%;
+  }
+  .w43 {
+    width: 62%;
+  }
+  .h63 {
+    width: 60%;
+  }
 }
 
 .blog,
@@ -144,6 +222,10 @@ img {
 .photograph.active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.photograph {
+  overflow: hidden;
 }
 
 .bio,
@@ -205,7 +287,7 @@ img {
   flex: 1;
   content: '\20';
   margin: 0 .8rem;
-  border-bottom: 1px dotted #212121;
+  border-bottom: 1px dashed #666;
   transition: all .24s;
 }
 
