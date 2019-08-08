@@ -64,34 +64,6 @@
         }
     }, true);
 
-    /* 兼容移动事件处理 */
-    var touched = false;
-    var touchEl = null;
-    function addEvent( el, evt, fn, options ){
-        if( ispc ){
-            el.addEventListener(evt, fn, options);
-        } else {
-            el.addEventListener('touchstart', function( e ){
-                touched = true;
-                touchEl = e.target;
-            }, options);
-            
-            if( evt === 'mousewheel' ){
-                el.addEventListener('touchmove', function( e ){
-                    if(e.targetTouches.length > 1 || e.scale && e.scale !== 1) return;
-                    e.preventDefault();
-                    var touch = e.targetTouches[0];
-
-                }, options);
-            }
-
-            el.addEventListener('touchend', function( e ){
-                fn.call( el, e );
-                touchEl = null;
-            });
-        }
-    }
-
     /* 节流封装 */
     function throttle( fn, ms ){
     	var t;

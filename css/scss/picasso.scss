@@ -100,7 +100,7 @@ img{
 	.h63{ width: 60%; }
 }
 
-.blog,
+.article,
 .photograph{
 	opacity: 0;
 	transform: translate3d(-20px, 0, 0);
@@ -111,6 +111,15 @@ img{
 }
 .photograph{
 	overflow: hidden;
+}
+.blog{
+	background-color: #212121;
+	opacity: 0;
+	transform: translate3d(0, 20px, 0);
+	&.active{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 .bio,
 .menu{
@@ -139,7 +148,7 @@ img{
 	}
 }
 .list{
-	margin: 0 0 32px;
+	margin: 20px 0 32px;
 	> .year {
 		text-align: right;
 		font-style: italic;
@@ -158,7 +167,7 @@ img{
 			flex: 1;
 			content: '\20';
 			margin: 0 .8rem;
-			border-bottom: 1px dashed #666;
+			border-bottom: 1px dotted #666;
 			transition: all .24s;
 		}
 		&:hover{
