@@ -113,13 +113,19 @@ img{
 	overflow: hidden;
 }
 .blog{
-	background-color: #212121;
 	opacity: 0;
 	transform: translate3d(0, 20px, 0);
 	&.active{
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
+}
+.iframe{
+	display: block;
+	box-sizing: border-box;
+	height: 100%; width: 812px;
+	margin: 0 auto;
+	border: none;
 }
 .bio,
 .menu{

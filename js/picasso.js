@@ -2,6 +2,7 @@
 
     var ispc = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? false : true;
     var cantAnimate = false;
+    var openView = new CustomEvent('open', { bubbles: true, cancelable: true });
 
 	doc.addEventListener('click', function( e ){
         var tar = e.target;
@@ -13,6 +14,7 @@
                 curr.classList.remove('on');
                 cantAnimate = false;
             }, 300);
+            room.dispatchEvent(openView);
             room.classList.add('on');
             room.offsetWidth;
             room.classList.add('active');
@@ -63,6 +65,11 @@
             li.classList.toggle('zoom');
         }
     }, true);
+
+    var blog = doc.getElementById('b');
+    blog.addEventListener('open', function(){
+        
+    });
 
     /* 节流封装 */
     function throttle( fn, ms ){
