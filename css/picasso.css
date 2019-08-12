@@ -24,7 +24,7 @@ li {
 }
 
 html, body {
-  font: calc(10px + .3vw) gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif;
+  font: calc(10px + .25vw) gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif;
   line-height: 1.425;
   letter-spacing: .04rem;
   color: #212121;
