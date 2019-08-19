@@ -4,7 +4,7 @@ h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
 a{ color: inherit; text-decoration: none; cursor: pointer; transition: all .24s; }
 li{ list-style: none; }
 html, body{
-	font: calc(10px + .25vw) gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif;
+	font: 14px gitan-latin, Helvetica, source-han-sans-cjk-sc, "Microsoft Yahei", sans-serif;
 	line-height: 1.425; letter-spacing: .04rem;
 	color: #212121;
 	overflow: hidden;
@@ -120,10 +120,26 @@ img{
 		transform: translate3d(0, 0, 0);
 	}
 }
+.content{
+	position: relative;
+	height: 100%;
+	width: 720px;
+	max-width: 100%;
+	margin: 0 auto;
+	> .header {
+		position: absolute; z-index: 101;
+		right: 4px; top: 12px;
+	}
+	.btn{
+		margin-left: 12px;
+		padding: 4px 6px;
+		font-size: 1.5em;
+	}
+}
 .iframe{
 	display: block;
 	box-sizing: border-box;
-	height: 100%; width: 812px;
+	height: 100%; width: 100%;
 	margin: 0 auto;
 	border: none;
 }
@@ -215,4 +231,8 @@ img{
 	> .link {
 		margin-left: .4rem;
 	}
+}
+
+.paper{
+	padding: 0 12px;
 }

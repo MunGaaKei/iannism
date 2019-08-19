@@ -2,7 +2,10 @@
 
     var ispc = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? false : true;
     var cantAnimate = false;
-    var openView = new CustomEvent('open', { bubbles: true, cancelable: true });
+    var evts = {
+        open: new CustomEvent('open', { bubbles: true, cancelable: true }),
+        close: new CustomEvent('close', { bubbles: true, cancelable: true })
+    }
 
 	doc.addEventListener('click', function( e ){
         var tar = e.target;
@@ -12,9 +15,10 @@
             curr.classList.remove('active');
             cantAnimate = setTimeout(function(){
                 curr.classList.remove('on');
+                curr.dispatchEvent(evts.close);
                 cantAnimate = false;
             }, 300);
-            room.dispatchEvent(openView);
+            room.dispatchEvent(evts.open);
             room.classList.add('on');
             room.offsetWidth;
             room.classList.add('active');
@@ -22,8 +26,17 @@
     }, false);
 
     var blog = doc.getElementById('b');
-    blog.addEventListener('open', function(){
+    var iframe = blog.querySelector('.iframe');
+    iframe.addEventListener('load', function(){
+        console.log('iframe loaded');
         
+    });
+    blog.addEventListener('close', function(){
+        // stop load iframe
+        var loading = this.querySelector('.loading');
+        if( !loading ){
+            
+        }
     });
 
     /* 节流封装 */
