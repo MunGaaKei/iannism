@@ -25,17 +25,22 @@
         }
     }, false);
 
-    var blog = doc.getElementById('b');
-    var iframe = blog.querySelector('.iframe');
+    var reading = doc.getElementById('r');
+    var iframe = reading.querySelector('.iframe');
     iframe.addEventListener('load', function(){
-        console.log('iframe loaded');
-        
+        var loading  = reading.querySelector('.loading');
+        if( loading ){
+            loading.classList.add('fading');
+            setTimeout(function(){ loading.remove(); }, 256);
+        }
     });
-    blog.addEventListener('close', function(){
-        // stop load iframe
+    reading.addEventListener('close', function(){
+        iframe.setAttribute('src', 'javascript:;');
         var loading = this.querySelector('.loading');
         if( !loading ){
-            
+            loading = doc.createElement('DIV');
+            loading.className = 'loading';
+            reading.appendChild( loading );
         }
     });
 

@@ -8,18 +8,18 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://use.typekit.net/tps0vhc.css">
-<link rel="stylesheet" href="https://at.alicdn.com/t/font_172279_bj0wz1c22gc.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_172279_if9o5ofrm9e.css">
 <link rel="stylesheet" media="screen" href="css/picasso.css">
 <title> : )</title>
 </head>
 <body>
 
-    <div id="h" class="room home on active">
+    <div id="h" class="room home">
       	<div class="bio">
 			<h1>满 家淇</h1>
 			<p>前端</p>
 			<br>
-			<p>偶尔写写<a class="link">代码</a>，偶尔偶尔发布<a class="link" data-href="a">文章</a>和<a class="link" data-href="p">图像</a></p>
+			<p>偶尔写写<a class="link">代码</a>，偶尔偶尔发布<a class="link" data-href="b">文章</a>和<a class="link" data-href="p">图像</a></p>
 			<p class="contact">
 				<a href="mailto:50297575@qq.com" class="link" title="写邮件"><i class="iconfont icon-mail"></i></a>
 				<a href="https://weibo.com/u/1807771927/" class="link" target="_blank" title="微博"><i class="iconfont icon-weibo"></i></a>
@@ -27,13 +27,13 @@
     	</div>
 	</div>
 	
-	<div id="a" class="room article">
+	<div id="b" class="room blog">
 		<div class="menu">
 			<h2 class="header">文章</h2>
 			<div class="list">
 				<h3 class="year">2019</h3>
-				<a href="javascript:;" class="li" data-date="Feb.23">MASIV 创作</a>
-				<a href="articles/tpl.html" class="li" data-href="b" data-date="Jan.1" target="blog">一些代码技巧</a>
+				<a href="javascript:;" class="li" data-href="r" data-date="Feb.23" target="blog">MASIV 创作</a>
+				<a href="articles/tpl.html" class="li" data-href="r" data-date="Jan.1" target="blog">一些代码技巧</a>
 			</div>
 			<footer class="footer">
 				<a class="link" data-href="h">返回</a>
@@ -41,18 +41,24 @@
 		</div>
 	</div>
 
-	<div id="b" class="room blog">
+	<div id="r" class="room reading">
 		<div class="content">
-			<header class="header">
-				<a data-href="a" class="btn iconfont icon-close"></a>
-			</header>
+			<aside class="sider">
+				<a data-href="b" class="btn iconfont icon-planet"></a>
+				<!-- <a class="btn iconfont icon-share"></a> -->
+			</aside>
 			<iframe name="blog" class="iframe"></iframe>
-			<div class="loading"></div>
 		</div>
+		<div class="loading"></div>
 	</div>
 
-	<div id="p" class="room photograph" data-href="h">
-		
+	<div id="p" class="room photograph on active" data-href="h">
+		<ul class="album">
+			<li><img src="/image/1.jpg" alt=""></li>
+			<li><img src="/image/3.jpg" alt=""></li>
+			<li><img src="/image/4.jpg" alt=""></li>
+			<li><img src="/image/2.jpg" alt=""></li>
+		</ul>
 	</div>
 
 <script src="js/picasso.js"></script>
