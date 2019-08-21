@@ -44,6 +44,15 @@
         }
     });
 
+    var photograhp = doc.getElementById('p');
+    photograhp.addEventListener('click', function( e ){
+        var tar = e.target;
+        if( tar.matches('img') ){
+            console.log(tar);
+            // tar.complete;
+        }
+    }, true);
+
     /* 节流封装 */
     function throttle( fn, ms ){
     	var t;

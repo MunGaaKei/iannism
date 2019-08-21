@@ -157,66 +157,6 @@ img {
   }
 }
 
-.gallery {
-  height: 100%;
-  user-select: none;
-}
-
-.gallery > li {
-  position: absolute;
-  display: none;
-  transform: translate(-50%, -50%);
-  transition: all .24s;
-  max-height: 100%;
-}
-
-.gallery > li.display {
-  display: flex;
-}
-
-.gallery > li.zoom {
-  left: 50% !important;
-  top: 50% !important;
-  width: 100%;
-  height: 100%;
-}
-
-.w50 {
-  width: 50%;
-  left: 60%;
-  top: 40%;
-}
-
-.w43 {
-  width: 43%;
-  left: 40%;
-  top: 60%;
-}
-
-.h63 {
-  height: 63%;
-  left: 50%;
-  top: 50%;
-}
-
-.h50 {
-  height: 80%;
-  left: 42%;
-  top: 60%;
-}
-
-@media (max-width: 600px) {
-  .w50 {
-    width: 70%;
-  }
-  .w43 {
-    width: 62%;
-  }
-  .h63 {
-    width: 60%;
-  }
-}
-
 .blog,
 .photograph {
   opacity: 0;
@@ -235,38 +175,18 @@ img {
 
 .album {
   position: absolute;
-  left: 25%;
-  top: 20%;
-  width: 40%;
-  height: 60%;
+}
+
+.album img {
+  position: absolute;
+  transform: translate(-50%, -50%);
   max-width: 240px;
   max-height: 260px;
 }
 
 .album > li {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  display: flex;
+  position: relative;
   transition: all .24s;
-}
-
-.album > li:nth-child(1) {
-  transform: rotate(3deg);
-}
-
-.album > li:nth-child(2) {
-  transform: rotate(10deg);
-}
-
-.album > li:nth-child(3) {
-  transform: rotate(-6deg);
-}
-
-.album > li:nth-child(4) {
-  transform: rotate(-12deg);
 }
 
 .album > li:hover {
@@ -277,20 +197,41 @@ img {
   z-index: 1;
 }
 
-.album:hover > li:nth-child(1) {
-  transform: rotate(3deg) translate(-30%, -40%);
+.alb-30 {
+  left: 30%;
+  top: 30%;
 }
 
-.album:hover > li:nth-child(2) {
-  transform: rotate(10deg) translate(30%, -20%);
+.alb-30 > li:nth-child(1) {
+  transform: rotate(6deg);
 }
 
-.album:hover > li:nth-child(3) {
-  transform: rotate(-6deg) translate(0, 30%);
+.alb-30 > li:nth-child(2) {
+  transform: rotate(-6deg);
 }
 
-.album:hover > li:nth-child(4) {
-  transform: rotate(-12deg) translate(-10%, 10%);
+.alb-30 > li:nth-child(3) {
+  transform: rotate(10deg);
+}
+
+.alb-30 > li:nth-child(4) {
+  transform: rotate(-12deg);
+}
+
+.alb-30:hover > li:nth-child(1) {
+  transform: rotate(6deg) translate(100px, 0);
+}
+
+.alb-30:hover > li:nth-child(2) {
+  transform: rotate(-6deg) translate(-100px, 0);
+}
+
+.alb-30:hover > li:nth-child(3) {
+  transform: rotate(10deg) translate(30px, 60px);
+}
+
+.alb-30:hover > li:nth-child(4) {
+  transform: rotate(-12deg) translate(-20px, -80px);
 }
 
 .reading {
