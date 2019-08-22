@@ -8,7 +8,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://use.typekit.net/tps0vhc.css">
-<link rel="stylesheet" href="https://at.alicdn.com/t/font_172279_if9o5ofrm9e.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_172279_1yswccv9v2h.css">
 <link rel="stylesheet" media="screen" href="css/picasso.css">
 <title> : )</title>
 </head>
@@ -27,13 +27,14 @@
     	</div>
 	</div>
 	
-	<div id="b" class="room blog">
+	<div id="b" class="room blog on active">
 		<div class="menu">
 			<h2 class="header">文章</h2>
 			<div class="list">
 				<h3 class="year">2019</h3>
-				<a href="javascript:;" class="li" data-href="r" data-date="Feb.23" target="blog">MASIV 创作</a>
-				<a href="articles/tpl.html" class="li" data-href="r" data-date="Jan.1" target="blog">一些代码技巧</a>
+				<a href="javascript:;" class="li" data-href="r" data-date="Mar.3" target="blog">一些代码技巧</a>
+				<a href="articles/masiv.html" class="li" data-href="r" data-date="Feb.23" target="blog">MASIV & 设计思想</a>
+				<a href="articles/tpl.html" class="li" data-href="r" data-date="Jan.1" target="blog">模板页面</a>
 			</div>
 			<footer class="footer">
 				<a class="link" data-href="h">返回</a>
@@ -43,22 +44,27 @@
 
 	<div id="r" class="room reading">
 		<div class="content">
-			<aside class="sider">
-				<a data-href="b" class="btn iconfont icon-planet"></a>
+			<header class="header">
 				<!-- <a class="btn iconfont icon-share"></a> -->
-			</aside>
+				<a data-href="b" class="btn iconfont icon-menu"></a>
+			</header>
 			<iframe name="blog" class="iframe"></iframe>
 		</div>
 		<div class="loading"></div>
 	</div>
 
-	<div id="p" class="room photograph on active" data-href="h">
-		<ul class="album alb-30">
-			<li><img src="/image/1.jpg" alt=""></li>
-			<li><img src="/image/3.jpg" alt=""></li>
-			<li><img src="/image/4.jpg" alt=""></li>
-			<li><img src="/image/2.jpg" alt=""></li>
+	<div id="p" class="room photograph" data-href="h">
+		<ul class="album alb-1">
+			<li><img data-src="/image/1.jpg" alt="" class="waiting" data-album="cloud"></li>
+			<li><img data-src="/image/3.jpg" alt="" class="waiting" data-album="cloud"></li>
+			<li><img data-src="/image/4.jpg" alt="" class="waiting" data-album="cloud"></li>
+			<li><img data-src="/image/2.jpg" alt="" class="waiting" data-album="cloud"></li>
 		</ul>
+	</div>
+
+	<div id="f" class="room frame" data-href="p">
+		<div class="framer"><img data-href="p"></div>
+		<ul class="thumbs"></ul>
 	</div>
 
 <script src="js/picasso.js"></script>

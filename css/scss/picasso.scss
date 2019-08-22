@@ -17,6 +17,7 @@ img{
 	display: block;
 	margin: auto;
 	max-width: 100%; max-height: 100%;
+	transition: all .24s;
 }
 ::selection{ background-color: #cce2ff; color: rgba(0,0,0,.87); }
 ::-webkit-scrollbar{ width: 6px; height: 6px; }
@@ -83,42 +84,34 @@ img{
 		transform: translate3d(0, 0, 0);
 	}
 }
-.photograph{
-	overflow: hidden;
-}
 .album{
-	position: absolute;
 	img{
-		position: absolute;
-		transform: translate(-50%, -50%);
-		max-width: 240px; max-height: 260px;
+		&.waiting{ opacity: 0; }
 	}
 	> li {
 		position: relative;
+		filter: grayscale(.8);
 		transition: all .24s;
-		&:hover{ z-index: 1; }
-	}
-	&:hover{
-		z-index: 1;
-	}
-}
-.alb-30{
-	left: 30%; top: 30%;
-	> li {
-		&:nth-child(1){ transform: rotate(6deg); }
-		&:nth-child(2){ transform: rotate(-6deg); }
-		&:nth-child(3){ transform: rotate(10deg); }
-		&:nth-child(4){ transform: rotate(-12deg); }
-	}
-	&:hover{
-		> li {
-			&:nth-child(1){ transform: rotate(6deg) translate(100px, 0); }
-			&:nth-child(2){ transform: rotate(-6deg) translate(-100px, 0); }
-			&:nth-child(3){ transform: rotate(10deg) translate(30px, 60px); }
-			&:nth-child(4){ transform: rotate(-12deg) translate(-20px, -80px); }
+		&:hover{
+			z-index: 1;
+			filter: grayscale(0);
 		}
 	}
 }
+.frame{
+	opacity: 0;
+	transform: scale(1.05);
+	&.active{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.framer{
+	position: absolute;
+	left: 12px; top: 12px; right: 12px; bottom: 12px;
+	display: flex;
+}
+
 .reading{
 	opacity: 0;
 	transform: translate3d(0, 20px, 0);
@@ -133,11 +126,23 @@ img{
 	width: 720px;
 	max-width: 100%;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	> .header {
+		position: absolute; z-index: 101;
+		right: 24px; top: 10px;
+		display: flex;
+		.btn{
+			font-size: 1.2em;
+			+ .btn {
+				margin-left: 1em;
+			}
+		}
+	}
 }
 .iframe{
-	display: block;
-	box-sizing: border-box;
-	width: 100%; height: 100%;
+	flex: 1;
+	width: 100%;
 	margin: 0 auto;
 	border: none;
 }
@@ -231,37 +236,18 @@ img{
 	}
 }
 
-.sider {
-	position: absolute; z-index: 101;
-	left: 100%; top: 50%;
-	transform: translate(4px, -50%);
-	display: flex;
-	flex-direction: column;
-	transition: all .24s;
-	.btn{
-		width: 30px; height: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 1.2em;
-		border-radius: 2px;
-		background-color: rgba(255,255,255,.86);
-		&:hover{
-			background-color: #e1eeff;
-		}
-		+ .btn { margin-top: 4px; }
-	}
-}
 /* 文章内页 */
 .page{
 	box-sizing: border-box;
-	height: 100%;
+	height: 100%; width: 100%;
 	display: flex;
 	overflow-y: auto; overflow-x: hidden;
 }
 .article{
 	margin: auto;
+	box-sizing: border-box;
 	padding: 72px 12px;
+	width: 720px;
 	> h1 {
 		position: sticky;
 		top: -1px;
@@ -273,9 +259,67 @@ img{
 	}
 }
 
-@media (max-width: 860px) {
-	.sider{
-		left: auto; right: 0;
-		transform: translate(-16px, -50%);
+@media (max-width: 1200px) {
+	.alb-1{ left: 30%; }
+	.alb-2{ left: 70%; }
+}
+
+@media (min-width: 860px) {
+	.photograph{
+		overflow: hidden;
+	}
+	.album{
+		position: absolute;
+		img{
+			position: absolute;
+			transform: translate(-50%, -50%);
+			max-width: 240px; max-height: 260px;
+		}
+		> li {
+			height: unset !important;
+		}
+		&:hover{
+			z-index: 1;
+			> li {
+				&:nth-child(5n+1){ transform: rotate(-12deg) translate(20px, 0); }
+				&:nth-child(5n+2){ transform: rotate(16deg) translate(20px, 120px); }
+				&:nth-child(5n+3){ transform: rotate(-6deg) translate(-150px, 0); }
+				&:nth-child(5n+4){ transform: rotate(-12deg) translate(60px, -100px); }
+				&:nth-child(5n){ transform: rotate(12deg) translate(200px, 0); }
+			}
+		}
+	}
+	.alb-1{
+		left: 33.3333%; top: 50%;
+		> li {
+			&:nth-child(5n+1){ transform: rotate(12deg); }
+			&:nth-child(5n+2){ transform: rotate(-16deg); }
+			&:nth-child(5n+3){ transform: rotate(20deg); }
+			&:nth-child(5n+4){ transform: rotate(8deg); }
+			&:nth-child(5n){ transform: rotate(-6deg); }
+		}
+	}
+	.alb-2{
+		left: 66.6667%; top: 50%;
+		> li {
+			&:nth-child(5n+1){ transform: rotate(-10deg); }
+			&:nth-child(5n+2){ transform: rotate(14deg); }
+			&:nth-child(5n+3){ transform: rotate(-18deg); }
+			&:nth-child(5n+4){ transform: rotate(-4deg); }
+			&:nth-child(5n){ transform: rotate(-24deg); }
+		}
+	}
+}
+
+@media (max-width: 859px) {
+	.album{
+		> li {
+			margin: 40px 0;
+			height: 160px;
+			overflow: hidden;
+		}
+		img{
+			max-width: 100%; max-height: unset;
+		}
 	}
 }
