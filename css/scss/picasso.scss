@@ -12,6 +12,9 @@ html, body{
 	text-size-adjust: none;
 	-webkit-tap-highlight-color: transparent;
 }
+kbd, code{ margin: 0 .2em; padding: .1em .4em; font-family: Consolas; border-radius: .2em; }
+code{ background-color: rgba(#212121, .1); color: #212121; }
+kbd{ background-color: #fff; color: #212121; border-right: 1px solid #e6e6e6; border-bottom: 2px solid #e6e6e6; }
 input, textarea{ font: inherit; }
 img{
 	display: block;
@@ -249,13 +252,16 @@ img{
 	padding: 72px 12px;
 	width: 720px;
 	> h1 {
-		position: sticky;
+		position: sticky; z-index: 1;
 		top: -1px;
 		margin: 1em 0;
 		padding-bottom: 4px;
 		background-color: #fff;
 		font-size: 2em;
 		&:first-child{ margin-top: 0; }
+	}
+	> p {
+		margin-top: 1rem;
 	}
 }
 
