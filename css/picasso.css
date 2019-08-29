@@ -406,7 +406,7 @@ img {
   margin-top: 0;
 }
 
-.article > p {
+.article > p + p {
   margin-top: 1rem;
 }
 
