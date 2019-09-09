@@ -406,8 +406,9 @@ img {
   margin-top: 0;
 }
 
-.article > p + p {
-  margin-top: 1rem;
+.article > p {
+  margin: 1rem 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 1200px) {
