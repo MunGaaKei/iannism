@@ -395,8 +395,33 @@ img {
   line-height: 1.5;
 }
 
-.article > img {
-  margin: 2rem auto;
+.img-wait {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.img-wait:after {
+  content: attr(data-alt);
+  display: block;
+  font-weight: 700;
+}
+
+.img-wait img {
+  margin: 0 4px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+.img {
+  margin: 2em 0;
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (min-width: 720px) {
