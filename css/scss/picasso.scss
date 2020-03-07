@@ -277,7 +277,6 @@ img{
 	transition: all .24s;
 	pointer-events: none;
 	overflow: auto;
-	backdrop-filter: blur(12px);
 }
 .backdrop.active {
 	pointer-events: unset;
