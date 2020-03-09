@@ -34,6 +34,7 @@ img{
 .room{
 	position: absolute;
 	left: 0; top: 0; right: 0; bottom: 0;
+	padding: 12px;
 	display: none;
 	overflow-x: hidden;
 	transition: all .24s;
@@ -87,6 +88,46 @@ img{
 		transform: translate3d(0, 0, 0);
 	}
 }
+.grids{
+	box-sizing: border-box;
+	margin: 20vh auto;
+	padding: 0 60px;
+	width: 980px;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	> li {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 25%;
+		transition: all .24s;
+		&:hover{
+			z-index: 1;
+		}
+	}
+	.waiting {
+		opacity: 0;
+	}
+	img {
+		max-width: 120%;
+		max-height: 200px;
+		transform: translate(-10%, 0);
+		filter: grayscale(.86);
+		border-radius: 4px;
+		&:hover{
+			box-shadow: 4px 12px 20px rgba(0,0,0,.25);
+			filter: grayscale(0);
+		}
+	}
+}
+@media (max-width: 760px) {
+	.grids > li { width: 33.3333%; }
+}
+@media (max-width: 600px) {
+	.grids > li { width: 50%; }
+}
+
 .frame{
 	opacity: 0;
 	transform: scale(1.05);
@@ -94,11 +135,10 @@ img{
 		opacity: 1;
 		transform: scale(1);
 	}
-}
-.framer{
-	position: absolute;
-	left: 12px; top: 12px; right: 12px; bottom: 12px;
-	display: flex;
+	&.on{ display: flex; }
+	img {
+		max-height: unset;
+	}
 }
 
 .reading{
@@ -117,7 +157,7 @@ img{
 	flex-direction: column;
 	> .header {
 		position: absolute; z-index: 101;
-		right: 12px; top: 10px;
+		right: 12px; top: 7px;
 		display: flex;
 		.btn{
 			font-size: 1.2em;
@@ -142,7 +182,7 @@ img{
 	min-height: 100%; max-width: 100%;
 }
 .menu{
-	padding: 20vh 16px 40px;
+	padding: 20vh 0;
 	> .header,
 	> .footer {
 		position: sticky; z-index: 1;
@@ -270,7 +310,7 @@ img{
 	z-index: 10;
 	left: 0; top: 0; bottom: 0; right: 0;
 	padding: 12px;
-	background: rgba(255,255,255,.5);
+	background: rgba(255,255,255,.94);
 	display: flex;
 	justify-content: center;
 	opacity: 0;
