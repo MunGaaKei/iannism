@@ -112,7 +112,6 @@ img {
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 12px;
   display: none;
   overflow-x: hidden;
   transition: all .24s;
@@ -190,6 +189,10 @@ img {
   transform: translate3d(0, 0, 0);
 }
 
+.photograph {
+  padding: 12px;
+}
+
 .grids {
   box-sizing: border-box;
   margin: 20vh auto;
@@ -242,6 +245,7 @@ img {
 }
 
 .frame {
+  padding: 12px;
   opacity: 0;
   transform: scale(1.05);
 }
@@ -281,7 +285,7 @@ img {
   position: absolute;
   z-index: 101;
   right: 12px;
-  top: 7px;
+  top: 10px;
   display: flex;
 }
 
