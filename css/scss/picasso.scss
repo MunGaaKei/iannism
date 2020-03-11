@@ -1,7 +1,7 @@
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,figure,fieldset,legend,button,img,input,textarea,th,td{margin:0;padding:0;border:0;}
 h1,h2,h3,h4,h5,h6,p,article,section,body{line-height: 1.425;}
-a{ color: inherit; text-decoration: none; cursor: pointer; transition: all .24s; }
+a, button{ color: inherit; text-decoration: none; cursor: pointer; transition: all .24s; }
 li{ list-style: none; }
 html, body{
 	font: 14px Consolas, Helvetica, "Microsoft Yahei", sans-serif;
@@ -15,7 +15,18 @@ html, body{
 kbd, code{ margin: 0 .2em; padding: .1em .4em; font-family: Consolas; border-radius: .2em; }
 code{ background-color: rgba(#212121, .1); color: #212121; }
 kbd{ background-color: #fff; color: #212121; border-right: 1px solid #e6e6e6; border-bottom: 2px solid #e6e6e6; }
-input, textarea{ font: inherit; }
+input, textarea, button{
+	padding: 6px 12px;
+	font: inherit;
+	background-color: #efefef;
+	border-radius: 4px;
+	outline: none;
+	transition: all .24s;
+}
+input:focus, textarea:focus{
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
 img{
 	display: block;
 	margin: auto;
@@ -160,7 +171,7 @@ img{
 	flex-direction: column;
 	> .header {
 		position: absolute; z-index: 101;
-		right: 12px; top: 10px;
+		right: 12px; top: 12px;
 		display: flex;
 		.btn{
 			font-size: 1.2em;
@@ -282,31 +293,53 @@ img{
 	> h1 {
 		position: sticky; z-index: 1;
 		top: -1px;
-		margin: 1em 0;
-		padding-bottom: 4px;
+		margin: 1em -12px;
+		padding: 4px 12px;
 		background-color: #fff;
 		font-size: 2em;
 		&:first-child{ margin-top: 0; }
 	}
-	> p{
+	p{
 		margin: 1rem 0;
 		line-height: 1.5;
 	}
 }
+.img-wait{
+	display: flex;
+	align-items: center;
+	color: #7aa559;
+	font-style: italic;
+}
 .img-wait:after{
 	content: attr(data-alt);
-	display: block;
-	font-weight: 700;
-	font-style: italic;
-	color: #7aa559;
+	font-family: Consolas, Helvetica, "Microsoft Yahei", sans-serif;
 }
 .img-wait img{
+	margin: 0 4px;
+	width: 0;
 	height: 0;
 	opacity: 0;
 }
 .img{
 	margin: 2em 0;
 	opacity: 1;
+}
+code, kbd{
+	display: inline-block;
+	margin: 0 4px;
+    padding: 0 6px;
+    font-family: Consolas;
+	border-radius: 3px;
+}
+kbd{
+	background-color: #4a4a4a;
+    color: #fff;
+    border-right: 1px solid #000;
+	border-bottom: 2px solid #1a1a1a;
+}
+code{
+	background-color: #f1f1f1;
+	color: #4c70ff;
 }
 .backdrop{
 	position: fixed;
