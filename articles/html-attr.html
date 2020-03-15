@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
+<link rel="stylesheet" media="screen" href="../css/prism.css">
 <link rel="stylesheet" media="screen" href="../css/picasso.css">
 <title>标题</title>
 <style>
@@ -16,27 +17,73 @@
         border-radius: 4px;
     }
     .section > h3 {
-        color: #0098f7;
+        border-left: 4px solid #212121;
+        padding-left: .5em;
+        color: #212121;
+    }
+    .params > li {
+        margin: 4px 0;
+        display: flex;
+        align-items: baseline;
+    }
+    .key {
+        margin-right: 1em;
+        background: #deffd1;
+        font-weight: 700;
     }
 </style>
 </head>
 <body class="page">
 
     <article class="article">
-        <h1>属性</h1>
-        <p>记录及说明了部分个人觉得比较有帮助的HTML节点属性。</p>
+        <h1>HTML 节点属性</h1>
+        <p>记录及说明了部分个人觉得比较有帮助的HTML节点属性，持续更新。</p>
+
         <section id="accesskey" class="section">
             <h3>accesskey</h3>
-            <p>通过快捷键访问该节点，该节点需具备可通过<kbd>TAB</kbd>获取焦点的条件。如<code>&lt;input accesskey="k"&gt;</code>，此时可通过<kbd>Alt</kbd>+<kbd>k</kbd>进行获取焦点:</p>
-            <input type="text" accesskey="k" placeholder="press key Alt & K" enterKeyHint="done">
+            <p>通过快捷键访问该节点，该节点需具备可通过<kbd>TAB</kbd>获取焦点的条件，可通过<kbd>Alt</kbd>+<kbd>k</kbd>进行获取焦点:</p>
+<pre class="language-html">
+    <code class="language-html">
+&lt;input type="text" accesskey="k" placeholder="press key Alt + K">
+    </code>
+</pre>
+            <input type="text" accesskey="k" placeholder="press key Alt + K">
         </section>
+
+        <section id="contenteditable" class="section">
+            <h3>contentEditable</h3>
+            <p>将节点内容变为可编辑状态，通常用于开发富文本编辑器。可选并且常用的值有：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">contenteditable:</h5>
+                    <span contenteditable>富文本形式</span>
+                </li>
+                <li>
+                    <h5 class="key">plaintext-only:</h5>
+                    <span contenteditable="plaintext-only">纯文本输入</span>
+                </li>
+            </ul>
+        </section>
+
         <section id="enterkeyhint" class="section">
             <h3>enterKeyHint</h3>
-            <p>指定在操作表单元素时</p>
-            <input type="text">
+            <p>屏幕键盘中<kbd>Enter</kbd>键显示的文本。</p>
         </section>
+
+        <section id="tabindex" class="section">
+            <h3>tabIndex</h3>
+            <p>当值大于或等于0时，节点可以被<kbd>Tab</kbd>键索引，一般默认值为-1。</p>
+        </section>
+
+
     </article>
 
+<script src="../js/prism.js"></script>
 <script src="../js/article.js"></script>
+<script>
+;(function(doc){
+
+})(document);
+</script>
 </body>
 </html>

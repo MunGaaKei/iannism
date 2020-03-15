@@ -329,7 +329,7 @@ code, kbd{
 	margin: 0 4px;
     padding: 0 6px;
     font-family: Consolas;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 kbd{
 	background-color: #4a4a4a;
@@ -338,8 +338,8 @@ kbd{
 	border-bottom: 2px solid #1a1a1a;
 }
 code{
-	background-color: #f1f1f1;
-	color: #4c70ff;
+	background-color: #282c34;
+	color: #ff8f88;
 }
 .backdrop{
 	position: fixed;
