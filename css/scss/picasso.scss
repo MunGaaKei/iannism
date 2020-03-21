@@ -196,7 +196,7 @@ img{
 	min-height: 100%; max-width: 100%;
 }
 .menu{
-	padding: 20vh 0;
+	padding: 20vh 12px;
 	> .header,
 	> .footer {
 		position: sticky; z-index: 1;
@@ -258,6 +258,7 @@ img{
 }
 .link{
 	position: relative;
+	white-space: nowrap;
 	&:before{
 		content: '\20';
 		position: absolute; z-index: -1;
@@ -305,19 +306,10 @@ img{
 	}
 }
 .img-wait{
-	display: flex;
-	align-items: center;
-	color: #7aa559;
-	font-style: italic;
-}
-.img-wait:after{
-	content: attr(data-alt);
-	font-family: Consolas, Helvetica, "Microsoft Yahei", sans-serif;
+	height: 120px;
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 .img-wait img{
-	margin: 0 4px;
-	width: 0;
-	height: 0;
 	opacity: 0;
 }
 .img{

@@ -9,35 +9,14 @@
 <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
 <link rel="stylesheet" media="screen" href="../css/prism.css">
 <link rel="stylesheet" media="screen" href="../css/picasso.css">
-<title>标题</title>
-<style>
-    .section {
-        margin: 40px -12px;
-        padding: 12px;
-        border-radius: 4px;
-    }
-    .section > h3 {
-        border-left: 4px solid #212121;
-        padding-left: .5em;
-        color: #212121;
-    }
-    .params > li {
-        margin: 4px 0;
-        display: flex;
-        align-items: baseline;
-    }
-    .key {
-        margin-right: 1em;
-        background: #deffd1;
-        font-weight: 700;
-    }
-</style>
+<link rel="stylesheet" media="screen" href="assets/attrs.css">
+<title>HTML 节点属性</title>
 </head>
 <body class="page">
 
     <article class="article">
         <h1>HTML 节点属性</h1>
-        <p>记录及说明了部分个人觉得比较有帮助的HTML节点属性，持续更新。</p>
+        <p>记录及整理了部分个人觉得比较有帮助的HTML节点属性，持续更新。</p>
 
         <section id="accesskey" class="section">
             <h3>accesskey</h3>
@@ -47,7 +26,36 @@
 &lt;input type="text" accesskey="k" placeholder="press key Alt + K">
     </code>
 </pre>
-            <input type="text" accesskey="k" placeholder="press key Alt + K">
+            <input type="text" name="name" accesskey="k" placeholder="press key Alt + K">
+        </section>
+
+        <section id="enterkeyhint" class="section">
+            <h3>enterKeyHint</h3>
+            <p>屏幕键盘中<kbd>Enter</kbd>键显示的文本。</p>
+        </section>
+
+        <section id="autocomplete" class="section">
+            <h3>autocomplete</h3>
+            <p>一般情况下，遇到相同<code>name</code>值的输入框时，浏览器会将之前记录的填入值以类似下拉框的形式显示出来，以便你可以迅速填入，默认为<code>on</code>开启。</p>
+            <p>如果想要清除其中某个候选值，可以使用↑↓键选中，然后按下<kbd>Shift</kbd>+<kbd>Del</kbd>键。<code>Mac</code>系统还需多按一个<kbd>fn</kbd>键。最新版<code>Edge</code>浏览器则会出现对应的按钮。</p>
+            <p>可选的值有：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">on:</h5>
+                    <span>开启</span>
+                </li>
+                <li>
+                    <h5 class="key">off:</h5>
+                    <span>关闭</span>
+                </li>
+            </ul>
+            <p><a id="tgl-autocomplete" class="link">点击这里</a>切换下面输入框的自动填写开启关闭。</p>
+<pre class="language-html">
+    <code class="language-html">
+&lt;input type="text" name="name" autocomplete="on">
+    </code>
+</pre>
+            <input id="ipt-autocomplete" type="text" name="name" autocomplete="on">
         </section>
 
         <section id="contenteditable" class="section">
@@ -65,16 +73,100 @@
             </ul>
         </section>
 
+        <section id="disabled" class="section">
+            <h3>disabled</h3>
+            <p>常用于禁用表单控件，可搭配<b>CSS</b><code>:disabled</code>选择器使用：</p>
+<pre class="language-css">
+    <code class="language-css">
+input:disabled{
+    background: #ffecec;
+    cursor: not-allowed;
+}
+    </code>
+</pre>
+            <input type="text" disabled placeholder="鼠标悬停禁用手势">
+        </section>
+
         <section id="enterkeyhint" class="section">
             <h3>enterKeyHint</h3>
             <p>屏幕键盘中<kbd>Enter</kbd>键显示的文本。</p>
         </section>
 
-        <section id="tabindex" class="section">
-            <h3>tabIndex</h3>
-            <p>当值大于或等于0时，节点可以被<kbd>Tab</kbd>键索引，一般默认值为-1。</p>
+        <section id="list" class="section">
+            <h3>list</h3>
+            <p>与<code>autocomplete</code>的功能一样，通过这个属性可以设置输入框的推荐填入值列表，与<code>&lt;datalist&gt;</code>标签搭配使用：</p>
+<pre class="language-html">
+    <code class="language-html">
+&lt;input type="text" list="list-recommand" name="name">
+&lt;datalist id="list-recommand">
+    &lt;option value="Jesse Lee">Jesse&lt;/option>
+    &lt;option value="Stephen Chow">Stephen&lt;/option>
+    &lt;option value="Jay Chow">Jay&lt;/option>
+&lt;/datalist>
+    </code>
+</pre>
+            <p>类似<code>&lt;select&gt;</code>控件，示例：</p>
+            <input type="text" list="list-recommand" name="name">
+            <datalist id="list-recommand">
+                <option value="Jesse Lee">Jesse</option>
+                <option value="Stephen Chow">Stephen</option>
+                <option value="Jay Chow">Jay</option>
+            </datalist>
         </section>
 
+        <section id="oncontextmenu" class="section">
+            <h3>oncontextmenu</h3>
+            <p>设置一个节点的鼠标右键按钮事件，一般常用于禁止右键点击弹出上下文。用法如下：<a oncontextmenu="return false;" class="link">右键点击我</a>将不会弹出上下文窗口。</p>
+<pre class="language-html">
+    <code class="language-html">
+&lt;a oncontextmenu="return false;">右键点击我&lt;/a>
+    </code>
+</pre>
+        </section>
+
+        <section id="spellcheck" class="section">
+            <h3>spellcheck</h3>
+            <p>检查拼写，一般仅对输入框有效果（<span style="text-decoration: red wavy underline;">红色波浪线</span>提示），默认为<code>true</code>开启。</p>
+            <p>可选的值有：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">true:</h5>
+                    <span>开启</span>
+                </li>
+                <li>
+                    <h5 class="key">false:</h5>
+                    <span>关闭</span>
+                </li>
+            </ul>
+            <p>如果觉得影响美观，<a id="tgl-spellcheck" class="link">点击这里</a>可以切换下面输入框的拼写检查开启关闭。</p>
+<pre class="language-html">
+    <code class="language-html">
+&lt;input type="text" spellcheck value="spellchcek">
+    </code>
+</pre>
+            <input id="ipt-spellcheck" type="text" spellcheck value="spellchcek">
+        </section>
+
+        <section id="tabindex" class="section">
+            <h3>tabIndex</h3>
+            <p>接收一个整数作为值，节点可以被聚焦和<kbd>Tab</kbd>键索引。</p>
+        </section>
+
+        <section id="title" class="section">
+            <h3>title</h3>
+            <p>不止<code>&lt;a&gt;</code>标签，其它节点也可以设置这个属性，作用一样，在鼠标悬停的时候可以显示一些信息。<b title="设置了'title'属性的&lt;b&gt;标签">请将鼠标悬停在这里。</b></p>
+            <!-- <div class="img-wait"><img data-src="assets/img.jpg" alt="Just An Image"></div> -->
+        </section>
+
+        <div class="navigators">
+            <a id="navigator">属性列表</a>
+            <div class="panel">
+                <h4>属性列表</h4>
+                <a href="#accesskey">accesskey</a>
+                <a href="#enterkeyhint">enterkeyhint</a>
+                <a href="#autocomplete">autocomplete</a>
+            </div>
+        </div>
 
     </article>
 
@@ -82,6 +174,40 @@
 <script src="../js/article.js"></script>
 <script>
 ;(function(doc){
+
+    var $panel = doc.querySelector('.panel');
+    var $properties = doc.querySelectorAll('.section');
+    var i = 0;
+    var l = $properties.length;
+    var html = '<h4>属性列表</h4>';
+    for(; i < l; i++) {
+        html += '<a href="#'+ $properties[i].id +'">'+ $properties[i].id +'</a>';
+    }
+    $panel.innerHTML = html;
+
+    doc.getElementById('tgl-spellcheck').addEventListener('click', function(){
+        var $ipt = doc.getElementById('ipt-spellcheck');
+        $ipt.spellcheck = !$ipt.spellcheck;
+        $ipt.focus();
+    });
+
+    doc.getElementById('tgl-autocomplete').addEventListener('click', function(){
+        var $ipt = doc.getElementById('ipt-autocomplete');
+        $ipt.autocomplete = $ipt.autocomplete === 'on'? 'off': 'on';
+    });
+
+    doc.getElementById('navigator').addEventListener('click', function( e ){
+        e.stopPropagation();
+        var css = $panel.classList;
+        if( css.contains('active') ){
+            $panel.style.cssText = '';
+            setTimeout(function(){ css.remove('active'); }, 300);
+        } else {
+            css.add('active');
+            $panel.offsetWidth;
+            $panel.style.cssText = 'transform:translate(0,-20px);opacity:1;';
+        }
+    });
 
 })(document);
 </script>

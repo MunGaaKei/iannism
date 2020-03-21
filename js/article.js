@@ -4,7 +4,6 @@
         let tar = entries[0].target;
         if( tar.classList.contains('img') ) return;
         tar.setAttribute('src', tar.dataset.src);
-        tar.parentNode.dataset.alt = ` ${tar.alt}`;
     });
 
     Array.from( doc.getElementsByClassName('img-wait') ).forEach( $div => {
