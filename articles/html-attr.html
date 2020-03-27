@@ -155,21 +155,15 @@ input:disabled{
         <section id="title" class="section">
             <h3>title</h3>
             <p>不止<code>&lt;a&gt;</code>标签，其它节点也可以设置这个属性，作用一样，在鼠标悬停的时候可以显示一些信息。<b title="设置了'title'属性的&lt;b&gt;标签">请将鼠标悬停在这里。</b></p>
-            <!-- <div class="img-wait"><img data-src="assets/img.jpg" alt="Just An Image"></div> -->
         </section>
 
         <div class="navigators">
             <a id="navigator">属性列表</a>
-            <div class="panel">
-                <h4>属性列表</h4>
-                <a href="#accesskey">accesskey</a>
-                <a href="#enterkeyhint">enterkeyhint</a>
-                <a href="#autocomplete">autocomplete</a>
-            </div>
+            <div class="panel"></div>
         </div>
 
     </article>
-
+    <div class="backdrop"></div>
 <script src="../js/prism.js"></script>
 <script src="../js/article.js"></script>
 <script>
@@ -198,15 +192,14 @@ input:disabled{
 
     doc.getElementById('navigator').addEventListener('click', function( e ){
         e.stopPropagation();
-        var css = $panel.classList;
-        if( css.contains('active') ){
-            $panel.style.cssText = '';
-            setTimeout(function(){ css.remove('active'); }, 300);
-        } else {
-            css.add('active');
-            $panel.offsetWidth;
-            $panel.style.cssText = 'transform:translate(0,-20px);opacity:1;';
-        }
+        $panel.classList.add('active');
+        $panel.offsetWidth;
+        $panel.style.cssText = 'transform:translate(0,-12px);opacity:1;';
+    });
+
+    doc.addEventListener('click', function(){
+        $panel.style.cssText = '';
+        setTimeout(function(){ $panel.classList.remove('active'); }, 300);
     });
 
 })(document);

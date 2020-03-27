@@ -25,6 +25,9 @@ html, body {
     background: #e4ffda;
     font-weight: 700;
 }
+input {
+    margin: 4px 0;
+}
 input:disabled{
     background: #ffecec;
     cursor: not-allowed;
@@ -34,14 +37,23 @@ input:disabled{
     bottom: 12px;
     width: 80px;
     margin-left: auto;
+    user-select: none;
 }
 .navigators > a {
+    position: relative;
     display: block;
     line-height: 2;
-    background: #212121;
-    color: #e4e44d;
+    background: #fff;
     border-radius: 4px;
     text-align: center;
+}
+.navigators > a:before {
+    content: '\20';
+    position: absolute;
+    top: 6px; bottom: 6px; right: 0;
+    width: 4px;
+    background: #212121;
+    border-radius: 4px;
 }
 .panel {
     display: none;
@@ -86,5 +98,5 @@ input:disabled{
     font-weight: 700;
 }
 .panel > a:hover {
-    background: #ffe642;
+    background: #fd0;
 }

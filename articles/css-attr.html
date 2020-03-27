@@ -8,45 +8,97 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
 <link rel="stylesheet" media="screen" href="../css/picasso.css">
-<title>CSS 属性</title>
+<link rel="stylesheet" media="screen" href="assets/attrs.css">
+<title>一些好玩的 CSS 属性</title>
 <style>
-    .section {
-        margin: 40px -12px;
-        padding: 12px;
-        border-radius: 4px;
-    }
-    .section > h3 {
-        border-left: 4px solid #212121;
-        padding-left: .5em;
-        color: #212121;
-    }
-    .params > li {
-        margin: 4px 0;
-        display: flex;
-        align-items: baseline;
-    }
-    .key {
-        margin-right: 1em;
-        background: #deffd1;
-        font-weight: 700;
+    .secsss {
+        pointer-events: all;
     }
 </style>
 </head>
 <body class="page">
 
     <article class="article">
-        <h1>CSS 属性</h1>
-        <p>记录及说明了部分个人觉得比较有帮助的 CSS 属性，持续更新。</p>
+        <h1>一些好玩的 CSS 属性</h1>
+        <p>CSS里有一些属性，虽然可能有点生僻或少用，但其中还是有好玩的而且实用的。记录一下，持续更新。</p>
 
         <section id="caret-color" class="section">
             <h3>caret-color</h3>
-            <p>设置光标颜色，除了IE几乎全部支持。</p>
-            <input type="text" placeholder="光标颜色为蓝色" style="caret-color: blue;">
+            <p>设置光标颜色。</p>
+            <input type="text" placeholder="光标颜色为红色" style="caret-color: red;">
         </section>
+
+        <section id="pointer-events" class="section">
+            <h3>pointer-events</h3>
+            <p>当设置其值为<code>none</code>时，可以使元素实现点击穿透效果。当鼠标与元素交互（click、hover等）时，事件只会指向它的父元素。</p>
+            <input type="text" placeholder="正常">
+            <input type="text" placeholder="pointer-events: none;" style="pointer-events: none;">
+            <input type="text" placeholder="readonly" readonly>
+            <input type="text" placeholder="disabled" disabled>
+            <p>除下面两个值，其它值一般用于<code>&lt;svg&gt;</code>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events" class="link" target="_blank">更多说明</a>：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">auto:</h5>
+                    <span>相当于未设置</span>
+                </li>
+                <li>
+                    <h5 class="key">none:</h5>
+                    <span>取消鼠标交互事件</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="scroll-behavior" class="section">
+            <h3>scroll-behavior</h3>
+            <p>设置容器平滑滚动，可以点击属性列表里的导航进行测试，可设置的值有：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">auto:</h5>
+                    <span>立即滚动，相当于未设置</span>
+                </li>
+                <li>
+                    <h5 class="key">smooth:</h5>
+                    <span>开启平滑滚动</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="navigators">
+            <a id="navigator">属性列表</a>
+            <div class="panel"></div>
+        </div>
+
     </article>
 
     <div class="backdrop"></div>
 
 <script src="../js/article.js"></script>
+<script>
+    ;(function(doc){
+    
+        var $panel = doc.querySelector('.panel');
+        var $properties = doc.querySelectorAll('.section');
+        var i = 0;
+        var l = $properties.length;
+        var html = '<h4>属性列表</h4>';
+        for(; i < l; i++) {
+            html += '<a href="#'+ $properties[i].id +'">'+ $properties[i].id +'</a>';
+        }
+        $panel.innerHTML = html;
+    
+        doc.getElementById('navigator').addEventListener('click', function( e ){
+            e.stopPropagation();
+            $panel.classList.add('active');
+            $panel.offsetWidth;
+            $panel.style.cssText = 'transform:translate(0,-12px);opacity:1;';
+        });
+    
+        doc.addEventListener('click', function(){
+            $panel.style.cssText = '';
+            setTimeout(function(){ $panel.classList.remove('active'); }, 300);
+        });
+    
+    })(document);
+    </script>
 </body>
 </html>
