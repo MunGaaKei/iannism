@@ -10,11 +10,6 @@
 <link rel="stylesheet" media="screen" href="../css/picasso.css">
 <link rel="stylesheet" media="screen" href="assets/attrs.css">
 <title>一些好玩的 CSS 属性</title>
-<style>
-    .secsss {
-        pointer-events: all;
-    }
-</style>
 </head>
 <body class="page">
 
@@ -50,7 +45,7 @@
 
         <section id="scroll-behavior" class="section">
             <h3>scroll-behavior</h3>
-            <p>设置容器平滑滚动，可以点击属性列表里的导航进行测试，可设置的值有：</p>
+            <p>设置容器平滑滚动，以前常用的做法是使用时间函数（如<code>jQuery</code>的$(document).animate()），相比之下，使用该属性则更加的快速和方便，只是不能设置滚动时长和运动函数而已。可以点击属性列表里的导航进行测试，可设置的值有：</p>
             <ul class="params">
                 <li>
                     <h5 class="key">auto:</h5>
@@ -59,6 +54,41 @@
                 <li>
                     <h5 class="key">smooth:</h5>
                     <span>开启平滑滚动</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="scroll-snap-type" class="section">
+            <h3>scroll-snap-type</h3>
+            <p>该属性规定如何处理容器滚动后元素停留的位置。例如<b>全屏Banner滚动</b>可以尝试使用该属性，而不必再去写<code>JS</code>去完成这种功能。</p>
+            <div class="scroll-container">
+                <div class="block" style="background:pink;">1</div>
+                <div class="block" style="background:tan;">2</div>
+                <div class="block" style="background:teal;">3</div>
+                <div class="block" style="background:olivedrab;">4</div>
+                <div class="block" style="background:khaki;">5</div>
+            </div>
+            <div class="style-header">可编辑样式框</div>
+<style class="style" contenteditable="plaintext-only">.scroll-container {
+    height: 150px;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.scroll-container > .block {
+    height: 100%;
+    line-height: 150px;
+    scroll-snap-align: center;
+}
+</style>
+            <p>可以设置的值有：</p>
+            <ul class="params">
+                <li>
+                    <h5 class="key">[x, y, both] mandatory:</h5>
+                    <span>强制容器滚动后停留在规定的位置</span>
+                </li>
+                <li>
+                    <h5 class="key">[x, y, both] proximity:</h5>
+                    <span>规定容器滚动后，按停留的位置判断是否再做额外的滚动（该行动结果可能和<code>mandatory</code>一致）</span>
                 </li>
             </ul>
         </section>
@@ -97,6 +127,17 @@
             $panel.style.cssText = '';
             setTimeout(function(){ $panel.classList.remove('active'); }, 300);
         });
+
+        var $styles = doc.getElementsByClassName('style');
+        l = $styles.length;
+        for(i = 0; i < l; i++) {
+            $styles[i].addEventListener('keydown', function( e ){
+                if( e.which === 9 ){
+                    e.preventDefault();
+                    doc.execCommand('insertHTML', this, '  ');
+                }
+            });
+        }
     
     })(document);
     </script>
