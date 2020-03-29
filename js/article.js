@@ -30,6 +30,11 @@
             tar = tar.parentNode;
         }
     });
+
+    doc.querySelector('.article > h1').addEventListener('dblclick', e => {
+        e.preventDefault();
+        doc.body.scrollTo(0, 0);
+    });
     
 
 })(document);

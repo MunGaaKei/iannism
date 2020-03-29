@@ -96,7 +96,7 @@ img {
 
 ::-webkit-scrollbar-thumb {
   background: #aaa;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-corner {
@@ -300,6 +300,7 @@ img {
 }
 
 .content > .header .btn {
+  padding: 0 4px;
   font-size: 1.2em;
 }
 
@@ -447,7 +448,7 @@ img {
   z-index: 1;
   top: -1px;
   margin: 1em -12px;
-  padding: 4px 12px;
+  padding: 4px 48px 4px 12px;
   background-color: #fff;
   font-size: 2em;
 }
