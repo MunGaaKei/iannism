@@ -12,6 +12,7 @@
         if( tar.matches('[data-href]') && !ttl ){
             close( doc.querySelector('.room.active') );
             open( doc.getElementById(tar.dataset.href) );
+            history.pushState({}, '', tar.dataset.state);
         }
     }, false);
 
@@ -49,7 +50,8 @@
             open( frame );
         }
     });
-
+    
+    resetURL();
 
     /* 节流封装 */
     function throttle( fn, ms ){
@@ -99,6 +101,34 @@
                 this.removeAttribute('data-src');
             }, { once: true });
         }
+    }
+
+    function resetURL() {
+        var hash = location.hash.split('/');
+        var l = hash.length;
+        var state = '/';
+        if( l > 1 ){
+            switch( hash[1] ){
+                case 'articles':
+                    var link = doc.querySelector('[data-state="/articles/'+ hash[2] +'"]');
+                    if( hash[2] && link ){
+                        link.click();
+                        state = '/articles/'+ hash[2];
+                    } else {
+                        close( doc.querySelector('.room.active') );
+                        open( doc.getElementById('b') );
+                        state = '/articles';
+                    }
+                break;
+                case 'photography':
+                    close( doc.querySelector('.room.active') );
+                    open( p );
+                    state = '/photography';
+                break;
+                default: break;
+            }
+        }
+        history.replaceState(null, '', state);
     }
 
 })(window, document);
