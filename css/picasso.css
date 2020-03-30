@@ -402,6 +402,7 @@ img {
 .link {
   position: relative;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .link:before {

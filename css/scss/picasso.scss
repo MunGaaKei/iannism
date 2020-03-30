@@ -260,6 +260,7 @@ img{
 .link{
 	position: relative;
 	white-space: nowrap;
+	font-weight: 600;
 	&:before{
 		content: '\20';
 		position: absolute; z-index: -1;
