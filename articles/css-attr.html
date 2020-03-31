@@ -17,6 +17,92 @@
         <h1>一些好玩的 CSS 属性</h1>
         <p>CSS里有一些属性，虽然可能有点生僻或少用，但其中还是有好玩的而且实用的。记录一下，持续更新。</p>
 
+        <section id="background-clip" class="section">
+            <h3>background-clip</h3>
+            <p>通俗来讲，可以通过这个属性设置背景的显示位置，个人觉得当你想给文字本身加颜色渐变的时候才用得到，比如：<b class="gradient-text">渐变文字</b>。可选参数直接使用示例表达：</p>
+            <div class="backgroundclip">
+                <div class="item">border-box</div>
+                <div class="item">padding-box</div>
+                <div class="item">content-box</div>
+                <div class="item">text</div>
+            </div>
+            <div class="style-header">可编辑样式框</div>
+<style class="style" contenteditable="plaintext-only" spellcheck="false">.backgroundclip > .item:nth-child(1) { background-clip: border-box; }
+.backgroundclip > .item:nth-child(2) { background-clip: padding-box; }
+.backgroundclip > .item:nth-child(3) { background-clip: content-box; }
+.backgroundclip > .item:nth-child(4) {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.backgroundclip > .item {
+    padding: 24px;
+    border: 8px dashed #808080;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+}
+.gradient-text{
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 25%, #f83600 50%, #f9d423 75%, #f83600 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    color: transparent;
+    background-position: 0 0;
+    animation: wave 1s linear 0s infinite;
+}
+@keyframes wave {
+    100% { background-position: -100% 0; }
+}
+</style>
+<style>
+.backgroundclip {
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+.backgroundclip > .item {
+    margin: 10px;
+    box-sizing: border-box;
+    width: calc(50% - 20px);
+}
+@media (max-width: 640px) {
+    .backgroundclip > .item { width: 100%; }
+}
+</style>
+        </section>
+
+        <section id="backdrop-filter" class="section">
+            <h3>backdrop-filter</h3>
+            <p>当元素背景透明度不为1时，可使用该属性改变元素背后区域的滤镜显示效果，和<code>filter</code>类似，比如毛玻璃效果。</p>
+            <blockquote>如果使用<code>transition</code>来切换该节点的显示隐藏，第一次渲染的时候可能会有稍微卡顿，之后则不会。</blockquote>
+            <div style="position:relative;">
+                <div class="img-wait"><img data-src="assets/img.jpg"></div>
+                <div class="backdropfilter">
+                    <div class="prop">backdrop-filter</div>
+                </div>
+            </div>
+            <div class="style-header">可编辑样式框</div>
+<style class="style" contenteditable="plaintext-only" spellcheck="false">.backdropfilter {
+    backdrop-filter: blur(12px);
+
+    position: absolute;
+    left: 50%; top: 0; right: 0; bottom: 0;
+    display: flex;
+    background: rgba(255,255,255,.2);
+}
+.backdropfilter > .prop {
+    margin: auto;
+    padding: 8px 12px;
+    background: #212121;
+    color: #d8d800;
+    border-radius: 4px;
+}
+</style>
+        </section>
+
         <section id="caret-color" class="section">
             <h3>caret-color</h3>
             <p>设置光标颜色。</p>
@@ -44,7 +130,7 @@
         </section>
 
         <section id="scroll-behavior" class="section">
-            <h3>scroll-behavior</h3>
+            <h3>scroll-behavior<span>💻</span></h3>
             <p>设置容器平滑滚动，以前常用的做法是使用时间函数（如<code>jQuery</code>的$(document).animate()），相比之下，使用该属性则更加的快速和方便，只是不能设置滚动时长和运动函数而已。可以点击属性列表里的导航进行测试，可设置的值有：</p>
             <ul class="params">
                 <li>
@@ -59,7 +145,7 @@
         </section>
 
         <section id="scroll-snap-type" class="section">
-            <h3>scroll-snap-type</h3>
+            <h3>scroll-snap-type<span>💻</span></h3>
             <p>该属性规定如何处理容器滚动后元素停留的位置。例如<b>全屏滚动</b>可以尝试使用该属性，而不必再去写<code>JS</code>去完成这种功能。兼容性的话，只有较少数浏览器不支持。</p>
             <div class="scroll-container">
                 <div class="block" style="background:pink;">1</div>

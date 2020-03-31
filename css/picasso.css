@@ -68,6 +68,12 @@ input:focus, textarea:focus {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+blockquote {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
 img {
   display: block;
   margin: auto;

@@ -11,9 +11,16 @@ html, body {
     background: #f2f5ff;
 }
 .section > h3 {
+    position: relative;
     display: inline-block;
     padding: 0 8px;
     background: #ffee7a;
+    font-size: 20px;
+}
+.section > h3 > span {
+    position: absolute;
+    left: 100%;
+    margin-left: 12px;
 }
 .style {
     position: relative;
@@ -22,11 +29,15 @@ html, body {
     padding: 1em;
     width: 100%;
     max-height: 160px;
-    background: #fafafa;
+    background: rgba(243,243,243,.5);
     border: 1px #dcdcdc dashed;
     overflow: auto;
     outline: none;
     border-radius: 0 0 4px 4px;
+    transition: all .24s;
+}
+.style:focus {
+    box-shadow: inset 0 0 4px rgba(0,0,0,.15);
 }
 .style-header {
     margin-top: 12px;
@@ -72,16 +83,9 @@ input:disabled{
     display: block;
     line-height: 2;
     background: #fff;
+    border: 1px dashed #ddd;
     border-radius: 4px;
     text-align: center;
-}
-.navigators > a:before {
-    content: '\20';
-    position: absolute;
-    top: 6px; bottom: 6px; right: 0;
-    width: 4px;
-    background: #212121;
-    border-radius: 4px;
 }
 .panel {
     display: none;
