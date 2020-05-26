@@ -12,7 +12,7 @@ gulp.task('default', () => {
 
 	gulp.watch(['css/scss/*.scss'], () => {
 		return gulp.src('css/scss/picasso.scss')
-		.pipe(sass({ outputStyle: 'expanded' }))
+		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(gulp.dest('css'))
 		.pipe(browserSync.reload({ stream: true }));
 	});

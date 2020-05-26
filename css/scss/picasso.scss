@@ -104,7 +104,7 @@ img{
 	}
 }
 .photograph{
-	padding: 12px;
+	padding: 12px 40px;
 }
 .grids{
 	box-sizing: border-box;
@@ -144,6 +144,34 @@ img{
 }
 @media (max-width: 600px) {
 	.grids > li { width: 50%; }
+}
+
+.codes {
+	padding: 12px;
+	box-sizing: border-box;
+	opacity: 0;
+	transform: scale(.94);
+}
+.codes.active {
+	opacity: 1;
+	transform: none;
+}
+.codes > .close {
+	position: fixed;
+	right: 12px; top: 12px;
+	padding: 8px 12px;
+	background: #fff;
+	border-radius: 4px;
+}
+.projects {
+	margin: 20vh auto 12px;
+	text-align: center;
+	> li {
+		margin: 24px 0;
+	}
+	.unfinished {
+		opacity: 0.4;
+	}
 }
 
 .frame{

@@ -125,6 +125,10 @@
                     open( p );
                     state = '/photography';
                 break;
+                case 'codes':
+                    close( doc.querySelector('.room.active') );
+                    open( doc.getElementById('c') );
+                    state = '/codes';
                 default: break;
             }
         }
