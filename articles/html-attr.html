@@ -158,8 +158,8 @@ input:disabled{
         </section>
 
         <div class="navigators">
-            <a id="navigator">属性列表</a>
             <div class="panel"></div>
+            <a id="navigator">属性列表</a>
         </div>
 
     </article>
@@ -194,11 +194,11 @@ input:disabled{
         e.stopPropagation();
         $panel.classList.add('active');
         $panel.offsetWidth;
-        $panel.style.cssText = 'transform:translate(0,-12px);opacity:1;';
+        $panel.classList.add('show');
     });
 
     doc.addEventListener('click', function(){
-        $panel.style.cssText = '';
+        $panel.classList.remove('show');
         setTimeout(function(){ $panel.classList.remove('active'); }, 300);
     });
 

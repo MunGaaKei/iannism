@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="description" content="">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
+<link rel="stylesheet" media="screen" href="../css/picasso.css">
+<link rel="stylesheet" media="screen" href="assets/attrs.css">
+<title>Javascript 操控节点</title>
+</head>
+<body class="page">
+
+    <article class="article">
+        <h1>Javascript 操控节点</h1>
+        <p>本篇列举一些实用的原生JS函数，持续更新。</p>
+
+        <section id="insertAdjacentHTML" class="section">
+            <h3>insertAdjacentHTML</h3>
+            <p></p>
+        </section>
+
+        <div class="navigators">
+            <div class="panel"></div>
+            <a id="navigator">属性列表</a>
+        </div>
+
+    </article>
+
+    <div class="backdrop"></div>
+
+<script src="../js/article.js"></script>
+<script>
+    ;(function(doc){
+    
+        var $panel = doc.querySelector('.panel');
+        var $properties = doc.querySelectorAll('.section');
+        var i = 0;
+        var l = $properties.length;
+        var html = '<h4>属性列表</h4>';
+        for(; i < l; i++) {
+            html += '<a href="#'+ $properties[i].id +'">'+ $properties[i].id +'</a>';
+        }
+        $panel.innerHTML = html;
+    
+        doc.getElementById('navigator').addEventListener('click', function( e ){
+            e.stopPropagation();
+            $panel.classList.add('active');
+            $panel.offsetWidth;
+            $panel.classList.add('show');
+        });
+
+        doc.addEventListener('click', function(){
+            $panel.classList.remove('show');
+            setTimeout(function(){ $panel.classList.remove('active'); }, 300);
+        });
+
+    
+    })(document);
+    </script>
+</body>
+</html>

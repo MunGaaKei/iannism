@@ -204,10 +204,10 @@ img{
 	flex-direction: column;
 	> .header {
 		position: absolute; z-index: 101;
-		right: 12px; top: 12px;
+		right: 12px; top: 8px;
 		display: flex;
 		.btn{
-			padding: 0 4px;
+			padding: 4px;
 			font-size: 1.2em;
 			+ .btn {
 				margin-left: .6em;

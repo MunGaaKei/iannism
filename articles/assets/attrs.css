@@ -15,7 +15,7 @@ html, body {
     display: inline-block;
     padding: 0 8px;
     background: #ffee7a;
-    font-size: 20px;
+    font-size: 24px;
 }
 .section > h3 > span {
     position: absolute;
@@ -83,9 +83,18 @@ input:disabled{
     display: block;
     line-height: 2;
     background: #fff;
-    border: 1px dashed #ddd;
+    box-shadow: 0 0 8px rgba(0,0,0,.15);
     border-radius: 4px;
     text-align: center;
+}
+.navigators > a:after {
+    position: absolute;
+    content: '\20';
+    top: -6px; left: 0; right: 0;
+    height: 12px;
+    background: #fff;
+    transition: all .24s;
+    opacity: 0;
 }
 .panel {
     display: none;
@@ -97,13 +106,18 @@ input:disabled{
     max-width: 672px;
     padding: 0 12px 12px;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,.15);
+    border-radius: 4px 4px 0;
+    box-shadow: 0 0 8px rgba(0,0,0,.15);
     overflow: auto;
     transition: all .24s;
     opacity: 0;
 }
 .panel.active { display: block; }
+.panel.show,
+.panel.show + a:after { opacity: 1; }
+.navigators > .active + a {
+    border-radius: 0 0 4px 4px;
+}
 .panel > h4 {
     position: sticky;
     top: -4px;
