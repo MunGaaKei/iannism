@@ -51,23 +51,26 @@ ul {
     align-items: center;
 }
 .avatar {
-    width: 172px;
+    width: 144px;
 }
 .bio {
     margin-left: 24px;
     text-align: right;
 }
 .bio > p {
-    margin: 8px 0;
+    margin: 4px 0;
 }
 .from {
-    margin: 12px 0;
+    margin: 8px 0;
 }
 .skills {
+    margin: 12px auto 40px;
+}
+.projects {
     margin: 40px auto;
 }
 .title {
-    margin: 32px 0 8px;
+    margin: 24px 0 4px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -78,4 +81,7 @@ ul {
 }
 .website {
     margin: 40px 0 0;
+}
+.projects .title {
+    margin: 16px 0 4px;
 }
