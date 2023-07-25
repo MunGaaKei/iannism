@@ -5,12 +5,5 @@
 			"src": "server.js",
 			"use": "@vercel/node"
 		}
-	],
-	"routes": [
-		{ "src": "/resume", "dest": "/resume.html" },
-		{
-			"src": "/",
-			"dest": "/index.html"
-		}
 	]
 }
