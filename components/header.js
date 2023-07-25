@@ -1,26 +1,29 @@
-import { make } from "./webc.js";
+import { make } from "./core/ire.js";
 
 make({
 	name: "i-header",
 	style: `
-    .header {
-        padding-block: 12px;
-        margin-bottom: 2em;
+    i-header {
+        margin: 0 auto 2em;
+        padding: 12px;
+        width: 720px;
+        max-width: 100%;
         position: sticky;
         z-index: 1;
+        top: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(24px);
     }
     `,
 	template() {
-		const { title } = this.dataset;
+		const { title, refer } = this.dataset;
 
-		return `<header class="header">
+		return `
             <h2>${title}</h2>
-            <a class="icon" data-close="articles">
+            <a class="icon link" data-open="${refer}">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -35,7 +38,9 @@ make({
                         stroke-linejoin="round"
                     ></path>
                 </svg>
-            </a>
-        </header>`;
+            </a>`;
+	},
+	watch: {
+		"data-title": () => {},
 	},
 });
