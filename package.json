@@ -2,7 +2,9 @@
 	"scripts": {
 		"build": "node server.js"
 	},
+	"license": "iann",
 	"dependencies": {
+		"@vercel/node": "^2.15.6",
 		"marked": "^5.1.1",
 		"mime": "^3.0.0"
 	}
