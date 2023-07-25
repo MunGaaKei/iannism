@@ -6,10 +6,10 @@
 			"use": "@vercel/node"
 		}
 	],
-	"redirects": [
+	"routes": [
 		{ "source": "/resume", "destination": "/resume.html" },
 		{
-			"source": "/(.*)/",
+			"source": "/",
 			"destination": "/index.html"
 		}
 	]
