@@ -10,7 +10,7 @@
 		{ "source": "/resume", "destination": "/resume.html" },
 		{
 			"source": "/(.*)",
-			"destination": "/"
+			"destination": "/index.html"
 		}
 	]
 }
