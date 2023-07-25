@@ -7,10 +7,10 @@
 		}
 	],
 	"routes": [
-		{ "source": "/resume", "destination": "/resume.html" },
+		{ "src": "/resume", "dest": "/resume.html" },
 		{
-			"source": "/",
-			"destination": "/index.html"
+			"src": "/",
+			"dest": "/index.html"
 		}
 	]
 }
